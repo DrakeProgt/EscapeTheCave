@@ -14,7 +14,7 @@ public class LightEffectsScript : MonoBehaviour
     private void Start()
     {
         light = gameObject.GetComponent<Light>();
-        SetMaxWaitTime(0.5f);
+        SetWaitTime(0.5f);
         isFlickeingEnabled = false;
     }
 	
@@ -43,27 +43,34 @@ public class LightEffectsScript : MonoBehaviour
         if (bActivate)
         {
             isFlickeingEnabled = true;
-            StartCoroutine(RandomFlickering());
+            StartCoroutine(RandomLightFlickering());
         }
         else
         {
             isFlickeingEnabled = false;
-            StopCoroutine(RandomFlickering());
-            light.enabled = true;
+            StopCoroutine(RandomLightFlickering());
         }
     }
 
-    private IEnumerator RandomFlickering()
+    private IEnumerator RandomLightFlickering()
     {
-        while(isFlickeingEnabled)
+        float intensity = GetLightIntensity();
+
+        //TODO: set intensity smooth?
+        while (isFlickeingEnabled)
         {
-            yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
-            light.enabled = !light.enabled;
+            //use random factor for more realistic result
+            //use half of waiting time because of the two-time wait
+            SetLightIntensity(intensity * 0.6f);
+            yield return new WaitForSecondsRealtime(Random.Range(minWaitTime / 2, maxWaitTime / 2));
+            SetLightIntensity(intensity);
+            yield return new WaitForSecondsRealtime(Random.Range(minWaitTime / 2, maxWaitTime / 2));
         }
-        light.enabled = true;
+
+        SetLightIntensity(intensity);
     }
 
-    private void SetMaxWaitTime(float time)
+    private void SetWaitTime(float time)
     {
         maxWaitTime = time * 1.3f;
         minWaitTime = time * 0.7f;
@@ -90,5 +97,15 @@ public class LightEffectsScript : MonoBehaviour
                 light.intensity -= step;
         }
         light.intensity = intensity;
+    }
+
+    private void SetLightIntensity(float intensity)
+    {        
+        light.intensity = intensity;
+    }
+
+    private float GetLightIntensity()
+    {
+        return light.intensity;
     }
 }

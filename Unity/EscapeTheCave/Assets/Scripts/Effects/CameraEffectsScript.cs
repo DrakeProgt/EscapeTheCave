@@ -10,10 +10,12 @@ public class CameraEffectsScript : MonoBehaviour
     private BlurOptimized blur;
     private MotionBlur motionBlur;
     private VignetteModel vignette;
+    private bool bPulsation;
 
     // Use this for initialization
     private void Start()
     {
+        bPulsation = false;
         //use Camera.main or gameObject
         motionBlur = gameObject.AddComponent<MotionBlur>();
         blur = gameObject.AddComponent<BlurOptimized>();
@@ -103,8 +105,9 @@ public class CameraEffectsScript : MonoBehaviour
         {
             ChangeBlur(true);
             ChangeVignette(true);
+            ChangeVignettePulsation(true);
             StartCoroutine(SetBlurIntensitySmooth(8));
-            StartCoroutine(SetVignetteIntensitySmooth(0.4f));
+            StartCoroutine(SetVignetteIntensitySmoothPulsation(0.4f, 0.5f));
         }
         else if (Input.GetKeyDown(KeyCode.Alpha9))
         {
@@ -160,6 +163,14 @@ public class CameraEffectsScript : MonoBehaviour
         vignette.enabled = bActivate;
     }
 
+    /// <summary>
+    /// Activate or deactivate pulsation vignette effect
+    /// </summary>
+    private void ChangeVignettePulsation(bool bActivate)
+    {
+        bPulsation = bActivate;
+    }
+
     private IEnumerator SetVignetteIntensitySmooth(float intensity)
     {
         VignetteModel.Settings vignetteSettings = vignette.settings;
@@ -188,5 +199,26 @@ public class CameraEffectsScript : MonoBehaviour
 
         vignetteSettings.intensity = intensity;
         vignette.settings = vignetteSettings;
+    }
+
+    private void SetVignetteIntensity(float intensity)
+    {
+        VignetteModel.Settings vignetteSettings = vignette.settings;
+        vignetteSettings.intensity = intensity;
+        vignette.settings = vignetteSettings;
+    }
+
+    private IEnumerator SetVignetteIntensitySmoothPulsation(float maxIntensity, float frequency)
+    {
+        //pulsation
+        while (bPulsation)
+        {
+            //use random factor for more realistic result
+            //use half of waiting time because of the two-time wait
+            SetVignetteIntensity(maxIntensity);
+            yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
+            SetVignetteIntensity(maxIntensity*0.5f);
+            yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
+        }
     }
 }
