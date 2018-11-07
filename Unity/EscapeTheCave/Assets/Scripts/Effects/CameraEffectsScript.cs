@@ -217,7 +217,7 @@ public class CameraEffectsScript : MonoBehaviour
             //use half of waiting time because of the two-time wait
             SetVignetteIntensity(maxIntensity);
             yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
-            SetVignetteIntensity(maxIntensity*0.5f);
+            SetVignetteIntensity(maxIntensity*0.85f);
             yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
         }
     }
