@@ -86,12 +86,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             //crouching
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (CrossPlatformInputManager.GetButtonDown("Crouch"))//Input.GetKeyDown(KeyCode.LeftControl))
             {
                 m_WalkSpeed /= 2;
                 CrouchFunction(true);
             }
-            if (Input.GetKeyUp(KeyCode.LeftControl))
+            if (CrossPlatformInputManager.GetButtonUp("Crouch"))//Input.GetKeyUp(KeyCode.LeftControl))
             {
                 m_WalkSpeed = savedWalkSpeed;
                 CrouchFunction(false);
@@ -136,6 +136,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 ray = new Ray(transform.position, transform.up);
             }
             CrouchFunction(false);
+        }
+
+        private void OnGUI()
+        {
+            //Interaction point
+            GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 5, 5), "");
         }
 
         private void PlayLandingSound()
@@ -266,7 +272,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            m_IsWalking = !CrossPlatformInputManager.GetButton("Run");// !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
