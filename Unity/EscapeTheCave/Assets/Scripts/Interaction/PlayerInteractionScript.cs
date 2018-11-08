@@ -21,7 +21,7 @@ public class PlayerInteractionScript : MonoBehaviour
     {
         RaycastHit hit;
 
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //or Input.mousePosition?
+        Ray ray = UnityEngine.Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //or Input.mousePosition?
         if (Physics.Raycast(ray, out hit, 5))
         {
             //TODO: set width and height of textBox depending on message
