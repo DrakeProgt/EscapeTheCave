@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour {
 
-    public bool isInteracted = false;
-    public float movementSpeed = 1f;
+    public bool isInteracted;
+    public float movementSpeed;
 
     Rigidbody rigidbody;
     [SerializeField] Vector3 startPosition;
@@ -16,10 +16,10 @@ public class BaseController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody = gameObject.GetComponent<Rigidbody>();
-
-        startPosition = targetPosition = transform.position;
-        targetPosition = new Vector3(0, 0.666f, 0);
+        
+        targetPosition = new Vector3(0, -0.3f, 0);
         movementTime = 1;
+        isInteracted = false;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class BaseController : MonoBehaviour {
         if(isInteracted)
         {
             t += Time.deltaTime / movementTime;
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, t);
         }
     }
 }
