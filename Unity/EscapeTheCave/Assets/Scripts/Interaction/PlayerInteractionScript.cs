@@ -15,9 +15,9 @@ public class PlayerInteractionScript : MonoBehaviour
         hovered = false;
         message = "";
     }
-	
-	// Update is called once per frame
-	private void Update()
+
+    // Update is called once per frame
+    private void FixedUpdate()
     {
         RaycastHit hit;
 
@@ -31,14 +31,14 @@ public class PlayerInteractionScript : MonoBehaviour
             {
                 case "pickable":
                     message = "Pick up " + hit.collider.gameObject.name + " with Button E";
-                    doPickingUpObject(hit.collider.gameObject);
-                    break;
-                case "placeable":
-                    message = "Place " + hit.collider.gameObject.name + " with Button E";
-                    doPlacingObject(hit.collider.gameObject);
+                    DoPickingUpObject(hit.collider.gameObject);
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name + " with Button E";
+                    break;
+                case "CrystalFrame":
+                    message = "Set crystal into base with Button E";
+                    DoPlacingObject((GameObject)Resources.Load("Crystal"), hit.collider.gameObject);
                     break;
                 case "Untagged":
                     return;
@@ -52,24 +52,34 @@ public class PlayerInteractionScript : MonoBehaviour
             hovered = false;
     }
 
-    private void doPickingUpObject(GameObject pickedObject)
+    private void DoPickingUpObject(GameObject pickedObject)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //Do something...
-            Destroy(pickedObject);
+            pickedObject.GetComponent<BoxCollider>().enabled = false;
+
+            //move the gameObject slowly
+            MoveSample animation = pickedObject.GetComponent<MoveSample>();
+            animation.MoveAnimation(gameObject.GetComponent<Transform>().position);
+            StartCoroutine(animation.DestroyObject(2));
+
+            //TODO: add item to inventory
         }
     }
 
-    private void doPlacingObject(GameObject placedObject)
+    private void DoPlacingObject(GameObject objToBePlaced, GameObject parent)
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //Do something...
-            placedObject.GetComponent<MeshRenderer>().enabled = true;
-            placedObject.tag = "Untagged";
-            //TODO: doesn't work...
-            hovered = false;
+            objToBePlaced.GetComponent<BoxCollider>().enabled = false;
+            GameObject placedObject = GameObject.Instantiate(objToBePlaced, gameObject.GetComponent<Transform>().position, new Quaternion());
+
+            //move the gameObject slowly
+            MoveSample animation = placedObject.GetComponent<MoveSample>();
+            animation.MoveAnimation(parent.GetComponent<Transform>().position);
+            StartCoroutine(animation.EnableCollider(2));
+
+            parent.tag = "Untagged";
         }
     }
 
