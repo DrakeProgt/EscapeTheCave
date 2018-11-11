@@ -49,6 +49,7 @@ public class Wall : MonoBehaviour {
 
     private class Cube
     {
+        public char letter;
         private GameObject cubeObject;
         private Vector3 prefabPosition;
         private float prefabRotation;
@@ -60,7 +61,7 @@ public class Wall : MonoBehaviour {
         {
             if (char.IsUpper(letter))
             {
-                return Resources.Load("WordPuzzle/letters/cap" + letter) as Texture2D;
+                return Resources.Load("WordPuzzle/letters/" + letter) as Texture2D;
             }
             else
             {
@@ -74,6 +75,10 @@ public class Wall : MonoBehaviour {
             prefabRotation = init.GetComponent<Transform>().eulerAngles.y;
             // set letter texture
             cubeObject.GetComponent<Renderer>().material.SetTexture("_BumpMap", loadTextFor(letter));
+            // set texture offset for uniqueness
+            cubeObject.GetComponent<Renderer>().material.SetTextureOffset("_DetailAlbedoMap", new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)));
+
+            this.letter = letter;
         }
 
         public Cube(GameObject init, char letter, int row, int column)
