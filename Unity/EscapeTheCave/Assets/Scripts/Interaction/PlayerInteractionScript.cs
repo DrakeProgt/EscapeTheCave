@@ -27,6 +27,14 @@ public class PlayerInteractionScript : MonoBehaviour
             //TODO: set width and height of textBox depending on message
             SetTextBoxDim(250, 20);
 
+            Interact.pressedE = false;
+            if (hit.collider.gameObject.tag != "Untagged")
+            {
+                Interact.focused = hit.collider.gameObject;
+                if (Input.GetKeyDown(KeyCode.E)) Interact.pressedE = true;
+                
+            } 
+
             switch (hit.collider.gameObject.tag)
             {
                 case "pickable":
@@ -36,6 +44,9 @@ public class PlayerInteractionScript : MonoBehaviour
                 case "placeable":
                     message = "Place " + hit.collider.gameObject.name + " with Button E";
                     doPlacingObject(hit.collider.gameObject);
+                    break;
+                case "pressable":
+                    message = "Press with Button E";
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name + " with Button E";
@@ -49,7 +60,12 @@ public class PlayerInteractionScript : MonoBehaviour
             hovered = true;
         }
         else
+        {
             hovered = false;
+            Interact.focused = null;
+            Interact.pressedE = false;
+        }
+            
     }
 
     private void doPickingUpObject(GameObject pickedObject)

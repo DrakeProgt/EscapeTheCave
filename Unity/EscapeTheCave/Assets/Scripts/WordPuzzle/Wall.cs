@@ -5,109 +5,31 @@ using UnityEngine;
 public class Wall : MonoBehaviour {
 
     public GameObject firstBrick;
+    public GameObject WallController;
     public string text = "Test es testet Test testet set test teste";
     public int lineLength = 5;
+    static List<GameObject> list = new List<GameObject>();
+
 
     void Start () {
-        WallManager.firstBrick = firstBrick;
-        WallManager.text = text;
-        WallManager.lineLength = lineLength;
-        WallManager.size = firstBrick.GetComponent<MeshFilter>().mesh.bounds.size;
-        
-        WallManager.setup();
+        list.Add(firstBrick);
 
-
-        //for (int index = 0; index < 2000; index++)
-        //{
-          //  Debug.Log();
-        //}
-	}
-	
-    public static class WallManager
-    {
-        public static GameObject firstBrick;
-        public static string text;
-        public static int lineLength;
-        static List<Cube> list = new List<Cube>();
-
-        public static Vector3 size;
-
-        public static void setup()
+        for (int index = 1; index < text.Length; index++)
         {
-            list.Add(new Cube(firstBrick, text[0]));
-    
-
-            for (int index = 1; index < text.Length; index++)
-            {
-                list.Add(
-                    new Cube(firstBrick, text[index], (int)index / lineLength, index % lineLength)
-                );
-            }
+            GameObject newCube = Instantiate(firstBrick, WallController.GetComponent<Transform>());
+            list.Add(newCube);
+            newCube.GetComponent<Cube>().setup(firstBrick, text[index], (int)index / lineLength, index % lineLength);   
         }
-
+        firstBrick.GetComponent<Cube>().setup(firstBrick, text[0], 0, 0);
     }
 
-    private class Cube
+    private void Update()
     {
-        public char letter;
-        private GameObject cubeObject;
-        private Vector3 prefabPosition;
-        private float prefabRotation;
-        private Vector3 originPosition;
-        private readonly float deltaWidth = 0.01023f;
-        private readonly float deltaHeight = 0.00240f;
-
-        public static Texture2D loadTextFor(char letter)
+        // focusing a button
+        if (null != Interact.focused && Interact.pressedE && "pressable" == Interact.focused.tag && ("WordPuzzleButton" == Interact.focused.name || "WordPuzzleButton(Clone)" == Interact.focused.name))
         {
-            if (char.IsUpper(letter))
-            {
-                return Resources.Load("WordPuzzle/letters/" + letter) as Texture2D;
-            }
-            else
-            {
-                return Resources.Load("WordPuzzle/letters/" + letter) as Texture2D;
-            }
+            Interact.focused.GetComponent<Cube>().press();
         }
-
-        void setup(GameObject init, char letter)
-        {
-            prefabPosition = init.GetComponent<Transform>().position;
-            prefabRotation = init.GetComponent<Transform>().eulerAngles.y;
-            // set letter texture
-            cubeObject.GetComponent<Renderer>().material.SetTexture("_BumpMap", loadTextFor(letter));
-            // set texture offset for uniqueness
-            cubeObject.GetComponent<Renderer>().material.SetTextureOffset("_DetailAlbedoMap", new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)));
-
-            this.letter = letter;
-        }
-
-        public Cube(GameObject init, char letter, int row, int column)
-        {
-            cubeObject = Instantiate(init);
-            setup(init, letter);
-            setOriginPosition(row, column);
-        }
-
-        // constructor for first button
-        public Cube(GameObject init, char letter)
-        {
-            cubeObject = init;
-            setup(init, letter);
-        }
-
-        void setOriginPosition(int row, int column)
-        {
-            // ATTENTION! maybe x or z axe may change
-            Vector3 offset = Quaternion.AngleAxis(prefabRotation + 90.0f, new Vector3(0, 1, 0)) * new Vector3(0, (WallManager.size.y + deltaHeight) * -row, (WallManager.size.z + deltaWidth) * -column);
-            originPosition = prefabPosition + offset;
-            setPosition(originPosition);
-        }
-
-        void setPosition(Vector3 target)
-        {
-            cubeObject.GetComponent<Transform>().position = target;
-        }
-
     }
 
     
