@@ -53,6 +53,8 @@ public class Wall : MonoBehaviour {
         private Vector3 prefabPosition;
         private float prefabRotation;
         private Vector3 originPosition;
+        private readonly float deltaWidth = 0.01023f;
+        private readonly float deltaHeight = 0.00240f;
 
         public static Texture2D loadTextFor(char letter)
         {
@@ -91,7 +93,7 @@ public class Wall : MonoBehaviour {
         void setOriginPosition(int row, int column)
         {
             // ATTENTION! maybe x or z axe may change
-            Vector3 offset = Quaternion.AngleAxis(prefabRotation + 90.0f, new Vector3(0, 1, 0)) * new Vector3(0, WallManager.size.y * -row, WallManager.size.z * -column);
+            Vector3 offset = Quaternion.AngleAxis(prefabRotation + 90.0f, new Vector3(0, 1, 0)) * new Vector3(0, (WallManager.size.y + deltaHeight) * -row, (WallManager.size.z + deltaWidth) * -column);
             originPosition = prefabPosition + offset;
             setPosition(originPosition);
         }
