@@ -86,12 +86,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             //crouching
-            if (CrossPlatformInputManager.GetButtonDown("Crouch"))//Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetButtonDown("Crouch"))//Input.GetKeyDown(KeyCode.LeftControl))
             {
                 m_WalkSpeed /= 2;
                 CrouchFunction(true);
             }
-            if (CrossPlatformInputManager.GetButtonUp("Crouch"))//Input.GetKeyUp(KeyCode.LeftControl))
+            if (Input.GetButtonUp("Crouch"))//Input.GetKeyUp(KeyCode.LeftControl))
             {
                 m_WalkSpeed = savedWalkSpeed;
                 CrouchFunction(false);
