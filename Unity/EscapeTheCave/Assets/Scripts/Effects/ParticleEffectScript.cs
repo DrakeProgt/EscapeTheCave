@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
 public class ParticleEffectScript : MonoBehaviour
 {
@@ -33,5 +34,11 @@ public class ParticleEffectScript : MonoBehaviour
         stoneDust.GetComponent<Transform>().position = new Vector3(possiblePositions[index].x, possiblePositions[index].y, possiblePositions[index].z);
         stoneDust.GetComponent<ParticleSystem>().Play(true);
         stoneDust.GetComponentInChildren<AudioSource>().Play();
+
+        //controller vibration
+        float stoneDustDir = Utilities.GetDirection(UnityEngine.Camera.main.transform, stoneDust.transform);
+        float vibLeft = (stoneDustDir == -1 || stoneDustDir == 0) ? 1 : 0;
+        float vibRight = (stoneDustDir == 1 || stoneDustDir == 0) ? 1 : 0;
+        StartCoroutine(Utilities.ControllerVibration(vibLeft, vibRight, 2));
     }
 }

@@ -51,6 +51,7 @@ public class CameraEffectsScript : MonoBehaviour
         {
             ChangeBlur(false);
             ChangeVignette(false);
+            ChangeVignettePulsation(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -213,6 +214,8 @@ public class CameraEffectsScript : MonoBehaviour
         //pulsation
         while (bPulsation)
         {
+            StartCoroutine(Utilities.ControllerVibration(0.25f, 0.25f, 0.1f));
+
             //use random factor for more realistic result
             //use half of waiting time because of the two-time wait
             SetVignetteIntensity(maxIntensity);
