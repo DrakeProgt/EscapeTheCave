@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public static class GameManager {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static GameObject focused;
+    public static bool pressedInteractKey = false;
+
+    public static bool isWordPuzzleSolved = false;
+
+    public static void UnpressAllKeys()
+    {
+        pressedInteractKey = false;
+    }
 }

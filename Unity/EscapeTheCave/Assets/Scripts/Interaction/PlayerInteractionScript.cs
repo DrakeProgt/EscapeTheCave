@@ -27,11 +27,12 @@ public class PlayerInteractionScript : MonoBehaviour
             //TODO: set width and height of textBox depending on message
             SetTextBoxDim(250, 20);
 
-            Interact.pressedE = false;
+            GameManager.UnpressAllKeys();
+
             if (hit.collider.gameObject.tag != "Untagged")
             {
-                Interact.focused = hit.collider.gameObject;
-                if (Input.GetKeyDown(KeyCode.E)) Interact.pressedE = true;
+                GameManager.focused = hit.collider.gameObject;
+                if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
                 
             } 
 
@@ -62,8 +63,8 @@ public class PlayerInteractionScript : MonoBehaviour
         else
         {
             hovered = false;
-            Interact.focused = null;
-            Interact.pressedE = false;
+            GameManager.focused = null;
+            GameManager.UnpressAllKeys();
         }
             
     }

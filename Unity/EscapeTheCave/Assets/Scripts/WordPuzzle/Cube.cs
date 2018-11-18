@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour {
 
-    public readonly float deltaWidth = 0.01023f;
-    public readonly float deltaHeight = 0.00240f;
+    public readonly float deltaWidth = 0.01275f;
+    public readonly float deltaHeight = 0.00310f;
 
+    private int index = 0;
     private char letter;
     private Vector3 prefabPosition;
     private float prefabRotation;
@@ -21,126 +22,144 @@ public class Cube : MonoBehaviour {
     private Wall wallInstance;
     public bool correctKey;
     public bool signalSent = false;
+    private GameObject light;
 
-    public void setup(GameObject init, Wall wall, bool correctKey, char letter, int row, int column)
+    public void Setup(GameObject init, Wall wall, int index, bool correctKey, char letter, int row, int column)
     {
+        if (-1 == size.x) size = GetComponent<MeshFilter>().mesh.bounds.size;
         prefabPosition = init.GetComponent<Transform>().position;
         prefabRotation = init.GetComponent<Transform>().eulerAngles.y;
-        // set letter texture
-        GetComponent<Renderer>().material.SetTexture("_BumpMap", loadTextFor(letter));
+        if (' ' != letter)
+        {
+            // set letter normal
+            GetComponent<Renderer>().material.SetTexture("_BumpMap", LoadNormalTextFor(letter));
+            // set letter notmal
+            GetComponent<Renderer>().material.SetTexture("_MainTex", LoadTextFor(letter));
+        }
+
         // set texture offset for uniqueness
         GetComponent<Renderer>().material.SetTextureOffset("_DetailAlbedoMap", new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)));
 
         this.letter = letter;
+        this.index = index;
     
-        setOriginPosition(row, column);
+        SetOriginPosition(row, column);
 
         wallInstance = wall;
 
         this.correctKey = correctKey;
 
-        ready = true;
-    }
+        if (correctKey)
+        {
+            light = Instantiate(wallInstance.StarLightPrefab, GetComponent<Transform>());
+            light.SetActive(false);
+        }
 
-    void Start () {
-		if (-1 == size.x) size = GetComponent<MeshFilter>().mesh.bounds.size;
+        ready = true;
     }
 	
 	void Update () {
         if (ready)
         {
+            Move();
             if (!moving && pressed && !signalSent)
             {
                 Debug.Log(correctKey);
-                wallInstance.pressedKey(correctKey);
                 signalSent = true;
+                wallInstance.PressedKey(correctKey);
+                if (correctKey) light.SetActive(true);
             }
-            highlight();
-            move();
+            Highlight();
         }
     }
 
-    public void finish()
+    public void Finish()
     {
         ready = false;
-        setEmmission(0.0f);
+        SetEmmission(0.0f);
     }
 
-    public void unpress()
+    public void Unpress()
     {
         if (' ' != letter)
         {
             pressed = false;
             moving = true;
             signalSent = false;
+            if (correctKey) light.SetActive(false);
         }
     }
 
-    public void press()
+    public void Press()
     {
-        if (' ' != letter)
+        Debug.Log(index);
+        if (!pressed && !moving && !signalSent && ' ' != letter)
         {
             pressed = true;
             moving = true;
         }
     } 
 
-    void move()
+    void Move()
     {
         moving = false;
         if (pressed && 0.03f > currentPressedLevel)
         {
             moving = true;
             currentPressedLevel += Time.deltaTime * 0.2f;
-            setLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
+            SetLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
         } else if (!pressed && 0.0f < currentPressedLevel)
         {
             moving = true;
             currentPressedLevel -= Time.deltaTime * 0.2f;
-            setLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
+            SetLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
         }
     }
 
-    void highlight()
+    void Highlight()
     {
-        bool focused = this.gameObject == Interact.focused && !pressed;
+        bool focused = this.gameObject == GameManager.focused && !pressed;
         if (focused && letter != ' ' && 0.1f > currentEmissionLevel)
         {
             currentEmissionLevel += Time.deltaTime * 0.4f;
-            setEmmission(currentEmissionLevel);
+            SetEmmission(currentEmissionLevel);
         } else if (!focused && 0.0f < currentEmissionLevel)
         {
             currentEmissionLevel -= Time.deltaTime * 0.7f;
-            setEmmission(currentEmissionLevel);
+            SetEmmission(currentEmissionLevel);
         }
         
     }
 
-    void setOriginPosition(int row, int column)
+    void SetOriginPosition(int row, int column)
     {
+        float offsetFromWall = 0.0616f - 0.04709972f;
+        if (' ' != letter) offsetFromWall = (Random.Range(0f, 100f) - 50.0f) / 6000.0f;
         // ATTENTION! maybe x or z axe may change
-        Vector3 offset = Quaternion.AngleAxis(prefabRotation + 90.0f, new Vector3(0, 1, 0)) * new Vector3((Random.Range(0f, 100f) -50.0f) / 6000.0f, (size.y + deltaHeight) * -row, (size.z + deltaWidth) * -column);
+        float width = (size.z + deltaWidth) * -column;
+        float height = (size.y + deltaHeight) * -row;
+        Vector3 offset = Quaternion.AngleAxis(prefabRotation + 90.0f, new Vector3(0, 1, 0)) * new Vector3(offsetFromWall, height, width);
         originPosition = prefabPosition + offset;
-        setPosition(originPosition);
+        SetPosition(originPosition);
         originLocalPosition = GetComponent<Transform>().localPosition;
     }
 
-    void setEmmission(float level)
+    void SetEmmission(float level)
     {
         GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.yellow * Mathf.LinearToGammaSpace(level));
     }
 
-    void setPosition(Vector3 target)
+    void SetPosition(Vector3 target)
     {
         GetComponent<Transform>().position = target;
     }
 
-    void setLocalPosition(Vector3 target)
+    void SetLocalPosition(Vector3 target)
     {
         GetComponent<Transform>().localPosition = target;
     }
 
-    public static Texture2D loadTextFor(char letter)
+    public static Texture2D LoadNormalTextFor(char letter)
     {
         if (char.IsUpper(letter))
         {
@@ -149,6 +168,18 @@ public class Cube : MonoBehaviour {
         else
         {
             return Resources.Load("WordPuzzle/letters/" + letter) as Texture2D;
+        }
+    }
+
+    public static Texture2D LoadTextFor(char letter)
+    {
+        if (char.IsUpper(letter))
+        {
+            return Resources.Load("WordPuzzle/LettersTextures/" + letter) as Texture2D;
+        }
+        else
+        {
+            return Resources.Load("WordPuzzle/LettersTextures/" + letter) as Texture2D;
         }
     }
 }
