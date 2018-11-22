@@ -639,7 +639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &121721433
 Transform:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &163190963
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &212159930
 Transform:
   m_ObjectHideFlags: 0
@@ -2509,6 +2509,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0d803d1843b4ee04ba29b785666f8693, type: 3}
+      propertyPath: m_TagString
+      value: Crystal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d803d1843b4ee04ba29b785666f8693, type: 3}
   m_IsPrefabAsset: 0
@@ -3008,6 +3012,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5bc35f35f3e348e40a738ef78430f852, type: 3}
+      propertyPath: m_TagString
+      value: Lantern
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc35f35f3e348e40a738ef78430f852, type: 3}
   m_IsPrefabAsset: 0
@@ -3112,7 +3120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &586282892
 Transform:
   m_ObjectHideFlags: 0
@@ -3635,7 +3643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &774741135
 Transform:
   m_ObjectHideFlags: 0
@@ -3727,7 +3735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &785522527
 Transform:
   m_ObjectHideFlags: 0
@@ -4414,7 +4422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &946524612
 Transform:
   m_ObjectHideFlags: 0
@@ -5089,7 +5097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1094311349
 Transform:
   m_ObjectHideFlags: 0
@@ -6030,7 +6038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1331050701
 Transform:
   m_ObjectHideFlags: 0
@@ -6207,7 +6215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1345032053
 Transform:
   m_ObjectHideFlags: 0
@@ -6554,7 +6562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1413378505
 Transform:
   m_ObjectHideFlags: 0
@@ -7259,7 +7267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1597177663
 Transform:
   m_ObjectHideFlags: 0
@@ -7356,8 +7364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3328e3d2f347da24685caa6fa3cd2b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spotLight: {fileID: 1081068948}
-  tempSwitch: 0
 --- !u!1 &1622313131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1489132592507122, guid: aadb646f48123f94480f3df47b18c9a2,
@@ -7871,7 +7877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1817786296
 Transform:
   m_ObjectHideFlags: 0
@@ -8229,9 +8235,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteracted: 0
   movementSpeed: 1
+  movementTime: 1
   startPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 3, z: 0}
-  movementTime: 1
+  crystalChild: {fileID: 1488688460}
+  lanternChild: {fileID: 1604948292}
+  prismChildren:
+  - {fileID: 1245438084}
+  - {fileID: 1873641651}
+  - {fileID: 1725279257}
 --- !u!136 &1926284378
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8413,7 +8425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2004151743
 Transform:
   m_ObjectHideFlags: 0

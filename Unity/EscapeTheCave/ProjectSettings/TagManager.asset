@@ -13,6 +13,8 @@ TagManager:
   - PrismLeftPlatform
   - LanternPlatform
   - CrystalPlatform
+  - Crystal
+  - Lantern
   layers:
   - Default
   - TransparentFX
