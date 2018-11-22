@@ -8,6 +8,11 @@ TagManager:
   - rotateable
   - placeable
   - prism
+  - PrismMiddlePlatform
+  - PrismRightPlatform
+  - PrismLeftPlatform
+  - LanternPlatform
+  - CrystalPlatform
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteractionScript : MonoBehaviour
 {
-    [SerializeField] GameObject crystal;
+    [SerializeField] GameObject crystal, lantern, prismLeft, prismRight, prismMiddle;
 
     private bool hovered;
     private string message;
@@ -38,9 +38,25 @@ public class PlayerInteractionScript : MonoBehaviour
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
                     break;
-                case "CrystalFrame":
+                case "CrystalPlatform":
                     message = "Set crystal into base";
-                    PlaceObject("crystal", crystal, hit.collider.gameObject);
+                    PlaceObject(crystal);
+                    break;
+                case "LanternPlatform": 
+                    message = "Set Lantern Into Base";
+                    PlaceObject(lantern);
+                    break;
+                case "PrismLeftPlatform":
+                    message = "Set Prism Into Base";
+                    PlaceObject(prismLeft);
+                    break;
+                case "PrismRightPlatform":
+                    message = "Set Prism Into Base";
+                    PlaceObject(prismRight);
+                    break;
+                case "PrismMiddlePlatform":
+                    message = "Set Prism Into Base";
+                    PlaceObject(prismMiddle);
                     break;
                 case "Untagged":
                     return;
@@ -69,24 +85,11 @@ public class PlayerInteractionScript : MonoBehaviour
         }
     }
 
-    private void PlaceObject(string type, GameObject objToBePlaced, GameObject parent)
+    private void PlaceObject(GameObject objToBePlaced)
     {
         if (Input.GetButtonDown("Interact"))
         {
-            if (type == "crystal")
-            {
-                //put the item over the target
-                Vector3 position = parent.GetComponent<Transform>().position;
-                position.y += 1;
-                GameObject placedObject = Instantiate(objToBePlaced, position, objToBePlaced.transform.rotation, parent.transform);
-                placedObject.SetActive(true);
-
-                //move the gameObject slowly
-                MoveSample animation = placedObject.GetComponent<MoveSample>();
-                Vector3 targetPosition = parent.GetComponent<Transform>().position;
-                targetPosition.y = 3.6f;
-                animation.MoveAnimation(targetPosition);
-            }
+            objToBePlaced.SetActive(true);
         }
     }
 

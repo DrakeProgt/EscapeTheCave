@@ -688,7 +688,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -865,7 +865,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -2998,7 +2998,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5bc35f35f3e348e40a738ef78430f852, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 5bc35f35f3e348e40a738ef78430f852, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3161,7 +3161,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -3684,7 +3684,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -3776,7 +3776,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -4588,7 +4588,7 @@ GameObject:
   - component: {fileID: 978655525}
   m_Layer: 0
   m_Name: LanternPlatform
-  m_TagString: Untagged
+  m_TagString: LanternPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5138,7 +5138,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -5492,7 +5492,7 @@ GameObject:
   - component: {fileID: 1217941867}
   m_Layer: 0
   m_Name: CrystalPlatform
-  m_TagString: CrystalFrame
+  m_TagString: CrystalPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5584,7 +5584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1245438085
 Transform:
   m_ObjectHideFlags: 0
@@ -5854,8 +5854,8 @@ GameObject:
   - component: {fileID: 1282577795}
   - component: {fileID: 1282577794}
   m_Layer: 0
-  m_Name: PrismPlatformMiddle
-  m_TagString: Untagged
+  m_Name: PrismMiddlePlatform
+  m_TagString: PrismMiddlePlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6256,7 +6256,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -6603,7 +6603,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -7168,8 +7168,8 @@ GameObject:
   - component: {fileID: 1585189167}
   - component: {fileID: 1585189166}
   m_Layer: 0
-  m_Name: PrismPlatformLeft
-  m_TagString: Untagged
+  m_Name: PrismLeftPlatform
+  m_TagString: PrismLeftPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7308,7 +7308,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -7649,7 +7649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725279258
 Transform:
   m_ObjectHideFlags: 0
@@ -7920,7 +7920,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -8108,7 +8108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1873641652
 Transform:
   m_ObjectHideFlags: 0
@@ -8462,7 +8462,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5896226, g: 0.7212111, b: 1, a: 1}
-  m_Intensity: 700
+  m_Intensity: 200
   m_Range: 5.25
   m_SpotAngle: 1.08
   m_CookieSize: 10
@@ -8671,8 +8671,8 @@ GameObject:
   - component: {fileID: 2097818386}
   - component: {fileID: 2097818385}
   m_Layer: 0
-  m_Name: PrismPlatformRight
-  m_TagString: Untagged
+  m_Name: PrismRightPlatform
+  m_TagString: PrismRightPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8959,7 +8959,27 @@ Prefab:
         type: 2}
       propertyPath: crystal
       value: 
-      objectReference: {fileID: 100000, guid: 0d803d1843b4ee04ba29b785666f8693, type: 3}
+      objectReference: {fileID: 1488688460}
+    - target: {fileID: 114628869825073470, guid: aadb646f48123f94480f3df47b18c9a2,
+        type: 2}
+      propertyPath: lantern
+      value: 
+      objectReference: {fileID: 1604948292}
+    - target: {fileID: 114628869825073470, guid: aadb646f48123f94480f3df47b18c9a2,
+        type: 2}
+      propertyPath: prismRight
+      value: 
+      objectReference: {fileID: 1725279257}
+    - target: {fileID: 114628869825073470, guid: aadb646f48123f94480f3df47b18c9a2,
+        type: 2}
+      propertyPath: prismMiddle
+      value: 
+      objectReference: {fileID: 1873641651}
+    - target: {fileID: 114628869825073470, guid: aadb646f48123f94480f3df47b18c9a2,
+        type: 2}
+      propertyPath: prismLeft
+      value: 
+      objectReference: {fileID: 1245438084}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aadb646f48123f94480f3df47b18c9a2, type: 2}
   m_IsPrefabAsset: 0
