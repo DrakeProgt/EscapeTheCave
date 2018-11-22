@@ -13,7 +13,6 @@ public class PrismController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-        parentBase = transform.parent.GetComponent<BaseController>();
         isInteracted = false;
         moveSpeed = 50;
 	}
@@ -39,19 +38,12 @@ public class PrismController : MonoBehaviour {
         }
 	}
 
-	void ActivateLights() //activate lights when lantern is placed on base
+	public void ActivateLights() 
 	{
-		foreach(Light light in GetComponentsInChildren<Light>() )
-		{
-			light.enabled = true;
-		}
-	}
-
-	void DeactivateLights() //deactivate lights when lantern is removed from base
-	{
-		foreach(Light light in GetComponentsInChildren<Light>() )
-		{
-			light.enabled = false;
-		}
-	}
+        Debug.Log("Activate Prism Lights");
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
 }

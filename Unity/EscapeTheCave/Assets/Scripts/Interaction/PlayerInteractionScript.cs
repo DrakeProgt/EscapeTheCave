@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractionScript : MonoBehaviour
 {
+    [SerializeField] GameObject crystal;
+
     private bool hovered;
     private string message;
     private float textBoxWidth;
@@ -31,14 +33,14 @@ public class PlayerInteractionScript : MonoBehaviour
             {
                 case "pickable":
                     message = "Pick up " + hit.collider.gameObject.name;
-                    DoPickingUpObject(hit.collider.gameObject);
+                    PickUpObject(hit.collider.gameObject);
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
                     break;
                 case "CrystalFrame":
                     message = "Set crystal into base";
-                    DoPlacingObject((GameObject)Resources.Load("Crystal"), hit.collider.gameObject);
+                    PlaceObject("crystal", crystal, hit.collider.gameObject);
                     break;
                 case "Untagged":
                     return;
@@ -52,7 +54,7 @@ public class PlayerInteractionScript : MonoBehaviour
             hovered = false;
     }
 
-    private void DoPickingUpObject(GameObject pickedObject)
+    private void PickUpObject(GameObject pickedObject)
     {
         if (Input.GetButtonDown("Interact"))
         {
@@ -67,22 +69,24 @@ public class PlayerInteractionScript : MonoBehaviour
         }
     }
 
-    private void DoPlacingObject(GameObject objToBePlaced, GameObject parent)
+    private void PlaceObject(string type, GameObject objToBePlaced, GameObject parent)
     {
         if (Input.GetButtonDown("Interact"))
         {
-            objToBePlaced.GetComponent<BoxCollider>().enabled = false;
-            //put the item over the target
-            Vector3 position = parent.GetComponent<Transform>().position;
-            position.y += 1;
-            GameObject placedObject = GameObject.Instantiate(objToBePlaced, position, new Quaternion());
+            if (type == "crystal")
+            {
+                //put the item over the target
+                Vector3 position = parent.GetComponent<Transform>().position;
+                position.y += 1;
+                GameObject placedObject = Instantiate(objToBePlaced, position, objToBePlaced.transform.rotation, parent.transform);
+                placedObject.SetActive(true);
 
-            //move the gameObject slowly
-            MoveSample animation = placedObject.GetComponent<MoveSample>();
-            animation.MoveAnimation(parent.GetComponent<Transform>().position);
-            StartCoroutine(animation.EnableCollider(2));
-
-            Destroy(parent);
+                //move the gameObject slowly
+                MoveSample animation = placedObject.GetComponent<MoveSample>();
+                Vector3 targetPosition = parent.GetComponent<Transform>().position;
+                targetPosition.y = 3.6f;
+                animation.MoveAnimation(targetPosition);
+            }
         }
     }
 
