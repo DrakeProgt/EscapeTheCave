@@ -90,6 +90,10 @@ public class PlayerInteractionScript : MonoBehaviour
         if (Input.GetButtonDown("Interact"))
         {
             objToBePlaced.SetActive(true);
+            if(objToBePlaced.CompareTag("Lantern") || objToBePlaced.CompareTag("Crystal"))
+            {
+                objToBePlaced.transform.parent.parent.GetComponent<BaseController>().ActivateLights();
+            }
         }
     }
 

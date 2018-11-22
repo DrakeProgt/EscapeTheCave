@@ -4,39 +4,21 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour {
 
-    public bool isInteracted;
 
-    [SerializeField] float movementSpeed;
-    [SerializeField] Vector3 startPosition;
-    [SerializeField] Vector3 targetPosition;
-    [SerializeField] float movementTime;
+    [SerializeField] bool isInteracted;
+    [SerializeField] float movementSpeed, movementTime;
+    [SerializeField] Vector3 startPosition, targetPosition;
+    [SerializeField] GameObject crystalChild, lanternChild;
+    [SerializeField] GameObject[] prismChildren;
 
     float t;
-    bool isMovedUp, isLanternPlaced, isCrystalPlaced;
-    GameObject crystalChild, lanternChild;
-    List<GameObject> prismChildren;
+    bool isMovedUp;
 
 	// Use this for initialization
 	void Start () {        
         targetPosition = new Vector3(0, 0.397f, 0);
         movementTime = 1;
-        prismChildren = new List<GameObject>();
-
-        foreach (Transform child in transform)
-        {
-            if (child.name == "Crystal")
-            {
-                crystalChild = child.gameObject;
-            }
-            if(child.name == "Lantern")
-            {
-                lanternChild = child.gameObject;
-            }
-            if(child.CompareTag("prism"))
-            {
-                prismChildren.Add(child.gameObject);
-            }
-        }
+        movementSpeed = 1;
     }
 	
 	// Update is called once per frame
@@ -54,31 +36,34 @@ public class BaseController : MonoBehaviour {
                     isInteracted = false;
                 }
             }
-            else
+        }
+    }
+
+    public void ActivateLights()
+    {
+        if (lanternChild.activeSelf && crystalChild.activeSelf)
+        {
+            lanternChild.GetComponent<LanternController>().ActivateLights();
+            crystalChild.GetComponent<CrystalController>().ActivateLights();
+            foreach (GameObject child in prismChildren)
             {
-            
-                if (!isCrystalPlaced)
-                {
-                    crystalChild.SetActive(true);
-                    isCrystalPlaced = true;
-                    isInteracted = false;
-                }
-                else
-                {
-
-                    if (!isLanternPlaced)
-                    {
-                        lanternChild.SetActive(true);
-                        isLanternPlaced = true;
-                        crystalChild.GetComponent<CrystalController>().ActivateLights();
-
-                        foreach(GameObject child in prismChildren)
-                        {
-                            child.GetComponent<PrismController>().ActivateLights();
-                        }
-                    }
-                }
+                child.GetComponent<PrismController>().ActivateLights();
             }
         }
+    }
+
+    void SetInteracted(bool isInteracted)
+    {
+        this.isInteracted = isInteracted;
+    }
+
+    public bool GetIsInteracted()
+    {
+        return isInteracted;
+    }
+
+    public bool GetIsMovedUp()
+    {
+        return isMovedUp;
     }
 }

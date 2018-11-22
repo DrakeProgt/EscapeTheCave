@@ -20,7 +20,7 @@ public class PrismController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-        if(parentBase.isInteracted && isInteracted)
+        if(parentBase.GetIsMovedUp() && isInteracted)
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
             if(transform.rotation == targetRotation)
@@ -40,7 +40,6 @@ public class PrismController : MonoBehaviour {
 
 	public void ActivateLights() 
 	{
-        Debug.Log("Activate Prism Lights");
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
