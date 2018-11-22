@@ -19,7 +19,7 @@ public class PlayerInteractionScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         RaycastHit hit;
 
