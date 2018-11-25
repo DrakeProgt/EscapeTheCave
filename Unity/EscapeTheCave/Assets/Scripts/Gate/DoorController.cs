@@ -15,7 +15,7 @@ public class DoorController : MonoBehaviour {
 	void Update () {
 		if(isInteracted)
         {
-            transform.RotateAround(transform.position - new Vector3(3, 0, 0), transform.up, -45 * Time.deltaTime);
+            transform.Translate(transform.right * 1 * Time.deltaTime);
         }
 	}
 }
