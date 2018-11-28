@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerInteractionScript : MonoBehaviour
 {
-    [SerializeField] GameObject crystal, lantern, prismLeft, prismRight, prismMiddle;
-
     private bool hovered;
     private string message;
     private float textBoxWidth;
@@ -33,6 +31,7 @@ public class PlayerInteractionScript : MonoBehaviour
 
             if (hit.collider.gameObject.tag != "Untagged")
             {
+                Debug.Log(hit.collider.gameObject.name);
                 GameManager.focused = hit.collider.gameObject;
                 if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
                 
@@ -47,32 +46,14 @@ public class PlayerInteractionScript : MonoBehaviour
                 case "pressable":
                     message = "Press with Button E";
                     break;
+                case "placeable": 
+                    message = "Place " + hit.collider.gameObject.transform.GetChild(0).gameObject.name;
+                    break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
                     break;
-                case "CrystalPlatform":
-                    message = "Set crystal into base";
-                    PlaceObject(crystal);
-                    break;
-                case "LanternPlatform": 
-                    message = "Set Lantern Into Base";
-                    PlaceObject(lantern);
-                    break;
-                case "PrismLeftPlatform":
-                    message = "Set Prism Into Base";
-                    PlaceObject(prismLeft);
-                    break;
-                case "PrismRightPlatform":
-                    message = "Set Prism Into Base";
-                    PlaceObject(prismRight);
-                    break;
-                case "PrismMiddlePlatform":
-                    message = "Set Prism Into Base";
-                    PlaceObject(prismMiddle);
-                    break;
-                case "Untagged":
-                    return;
                 default:
+                    message = null;
                     break;
             }
 

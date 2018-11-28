@@ -7,7 +7,7 @@ public static class GameManager {
     public static GameObject focused;
     public static bool pressedInteractKey = false;
 
-    public static bool isWordPuzzleSolved = false;
+    public static bool isWordPuzzleSolved = true;
 
     public static void UnpressAllKeys()
     {
