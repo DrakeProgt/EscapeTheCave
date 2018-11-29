@@ -4,38 +4,17 @@ using UnityEngine;
 
 public class PrismController : MonoBehaviour {
 
-    [SerializeField] BaseController parentBase;
-    [SerializeField] bool isInteracted;
-    [SerializeField] float moveSpeed;
-    [SerializeField] Quaternion myRotation, targetRotation;
-    [SerializeField] Vector3 correctRotation;
+    Dictionary<int, Vector3> rotateValues;
 
 	// Use this for initialization
 	void Start ()
 	{
-        isInteracted = false;
-        moveSpeed = 50;
+        rotateValues = new Dictionary<int, Vector3>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-        if(parentBase.GetIsMovedUp() && isInteracted)
-        {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
-            if(transform.rotation == targetRotation)
-            {
-                isInteracted = false;
-                if(transform.rotation == Quaternion.Euler(correctRotation))
-                {
-                    Debug.Log("CORRECT ROTATION");
-                }
-            }
-        }
-        else
-        {
-            targetRotation = transform.rotation * Quaternion.Euler(360 / 8, 0, 0);
-        }
 	}
 
 	public void ActivateLights() 
@@ -43,6 +22,17 @@ public class PrismController : MonoBehaviour {
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
+        }
+    }
+
+    public void Rotate()
+    {
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.activeSelf)
+            {
+                child.gameObject.GetComponent<StarLightController>().Rotate();
+            }
         }
     }
 }

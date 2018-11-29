@@ -31,7 +31,6 @@ public class PlayerInteractionScript : MonoBehaviour
 
             if (hit.collider.gameObject.tag != "Untagged")
             {
-                Debug.Log(hit.collider.gameObject.name);
                 GameManager.focused = hit.collider.gameObject;
                 if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
                 
