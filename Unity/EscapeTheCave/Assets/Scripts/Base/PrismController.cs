@@ -4,54 +4,35 @@ using UnityEngine;
 
 public class PrismController : MonoBehaviour {
 
-    [SerializeField] BaseController parentBase;
-    [SerializeField] bool isInteracted;
-    [SerializeField] float moveSpeed;
-    [SerializeField] Quaternion myRotation, targetRotation;
-    [SerializeField] Vector3 correctRotation;
+    Dictionary<int, Vector3> rotateValues;
 
 	// Use this for initialization
 	void Start ()
 	{
-        parentBase = transform.parent.GetComponent<BaseController>();
-        isInteracted = false;
-        moveSpeed = 50;
+        rotateValues = new Dictionary<int, Vector3>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-        if(parentBase.isInteracted && isInteracted)
+	}
+
+	public void ActivateLights() 
+	{
+        foreach (Transform child in transform)
         {
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
-            if(transform.rotation == targetRotation)
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    public void Rotate()
+    {
+        foreach (Transform child in transform)
+        {
+            if(child.gameObject.activeSelf)
             {
-                isInteracted = false;
-                if(transform.rotation == Quaternion.Euler(correctRotation))
-                {
-                    Debug.Log("CORRECT ROTATION");
-                }
+                child.gameObject.GetComponent<StarLightController>().Rotate();
             }
         }
-        else
-        {
-            targetRotation = transform.rotation * Quaternion.Euler(360 / 8, 0, 0);
-        }
-	}
-
-	void ActivateLights() //activate lights when lantern is placed on base
-	{
-		foreach(Light light in GetComponentsInChildren<Light>() )
-		{
-			light.enabled = true;
-		}
-	}
-
-	void DeactivateLights() //deactivate lights when lantern is removed from base
-	{
-		foreach(Light light in GetComponentsInChildren<Light>() )
-		{
-			light.enabled = false;
-		}
-	}
+    }
 }

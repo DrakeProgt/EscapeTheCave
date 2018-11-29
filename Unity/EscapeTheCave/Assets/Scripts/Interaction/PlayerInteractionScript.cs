@@ -17,7 +17,7 @@ public class PlayerInteractionScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         RaycastHit hit;
 
@@ -27,32 +27,47 @@ public class PlayerInteractionScript : MonoBehaviour
             //TODO: set width and height of textBox depending on message
             SetTextBoxDim(250, 20);
 
+            GameManager.UnpressAllKeys();
+
+            if (hit.collider.gameObject.tag != "Untagged")
+            {
+                GameManager.focused = hit.collider.gameObject;
+                if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
+                
+            } 
+
             switch (hit.collider.gameObject.tag)
             {
                 case "pickable":
                     message = "Pick up " + hit.collider.gameObject.name;
-                    DoPickingUpObject(hit.collider.gameObject);
+                    PickUpObject(hit.collider.gameObject);
+                    break;
+                case "pressable":
+                    message = "Press with Button E";
+                    break;
+                case "placeable": 
+                    message = "Place " + hit.collider.gameObject.transform.GetChild(0).gameObject.name;
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
                     break;
-                case "CrystalFrame":
-                    message = "Set crystal into base";
-                    DoPlacingObject((GameObject)Resources.Load("Crystal"), hit.collider.gameObject);
-                    break;
-                case "Untagged":
-                    return;
                 default:
+                    message = null;
                     break;
             }
 
             hovered = true;
         }
         else
+        {
             hovered = false;
+            GameManager.focused = null;
+            GameManager.UnpressAllKeys();
+        }
+            
     }
 
-    private void DoPickingUpObject(GameObject pickedObject)
+    private void PickUpObject(GameObject pickedObject)
     {
         if (Input.GetButtonDown("Interact"))
         {
@@ -67,22 +82,15 @@ public class PlayerInteractionScript : MonoBehaviour
         }
     }
 
-    private void DoPlacingObject(GameObject objToBePlaced, GameObject parent)
+    private void PlaceObject(GameObject objToBePlaced)
     {
         if (Input.GetButtonDown("Interact"))
         {
-            objToBePlaced.GetComponent<BoxCollider>().enabled = false;
-            //put the item over the target
-            Vector3 position = parent.GetComponent<Transform>().position;
-            position.y += 1;
-            GameObject placedObject = GameObject.Instantiate(objToBePlaced, position, new Quaternion());
-
-            //move the gameObject slowly
-            MoveSample animation = placedObject.GetComponent<MoveSample>();
-            animation.MoveAnimation(parent.GetComponent<Transform>().position);
-            StartCoroutine(animation.EnableCollider(2));
-
-            Destroy(parent);
+            objToBePlaced.SetActive(true);
+            if(objToBePlaced.CompareTag("Lantern") || objToBePlaced.CompareTag("Crystal"))
+            {
+                objToBePlaced.transform.parent.parent.GetComponent<BaseController>().ActivateLights();
+            }
         }
     }
 
