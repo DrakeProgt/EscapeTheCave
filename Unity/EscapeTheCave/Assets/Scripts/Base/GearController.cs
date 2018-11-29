@@ -6,7 +6,6 @@ public class GearController : MonoBehaviour
 {
 
     [SerializeField] GameObject prismPlatform;
-    [SerializeField] Vector3 correctRotation;
     bool isRotating;
     Quaternion targetRotation;
     float moveSpeed;

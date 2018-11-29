@@ -25,7 +25,6 @@ public class StarLightController : MonoBehaviour {
 	void Update () {
 		if(isRotating)
         {
-            Debug.Log(rotateValues[rotateIndex]);
             Quaternion rotateValue = Quaternion.Euler(rotateValues[rotateIndex]);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateValue, 50 * Time.deltaTime);
