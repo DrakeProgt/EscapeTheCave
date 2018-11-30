@@ -140,6 +140,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnGUI()
         {
+            if (GameManager.isGamePaused)
+                return;
+
             //Interaction point
             GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, 5, 5), "");
         }

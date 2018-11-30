@@ -1934,10 +1934,10 @@ RectTransform:
   m_Father: {fileID: 385318990}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -271.6, y: 0}
-  m_SizeDelta: {x: 543.2, y: 556}
+  m_AnchoredPosition: {x: 203.4, y: 0}
+  m_SizeDelta: {x: -406.8, y: 556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754366878
 MonoBehaviour:
@@ -3726,10 +3726,10 @@ RectTransform:
   m_Father: {fileID: 385318990}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -271.59998, y: 0}
-  m_SizeDelta: {x: 543.2, y: 556}
+  m_AnchoredPosition: {x: 203.40002, y: 0}
+  m_SizeDelta: {x: -406.8, y: 556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575323400
 MonoBehaviour:
@@ -3948,6 +3948,8 @@ MonoBehaviour:
   soundPanel: {fileID: 754366876}
   controlsPanel: {fileID: 1575323398}
   B: {fileID: 636643453}
+  pauseMenuCanvas: {fileID: 0}
+  MusicOnOffSlider: {fileID: 1715747809}
   eventSystem: {fileID: 1184239150}
 --- !u!4 &1705253884
 Transform:

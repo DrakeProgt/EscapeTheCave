@@ -102,6 +102,9 @@ public class PlayerInteractionScript : MonoBehaviour
 
     private void OnGUI()
     {
+        if (GameManager.isGamePaused)
+            return;
+
         if (hovered)
         {
             GUI.Box(new Rect(Screen.width / 2, Screen.height / 2, textBoxWidth, textBoxHeight), message);

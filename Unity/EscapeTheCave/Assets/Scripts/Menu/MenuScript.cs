@@ -13,6 +13,8 @@ public class MenuScript : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject B;
 
+    public GameObject pauseMenuCanvas;
+
     public GameObject eventSystem;
     private bool gamepadConected;
     private GameObject lastButtonPressed;
@@ -28,8 +30,13 @@ public class MenuScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
-            if (gamepadConected && lastButtonPressed != null)
+        if (Input.GetButtonDown("Pause"))
+        {
+            PauseGame();
+        }
+
+        if (gamepadConected && Input.GetButtonDown("Cancel"))
+            if (lastButtonPressed != null)
             {
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(lastButtonPressed);
                 B.SetActive(false);
@@ -40,9 +47,41 @@ public class MenuScript : MonoBehaviour
             }
     }
 
+    private void PauseGame()
+    {
+        pauseMenuCanvas.SetActive(!pauseMenuCanvas.activeSelf);
+
+        if (gamepadConected)
+            eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Continue"));
+
+        if (Time.timeScale == 0)
+        {
+            //normal game speed
+            Time.timeScale = 1;
+            GameManager.isGamePaused = false;
+        }
+        else
+        {
+            //stop game
+            Time.timeScale = 0;
+            GameManager.isGamePaused = true;
+        }
+    }
+
+    public void RestartGame()
+    {
+        PauseGame();
+        LoadGame();
+    }
+
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ContinueGame()
+    {
+        PauseGame();
     }
 
     public void ShowOptions()
@@ -118,8 +157,11 @@ public class MenuScript : MonoBehaviour
         creditsPanel.SetActive(false);
         controlsPanel.SetActive(false);
         soundPanel.SetActive(false);
+
         if (gamepadConected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Start"));
+        if (gamepadConected)
+            eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Continue"));
 
         //play anim for opening game options panel
         //anim.Play("OptTweenAnim_on");
@@ -127,7 +169,7 @@ public class MenuScript : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("NicoSampleScene");
+        SceneManager.LoadScene("Main");
     }
 
     public void EditMusic()
