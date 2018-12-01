@@ -16,4 +16,23 @@ public static class GameManager
     {
         pressedInteractKey = false;
     }
+
+    public static bool IsGamepadConnected
+    {
+        get
+        {
+            bool isConnected = Input.GetJoystickNames().Length > 0;
+            if (isConnected)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            return isConnected;
+        }
+    }
 }

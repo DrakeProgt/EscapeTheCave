@@ -16,15 +16,13 @@ public class MenuScript : MonoBehaviour
     public GameObject pauseMenuCanvas;
 
     public GameObject eventSystem;
-    private bool gamepadConected;
     private GameObject lastButtonPressed;
 
     // Use this for initialization
     private void Start ()
     {
         lastButtonPressed = null;
-        gamepadConected = Input.GetJoystickNames().Length > 0;
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Start"));
     }
 
@@ -35,7 +33,7 @@ public class MenuScript : MonoBehaviour
             PauseGame();
         }
 
-        if (gamepadConected && Input.GetButtonDown("Cancel"))
+        if (GameManager.IsGamepadConnected && Input.GetButtonDown("Cancel"))
             if (lastButtonPressed != null)
             {
                 eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(lastButtonPressed);
@@ -51,7 +49,7 @@ public class MenuScript : MonoBehaviour
     {
         pauseMenuCanvas.SetActive(!pauseMenuCanvas.activeSelf);
 
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Continue"));
 
         if (Time.timeScale == 0)
@@ -90,7 +88,7 @@ public class MenuScript : MonoBehaviour
         optionsPanel.SetActive(true);
         mainPanel.SetActive(false);
         creditsPanel.SetActive(false);
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Sound"));
 
         soundPanel.SetActive(true);
@@ -106,7 +104,7 @@ public class MenuScript : MonoBehaviour
         controlsPanel.SetActive(false);
         mainPanel.SetActive(false);
 
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
         {
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Sound"));
 
@@ -115,7 +113,7 @@ public class MenuScript : MonoBehaviour
         //GameObject.Find("TextSound").GetComponent<Text>().color = new Color(0, 1, 1, 1);
         //GameObject.Find("TextControls").GetComponent<Text>().color = new Color(1, 1, 1, 1);
 
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("MusicButton"));
 
         lastButtonPressed = GameObject.Find("Sound");
@@ -127,7 +125,7 @@ public class MenuScript : MonoBehaviour
         soundPanel.SetActive(false);
         mainPanel.SetActive(false);
 
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Controls"));
 
         //GameObject.Find("TextSound").GetComponent<Text>().color = new Color(1, 1, 1, 1);
@@ -142,7 +140,7 @@ public class MenuScript : MonoBehaviour
         creditsPanel.SetActive(true);
         mainPanel.SetActive(false);
         optionsPanel.SetActive(false);
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("BackCredits")); ;
 
         //play anim for opening game options panel
@@ -158,10 +156,13 @@ public class MenuScript : MonoBehaviour
         controlsPanel.SetActive(false);
         soundPanel.SetActive(false);
 
-        if (gamepadConected)
-            eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Start"));
-        if (gamepadConected)
-            eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("Continue"));
+        if (GameManager.IsGamepadConnected)
+        {
+            GameObject selectableObject = GameObject.Find("Start");
+            if (selectableObject == null)
+                selectableObject = GameObject.Find("Continue");
+            eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(selectableObject);
+        }
 
         //play anim for opening game options panel
         //anim.Play("OptTweenAnim_on");
@@ -184,12 +185,13 @@ public class MenuScript : MonoBehaviour
 
     public void EditVolume()
     {
-        if (gamepadConected)
+        if (GameManager.IsGamepadConnected)
+        {
             eventSystem.GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(GameObject.Find("SliderVolume"));
-        
-        lastButtonPressed = GameObject.Find("VolumeButton");
-        if (gamepadConected)
             B.SetActive(true);
+        }
+
+        lastButtonPressed = GameObject.Find("VolumeButton");
     }
 
     public void SetMusicEnabled(float value)
