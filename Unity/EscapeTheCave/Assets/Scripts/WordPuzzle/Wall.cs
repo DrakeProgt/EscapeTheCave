@@ -12,7 +12,7 @@ public class Wall : MonoBehaviour {
     public GameObject StarSign;
     public string text = "Test es testet Test testet set test teste";
     public int lineLength = 5;
-    public int[] rightKeys = { 13, 36, 41, 113, 169, 191, 211, 264, 282, 341, 355 };
+    public int[] rightKeys = { 14, 36, 41, 110, 164, 184, 204, 255, 272, 329, 342 };
     public int correctCount = 0;
     private float starSignAlpha = 1.0f;
     private bool solved = false;

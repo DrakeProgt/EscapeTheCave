@@ -15,6 +15,7 @@ TagManager:
   - CrystalPlatform
   - Crystal
   - Lantern
+  - pressable
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Interaction
   - 
   - 
   - 

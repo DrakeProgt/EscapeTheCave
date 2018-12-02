@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour {
 
-    public readonly float deltaWidth = 0.01275f;
-    public readonly float deltaHeight = 0.00310f;
+    public readonly float deltaWidth = 0.04710f;
+    public readonly float deltaHeight = 0.04445f;
 
     private int index = 0;
     private char letter;

@@ -8,6 +8,7 @@ public class PlayerInteractionScript : MonoBehaviour
     private string message;
     private float textBoxWidth;
     private float textBoxHeight;
+    private int layerMask = 1 << 8; // Interaction Layer Only
 
     // Use this for initialization
     private void Start()
@@ -22,7 +23,7 @@ public class PlayerInteractionScript : MonoBehaviour
         RaycastHit hit;
 
         Ray ray = UnityEngine.Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //or Input.mousePosition?
-        if (Physics.Raycast(ray, out hit, 5))
+        if (Physics.Raycast(ray, out hit, 5, layerMask))
         {
             //TODO: set width and height of textBox depending on message
             SetTextBoxDim(250, 20);
@@ -33,7 +34,6 @@ public class PlayerInteractionScript : MonoBehaviour
             {
                 GameManager.focused = hit.collider.gameObject;
                 if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
-                
             } 
 
             switch (hit.collider.gameObject.tag)
