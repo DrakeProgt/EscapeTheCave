@@ -12,7 +12,7 @@ public class DoorController : MonoBehaviour {
 	void Update () {
 		if(GameManager.isLightPuzzleSolved)
         {
-            transform.Translate(transform.right * 1 * Time.deltaTime);
+            transform.Translate(transform.forward * -1 * Time.deltaTime);
         }
 	}
 }
