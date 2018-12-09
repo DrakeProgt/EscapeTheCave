@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: 1ddb488b36a9e284ca33c62b58159aac
+guid: 724864a265a094144b1928e195443648
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
+    100000: space_button
+    100002: //RootNode
+    400000: space_button
+    400002: //RootNode
+    2100000: initialShadingGroup
+    2300000: space_button
+    3300000: space_button
     4300000: space_button
-    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -82,6 +83,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
