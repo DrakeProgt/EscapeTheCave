@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Cave
+  m_Name: cave
   m_Shader: {fileID: 4800000, guid: f14ba7e6223c26f4ca13d2c306b9fec9, type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
