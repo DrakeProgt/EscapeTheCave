@@ -42,7 +42,7 @@ public class PulseReactionScript : MonoBehaviour
         ReactView();
         ReactStonesAndDust();
 
-        GameObject.Find("Puls").GetComponent<Text>().text = currentPulse.ToString();
+        //GameObject.Find("Puls").GetComponent<Text>().text = currentPulse.ToString();
     }
 
     private void ReactStonesAndDust()
