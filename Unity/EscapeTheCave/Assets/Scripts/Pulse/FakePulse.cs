@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FakePulseScript : MonoBehaviour
+public class FakePulse : MonoBehaviour
 {
-    private static FakePulseScript instance;
+    private static FakePulse instance;
 
     private float pulse;
     private Operation operation;
 
-    public static FakePulseScript GetInstance()
+    public static FakePulse GetInstance()
     {
         if (instance == null)
         {
-            instance = new FakePulseScript();
+            instance = new FakePulse();
         }
 
         return instance;

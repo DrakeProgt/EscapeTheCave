@@ -159,7 +159,12 @@ public class CameraEffectsScript : MonoBehaviour
         vignette.settings = vignetteSettings;
     }
 
-    public IEnumerator SetVignetteIntensitySmoothPulsation()
+    public void DoVignetteIntensitySmoothPulsation()
+    {
+        StartCoroutine(RoutineVignetteIntensitySmoothPulsation());
+    }
+
+    private IEnumerator RoutineVignetteIntensitySmoothPulsation()
     {
         //pulsation
         while (bPulsation)
