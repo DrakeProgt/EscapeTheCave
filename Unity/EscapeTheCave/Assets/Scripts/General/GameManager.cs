@@ -8,10 +8,12 @@ public static class GameManager
     public static GameObject focused;
     public static bool pressedInteractKey = false;
 
-    public static bool isWordPuzzleSolved = false;
+    [SerializeField] public static bool isWordPuzzleSolved = true;
     public static bool isLightPuzzleSolved = false;
 
     public static bool isGamePaused = false;
+
+	public static Vector3 monsterPosition;
 
     public static void UnpressAllKeys()
     {

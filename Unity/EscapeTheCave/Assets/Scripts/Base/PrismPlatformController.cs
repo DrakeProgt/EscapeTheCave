@@ -23,7 +23,7 @@ public class PrismPlatformController : MonoBehaviour {
             if (transform.rotation == targetRotation)
             {
                 isRotating = false;
-                if (EqualVecs(transform.eulerAngles, correctRotation) < 1)
+                if (prism.activeSelf && EqualVecs(transform.eulerAngles, correctRotation) < 1)
                 {
                     transform.parent.gameObject.GetComponent<BaseController>().correctRotations++;
                 }

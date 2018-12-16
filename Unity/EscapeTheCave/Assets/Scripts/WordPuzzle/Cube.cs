@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour {
 
-    public readonly float deltaWidth = 0.04710f;
-    public readonly float deltaHeight = 0.04445f;
+    public readonly float deltaWidth = 0.09657f;
+    public readonly float deltaHeight = 0.0961f;
 
     private int index = 0;
     private char letter;
@@ -39,7 +39,10 @@ public class Cube : MonoBehaviour {
 
         // set texture offset for uniqueness
         GetComponent<Renderer>().material.SetTextureOffset("_DetailAlbedoMap", new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)));
-
+        if (' ' == letter)
+        {
+            GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f)));
+        }
         this.letter = letter;
         this.index = index;
     
@@ -107,12 +110,12 @@ public class Cube : MonoBehaviour {
         {
             moving = true;
             currentPressedLevel += Time.deltaTime * 0.2f;
-            SetLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
+            SetLocalPosition(originLocalPosition + new Vector3(0.0f, currentPressedLevel, 0.0f));
         } else if (!pressed && 0.0f < currentPressedLevel)
         {
             moving = true;
             currentPressedLevel -= Time.deltaTime * 0.2f;
-            SetLocalPosition(originLocalPosition + new Vector3(0.0f, 0.0f, currentPressedLevel));
+            SetLocalPosition(originLocalPosition + new Vector3(0.0f, currentPressedLevel, 0.0f));
         }
     }
 

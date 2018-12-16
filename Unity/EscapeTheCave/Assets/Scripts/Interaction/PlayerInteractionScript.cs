@@ -82,18 +82,6 @@ public class PlayerInteractionScript : MonoBehaviour
         }
     }
 
-    private void PlaceObject(GameObject objToBePlaced)
-    {
-        if (Input.GetButtonDown("Interact"))
-        {
-            objToBePlaced.SetActive(true);
-            if(objToBePlaced.CompareTag("Lantern") || objToBePlaced.CompareTag("Crystal"))
-            {
-                objToBePlaced.transform.parent.parent.GetComponent<BaseController>().ActivateLights();
-            }
-        }
-    }
-
     private void SetTextBoxDim(float width, float height)
     {
         textBoxWidth = width;
