@@ -6,28 +6,30 @@ public class StarLightController : MonoBehaviour {
 
     [SerializeField] bool isRotating;
     int rotateIndex;
-    Dictionary<int, Vector3> rotateValues;
-    [SerializeField] Vector3[] temp;
+    [SerializeField] GameObject targetRotations;
+    Vector3[] rotations;
+    [SerializeField] int[] validRotations;
+   
 
 	// Use this for initialization
 	void Start () {
-        rotateIndex = -1;
-        isRotating = false;
-        rotateValues = new Dictionary<int, Vector3>();
-
-        for(int i = 0; i < temp.Length; i++)
+        rotations = new Vector3[8];
+        for (int i = 0; i < validRotations.Length; i++) 
         {
-            rotateValues.Add(i, temp[i]);
+            rotations[i] = targetRotations.transform.GetChild(validRotations[i] - 1).position;
         }
+        rotateIndex = 0;
+        isRotating = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(isRotating)
         {
-            Quaternion rotateValue = Quaternion.Euler(rotateValues[rotateIndex]);
+            Vector3 direction = (rotations[rotateIndex] - transform.position).normalized;
+            Quaternion rotateValue = Quaternion.LookRotation(direction);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotateValue, 50 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotateValue, 4 * Time.deltaTime);
             if (transform.rotation == rotateValue)
             {
                 isRotating = false;
@@ -35,9 +37,10 @@ public class StarLightController : MonoBehaviour {
         }
 	}
 
+
     public void Rotate()
     {
-        if (++rotateIndex >= rotateValues.Count)
+        if (++rotateIndex >= rotations.Length)
         {
             rotateIndex = 0;
         }

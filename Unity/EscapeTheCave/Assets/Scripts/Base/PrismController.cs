@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PrismController : MonoBehaviour {
 
-    Dictionary<int, Vector3> rotateValues;
-
 	// Use this for initialization
 	void Start ()
 	{
-        rotateValues = new Dictionary<int, Vector3>();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +28,14 @@ public class PrismController : MonoBehaviour {
         {
             if(child.gameObject.activeSelf)
             {
-                child.gameObject.GetComponent<StarLightController>().Rotate();
+                if (child.name == "PrismPlatform")
+                {
+                    child.gameObject.GetComponent<PrismPlatformController>().Rotate();
+                }
+                else
+                {
+                    child.gameObject.GetComponent<StarLightController>().Rotate();
+                }
             }
         }
     }
