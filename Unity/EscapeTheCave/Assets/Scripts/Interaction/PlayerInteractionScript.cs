@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractionScript : MonoBehaviour
 {
+    [SerializeField] GameObject inventory;
+
     private bool hovered;
     private string message;
     private float textBoxWidth;
