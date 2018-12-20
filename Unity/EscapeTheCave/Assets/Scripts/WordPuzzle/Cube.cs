@@ -95,7 +95,7 @@ public class Cube : MonoBehaviour {
 
     public void Press()
     {
-        Debug.Log(index);
+        //Debug.Log(index);
         if (!pressed && !moving && !signalSent && ' ' != letter)
         {
             pressed = true;
