@@ -14,8 +14,9 @@ public static class GameManager
     public static bool isGamePaused = false;
 
 	public static Vector3 monsterPosition;
+	public static Vector3 playerPosition;
 
-    public static void UnpressAllKeys()
+	public static void UnpressAllKeys()
     {
         pressedInteractKey = false;
     }

@@ -98,6 +98,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+			GameManager.playerPosition = transform.position;
         }
 
         private void CrouchFunction(bool crouch)
