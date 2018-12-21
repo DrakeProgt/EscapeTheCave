@@ -14,9 +14,9 @@ public class Wall : MonoBehaviour {
     public int lineLength = 5;
     public int[] rightKeys = { 14, 36, 41, 110, 164, 184, 204, 255, 272, 329, 342 };
     public int correctCount = 0;
-    private float starSignAlpha = 1.0f;
     private bool solved = false;
     static List<GameObject> list = new List<GameObject>();
+    private StarSignLineSystem starSignScript;
 
 
     void Start () {
@@ -38,6 +38,8 @@ public class Wall : MonoBehaviour {
             newCube.GetComponent<Cube>().Setup(firstCube, this, index, isIndexCorrect(index + 1), text[index], (int)index / lineLength, index % lineLength);   
         }
         firstCube.GetComponent<Cube>().Setup(firstCube, this, 0, isIndexCorrect(1), text[0], 0, 0);
+
+        starSignScript = StarSign.GetComponent<StarSignLineSystem>();
     }
 
     private void Update()
@@ -61,11 +63,7 @@ public class Wall : MonoBehaviour {
 
     private bool isEndAnimationFinished()
     {
-        StarSign.SetActive(true);
-        StarSign.GetComponent<Renderer>().material.SetFloat("_Cutoff", starSignAlpha);
-        starSignAlpha -= 0.002f;
-        if (starSignAlpha < 0.085f) return true;
-        return false;
+        return starSignScript.buildUp();
     }
 
     private bool isFinished()
