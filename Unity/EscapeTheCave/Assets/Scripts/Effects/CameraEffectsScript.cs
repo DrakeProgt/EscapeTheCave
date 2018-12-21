@@ -11,6 +11,8 @@ public class CameraEffectsScript : MonoBehaviour
     private MotionBlur motionBlur;
     private VignetteModel vignette;
     private bool bPulsation;
+    float maxIntensity;
+    float frequency;
 
     // Use this for initialization
     private void Start()
@@ -28,7 +30,7 @@ public class CameraEffectsScript : MonoBehaviour
 
     private void InitEffects()
     {
-        blur.downsample = 2;
+        blur.downsample = 1;
         blur.blurSize = 0;
         blur.blurIterations = 2;
         blur.blurShader = Shader.Find("Hidden/FastBlur");
@@ -37,99 +39,37 @@ public class CameraEffectsScript : MonoBehaviour
         motionBlur.extraBlur = false;
         motionBlur.shader = Shader.Find("Hidden/MotionBlur");
 
-        ChangeBlur(false);
+        ChangeBlur(true);
+        ChangeMotionBlur(true);
 
-        SetVignetteIntensitySmooth(0);
-        ChangeVignette(false);
-    }
-
-    // Update is called once per frame
-    private void Update()
-    {
-        #region for testing...
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            ChangeBlur(false);
-            ChangeVignette(false);
-            ChangeVignettePulsation(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(1));
-            StartCoroutine(SetVignetteIntensitySmooth(0.05f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(2));
-            StartCoroutine(SetVignetteIntensitySmooth(0.1f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(3));
-            StartCoroutine(SetVignetteIntensitySmooth(0.15f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(4));
-            StartCoroutine(SetVignetteIntensitySmooth(0.2f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(5));
-            StartCoroutine(SetVignetteIntensitySmooth(0.25f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(6));
-            StartCoroutine(SetVignetteIntensitySmooth(0.3f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(7));
-            StartCoroutine(SetVignetteIntensitySmooth(0.35f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            ChangeVignettePulsation(true);
-            StartCoroutine(SetBlurIntensitySmooth(8));
-            StartCoroutine(SetVignetteIntensitySmoothPulsation(0.4f, 0.5f));
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha9))
-        {
-            ChangeBlur(true);
-            ChangeVignette(true);
-            StartCoroutine(SetBlurIntensitySmooth(9));
-            StartCoroutine(SetVignetteIntensitySmooth(0.45f));
-        }
-        #endregion
+        SetVignetteIntensity(0);
+        ChangeVignette(true);
     }
 
     /// <summary>
     /// Activate or deactivate blur and motion blur effect
     /// </summary>
-    private void ChangeBlur(bool bActivate)
+    public void ChangeBlur(bool bActivate)
     {
         blur.enabled = bActivate;
+    }
+
+    public void SetBlurIntensity(float intensity)
+    {        
+        blur.blurSize = intensity;
+    }
+
+    public void ChangeMotionBlur(bool bActivate)
+    {
         motionBlur.enabled = bActivate;
     }
 
-    private IEnumerator SetBlurIntensitySmooth(float intensity)
+    public void SetMotionBlurIntensity(float intensity)
+    {
+        motionBlur.blurAmount = intensity / 10;
+    }
+
+    public IEnumerator SetBlurIntensitySmooth(float intensity)
     {
         bool increment = blur.blurSize < intensity;
         float step = 0.05f;
@@ -152,14 +92,13 @@ public class CameraEffectsScript : MonoBehaviour
             }
         }
 
-        blur.blurSize = intensity;
-        motionBlur.blurAmount = intensity / 10;
+        SetBlurIntensity(intensity);
     }
 
     /// <summary>
     /// Activate or deactivate vignette effect
     /// </summary>
-    private void ChangeVignette(bool bActivate)
+    public void ChangeVignette(bool bActivate)
     {
         vignette.enabled = bActivate;
     }
@@ -167,9 +106,20 @@ public class CameraEffectsScript : MonoBehaviour
     /// <summary>
     /// Activate or deactivate pulsation vignette effect
     /// </summary>
-    private void ChangeVignettePulsation(bool bActivate)
+    public void ChangeVignettePulsation(bool bActivate)
     {
         bPulsation = bActivate;
+    }
+
+    public bool IsVignettePulsation()
+    {
+        return bPulsation;
+    }
+
+    public void SetVignettePulsationIntensityAndFrequency(float maxIntensity, float frequency)
+    {
+        this.maxIntensity = maxIntensity;
+        this.frequency = frequency;
     }
 
     private IEnumerator SetVignetteIntensitySmooth(float intensity)
@@ -202,14 +152,19 @@ public class CameraEffectsScript : MonoBehaviour
         vignette.settings = vignetteSettings;
     }
 
-    private void SetVignetteIntensity(float intensity)
+    public void SetVignetteIntensity(float intensity)
     {
         VignetteModel.Settings vignetteSettings = vignette.settings;
         vignetteSettings.intensity = intensity;
         vignette.settings = vignetteSettings;
     }
 
-    private IEnumerator SetVignetteIntensitySmoothPulsation(float maxIntensity, float frequency)
+    public void DoVignetteIntensitySmoothPulsation()
+    {
+        StartCoroutine(RoutineVignetteIntensitySmoothPulsation());
+    }
+
+    private IEnumerator RoutineVignetteIntensitySmoothPulsation()
     {
         //pulsation
         while (bPulsation)
@@ -220,7 +175,7 @@ public class CameraEffectsScript : MonoBehaviour
             //use half of waiting time because of the two-time wait
             SetVignetteIntensity(maxIntensity);
             yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
-            SetVignetteIntensity(maxIntensity*0.85f);
+            SetVignetteIntensity(maxIntensity*0.8f);
             yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
         }
     }

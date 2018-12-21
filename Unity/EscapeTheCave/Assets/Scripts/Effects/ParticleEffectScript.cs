@@ -11,23 +11,20 @@ public class ParticleEffectScript : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        stoneDust = GameObject.Find("DustStorm");
-        possiblePositions = new Vector3[3] 
+        stoneDust = (GameObject)GameObject.Instantiate(Resources.Load("DustStorm"), Vector3.zero, Quaternion.identity);
+        //stoneDust = GameObject.Find("DustStorm");
+        possiblePositions = new Vector3[6] 
         {
-            new Vector3(4.156473f, 3.93f, 2.12f),
-            new Vector3(4.16f, 3.93f, -3.91f),
-            new Vector3(4.16f, 3.93f, -9.02f)
+            new Vector3(2.294353f, 3.6f, 5.34f),
+            new Vector3(-4.31f, 3.6f, -5.11f),
+            new Vector3(16.64f, 3.6f, -5.5f),
+            new Vector3(16.25f, 3.6f, 3.86f),
+            new Vector3(7.59f, 3.6f, -1f),
+            new Vector3(1.15f, 3.6f, -4.57f)
         };
 	}
 
-    // Update is called once per frame
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-            PlayStoneDustOnceRandom();
-	}
-
-    private void PlayStoneDustOnceRandom()
+    public void PlayStoneDustOnceRandom()
     {
         System.Random random = new System.Random();
         int index = random.Next(0, 3);
