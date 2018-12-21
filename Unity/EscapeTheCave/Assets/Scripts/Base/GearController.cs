@@ -25,8 +25,23 @@ public class GearController : MonoBehaviour
             && GameManager.focused == gameObject)
         {
             isRotating = true;
-            prismPlatform.GetComponent<PrismPlatformController>().Rotate();
+            prismPlatform.GetComponent<PrismController>().Rotate();
         }
+        
+        /*
+        if (isRotating)
+        {
+            transform.GetChild(0).transform.Rotate(Vector3.up * 2);
+            if (transform.rotation == targetRotation)
+            {
+                isRotating = false;
+            }
+        }
+        else
+        {
+            targetRotation = transform.rotation * Quaternion.Euler(0, 360 / 8, 0);
+        }
+        */
 
     }
 }

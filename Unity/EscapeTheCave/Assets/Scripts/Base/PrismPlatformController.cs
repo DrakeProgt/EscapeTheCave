@@ -6,13 +6,14 @@ public class PrismPlatformController : MonoBehaviour {
 
     bool isRotating;
     Quaternion targetRotation;
-    [SerializeField] Vector3 correctRotation;
     float moveSpeed;
-    [SerializeField] GameObject prism;
+    [SerializeField] int rotateIndex, correctRotation;
+
 
 	// Use this for initialization
 	void Start () {
         moveSpeed = 50;
+        rotateIndex = 0;
 	}
 	
 	// Update is called once per frame
@@ -23,13 +24,10 @@ public class PrismPlatformController : MonoBehaviour {
             if (transform.rotation == targetRotation)
             {
                 isRotating = false;
-                if (prism.activeSelf && EqualVecs(transform.eulerAngles, correctRotation) < 1)
+
+                if (gameObject.activeSelf && rotateIndex == correctRotation)
                 {
-                    transform.parent.gameObject.GetComponent<BaseController>().correctRotations++;
-                }
-                else
-                {
-                    transform.parent.gameObject.GetComponent<BaseController>().correctRotations = 0;
+                    transform.parent.parent.gameObject.GetComponent<BaseController>().correctRotations++;
                 }
             }
         }
@@ -48,11 +46,11 @@ public class PrismPlatformController : MonoBehaviour {
     {
         if(!isRotating)
         {
-            isRotating = true;
-            if(prism.activeSelf)
+            if (++rotateIndex >= 8)
             {
-                prism.GetComponent<PrismController>().Rotate();
+                rotateIndex = 0;
             }
+            isRotating = true;
         }
     }
 }
