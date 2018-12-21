@@ -21,6 +21,9 @@ public class PulseReactionScript : MonoBehaviour
     private FakePulse fakePulse;
 
     private ViewReaction viewReaction;
+    private StoneDustReaction stoneDustReaction;
+
+    private List<Reaction> reactions;
 
     //Use this for initialization
     void Start()
@@ -28,7 +31,9 @@ public class PulseReactionScript : MonoBehaviour
         currentPulse = 60;
         pulseLevel = PulseLevel.low;
         fakePulse = FakePulse.GetInstance();
-        viewReaction = ViewReaction.GetInstance();
+        reactions = new List<Reaction>();
+        reactions.Add(ViewReaction.GetInstance());
+        reactions.Add(StoneDustReaction.GetInstance());
         fakePulse.Init();
         StartCoroutine(fakePulse.PulseLoop());
     }
@@ -39,29 +44,23 @@ public class PulseReactionScript : MonoBehaviour
         currentPulse = GetLivePulseData();
         SetPulseLevel(currentPulse);
 
-        ReactView();
-        ReactStonesAndDust();
-
+        React();
+        
         //GameObject.Find("Puls").GetComponent<Text>().text = currentPulse.ToString();
     }
 
-    private void ReactStonesAndDust()
-    {
-
-    }
-
-    private void ReactView()
+    private void React()
     {
         switch (pulseLevel)
         {
             case PulseLevel.low:
-                viewReaction.ReactionLowIntensity(currentPulse);
+                reactions.ForEach(r => r.ReactionLowIntensity(currentPulse));
                 break;
             case PulseLevel.medium:
-                viewReaction.ReactionMediumIntensity(currentPulse);
+                reactions.ForEach(r => r.ReactionMediumIntensity(currentPulse));
                 break;
             case PulseLevel.high:
-                viewReaction.ReactionHighIntensity(currentPulse);
+                reactions.ForEach(r => r.ReactionHighIntensity(currentPulse));
                 break;
             default:
                 break;

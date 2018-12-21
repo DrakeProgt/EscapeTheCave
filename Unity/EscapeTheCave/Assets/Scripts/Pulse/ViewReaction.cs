@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// Reaction for blur and Vignette.
 /// </summary>
-public class ViewReaction
+public class ViewReaction : Reaction
 {
     private static ViewReaction instance;
 
@@ -30,7 +30,7 @@ public class ViewReaction
         cameraEffects = GameObject.Find("FirstPersonCharacter").GetComponent<CameraEffectsScript>();
     }
 
-    public void ReactionLowIntensity(float pulse)
+    public override void ReactionLowIntensity(float pulse)
     {
         cameraEffects.ChangeBlur(false);
         cameraEffects.ChangeMotionBlur(false);
@@ -38,7 +38,7 @@ public class ViewReaction
         cameraEffects.ChangeVignettePulsation(false);
     }
 
-    public void ReactionMediumIntensity(float pulse)
+    public override void ReactionMediumIntensity(float pulse)
     {
         cameraEffects.ChangeBlur(true);
         cameraEffects.ChangeMotionBlur(false);
@@ -51,7 +51,7 @@ public class ViewReaction
         cameraEffects.SetVignetteIntensity(vignetteIntensity);
     }
 
-    public void ReactionHighIntensity(float pulse)
+    public override void ReactionHighIntensity(float pulse)
     {
         cameraEffects.ChangeBlur(true);
         cameraEffects.ChangeMotionBlur(true);
