@@ -16,6 +16,10 @@ TagManager:
   - Crystal
   - Lantern
   - pressable
+  - Slot
+  - Slots
+  - Hotbar
+  - Diary
   layers:
   - Default
   - TransparentFX
