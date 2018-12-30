@@ -22,6 +22,16 @@ public class PlayerInteractionScript : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // pressed buttons
+        GameManager.UnpressAllKeys();
+        
+        // TODO: this are just test keys, need to be corrected
+        if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
+        if (Input.GetKeyDown(KeyCode.O)) GameManager.pressedL1Key = true;
+        if (Input.GetKeyDown(KeyCode.I)) GameManager.pressedR2Key = true;
+        if (Input.GetKeyDown(KeyCode.U)) GameManager.pressedL2Key = true;
+
+        // Raycast
         RaycastHit hit;
 
         Ray ray = UnityEngine.Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //or Input.mousePosition?
@@ -30,12 +40,9 @@ public class PlayerInteractionScript : MonoBehaviour
             //TODO: set width and height of textBox depending on message
             SetTextBoxDim(250, 20);
 
-            GameManager.UnpressAllKeys();
-
             if (hit.collider.gameObject.tag != "Untagged")
             {
                 GameManager.focused = hit.collider.gameObject;
-                if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
             } 
 
             switch (hit.collider.gameObject.tag)
@@ -64,7 +71,6 @@ public class PlayerInteractionScript : MonoBehaviour
         {
             hovered = false;
             GameManager.focused = null;
-            GameManager.UnpressAllKeys();
         }
             
     }

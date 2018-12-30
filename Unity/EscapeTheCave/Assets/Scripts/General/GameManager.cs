@@ -7,6 +7,10 @@ public static class GameManager
 
     public static GameObject focused;
     public static bool pressedInteractKey = false;
+    public static bool pressedL1Key = false;
+    public static bool pressedR1Key = false;
+    public static bool pressedL2Key = false;
+    public static bool pressedR2Key = false;
 
     [SerializeField] public static bool isWordPuzzleSolved = false;
     public static bool isLightPuzzleSolved = false;
@@ -18,6 +22,10 @@ public static class GameManager
     public static void UnpressAllKeys()
     {
         pressedInteractKey = false;
+        pressedL1Key = false;
+        pressedR1Key = false;
+        pressedL2Key = false;
+        pressedR2Key = false;
     }
 
     public static bool IsGamepadConnected

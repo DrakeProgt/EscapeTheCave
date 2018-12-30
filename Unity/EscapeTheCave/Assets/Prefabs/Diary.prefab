@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 114591668938550288}
   m_Layer: 0
   m_Name: Diary
-  m_TagString: Diary
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

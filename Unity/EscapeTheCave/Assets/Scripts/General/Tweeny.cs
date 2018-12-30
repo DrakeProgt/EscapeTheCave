@@ -61,7 +61,12 @@ public class Tweeny
             startTime = Time.time * 1000;
         }    
     }
-    
+
+    public void reset()
+    {
+        startTime = -1.0f;
+        finished = false;
+    }
     
     private bool isFinished()
     {
