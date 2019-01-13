@@ -21,7 +21,7 @@ public class PrismPlatformController : MonoBehaviour {
         if (isRotating)
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
-            if (transform.rotation == targetRotation)
+            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
             {
                 isRotating = false;
 

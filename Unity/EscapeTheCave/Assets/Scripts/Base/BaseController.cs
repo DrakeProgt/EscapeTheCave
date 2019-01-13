@@ -6,7 +6,6 @@ public class BaseController : MonoBehaviour
 {
     [SerializeField] float movementTime;
     [SerializeField] Vector3 targetPosition;
-    [SerializeField] GameObject crystalChild, lanternChild;
     [SerializeField] GameObject[] prismChildren;
     [SerializeField] GameObject StarSign;
 
@@ -31,7 +30,15 @@ public class BaseController : MonoBehaviour
         if (correctRotations == 3) // TODO correctRotations == 11 for prod version
         {
             GameManager.isLightPuzzleSolved = true;
-            StarSign.GetComponent<StarSignLineSystem>().buildUp();
+            foreach(GameObject prism in prismChildren)
+            {
+                foreach(Transform child in prism.transform)
+                {
+                    if(child.name.Contains("Platform")) continue;
+                    child.gameObject.GetComponent<StarLightController>().ActivateHaloLights();
+                }
+            }
+            // StarSign.GetComponent<StarSignLineSystem>().buildUp();
         }
     }
 }
