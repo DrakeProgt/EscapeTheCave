@@ -30,7 +30,7 @@ public class GearController : MonoBehaviour
         if (isRotating)
         {
             transform.GetChild(0).transform.Rotate(Vector3.up * 2);
-            if (transform.rotation == targetRotation)
+            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
             {
                 isRotating = false;
             }

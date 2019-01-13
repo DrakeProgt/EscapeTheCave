@@ -16,13 +16,12 @@ public class PedestalBaseController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*
         if (!GameManager.isWordPuzzleSolved)
         {
             return;
-        }*/
+        }
 
-        if(!true)
+        if(!isGateOpened)
         {
             foreach(GameObject pedestalGate in pedestalGates)
             {

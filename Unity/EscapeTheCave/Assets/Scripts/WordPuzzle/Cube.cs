@@ -67,7 +67,6 @@ public class Cube : MonoBehaviour {
             Move();
             if (!moving && pressed && !signalSent)
             {
-                Debug.Log(correctKey);
                 signalSent = true;
                 wallInstance.PressedKey(correctKey);
                 if (correctKey) light.SetActive(true);

@@ -538,6 +538,11 @@ Transform:
   m_Father: {fileID: 1628695101}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &76651201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1970247880816640, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+    type: 2}
+  m_PrefabInternal: {fileID: 606009251}
 --- !u!4 &85591228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4805487640584304, guid: b0e9780b938d3fd4d95edf9e5271fdc8,
@@ -1812,6 +1817,7 @@ Transform:
   - {fileID: 1397867611}
   - {fileID: 1552810725}
   - {fileID: 432396603}
+  - {fileID: 574452390}
   m_Father: {fileID: 1684550045}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2493,6 +2499,34 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b07a314345d5eb4b8e2ee98d1b65000, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &574452389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574452390}
+  m_Layer: 0
+  m_Name: positionTarget (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &574452390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 574452389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.71, z: -0.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 389869124}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &581088137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +2819,21 @@ Prefab:
       propertyPath: correctRotation
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114042112031368370, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+        type: 2}
+      propertyPath: prismChildren.Array.data[0]
+      value: 
+      objectReference: {fileID: 1490997817}
+    - target: {fileID: 114042112031368370, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+        type: 2}
+      propertyPath: prismChildren.Array.data[1]
+      value: 
+      objectReference: {fileID: 76651201}
+    - target: {fileID: 114042112031368370, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+        type: 2}
+      propertyPath: prismChildren.Array.data[2]
+      value: 
+      objectReference: {fileID: 2057719810}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b1acb85feccc84a88d1bd50e2dd254, type: 2}
   m_IsPrefabAsset: 0
@@ -8166,6 +8215,11 @@ MonoBehaviour:
   lineLength: 24
   rightKeys: 0e000000
   correctCount: 0
+--- !u!1 &1490997817 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1467600000118834, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+    type: 2}
+  m_PrefabInternal: {fileID: 606009251}
 --- !u!1001 &1495316763
 Prefab:
   m_ObjectHideFlags: 0
@@ -11580,6 +11634,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2057719810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537702575654290, guid: 03b1acb85feccc84a88d1bd50e2dd254,
+    type: 2}
+  m_PrefabInternal: {fileID: 606009251}
 --- !u!1 &2070158169
 GameObject:
   m_ObjectHideFlags: 0

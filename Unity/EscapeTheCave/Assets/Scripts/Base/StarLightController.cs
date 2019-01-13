@@ -33,8 +33,9 @@ public class StarLightController : MonoBehaviour
             Quaternion rotateValue = Quaternion.LookRotation(direction);
 
             transform.rotation = Quaternion.Lerp(transform.rotation, rotateValue, 4 * Time.deltaTime);
-            if (Quaternion.Angle(transform.rotation, rotateValue) < .1f)
+            if (Quaternion.Angle(transform.rotation, rotateValue) < .01f)
             {
+                Debug.Log("ROTATING IS FALSE");
                 isRotating = false;
             }
         }
@@ -49,6 +50,8 @@ public class StarLightController : MonoBehaviour
 
     public void Rotate()
     {
+        if (isRotating) return;
+
         if (targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>() != null)
             targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>().enabled = false;
 
