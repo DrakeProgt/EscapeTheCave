@@ -6,12 +6,13 @@ using Assets.Scripts;
 public class ParticleEffectScript : MonoBehaviour
 {
     Vector3[] possiblePositions;
+    AudioClip[] audioClips;
     GameObject stoneDust;
 
     // Use this for initialization
     private void Start()
     {
-        stoneDust = (GameObject)GameObject.Instantiate(Resources.Load("DustStorm"), Vector3.zero, Quaternion.identity);
+        stoneDust = (GameObject)GameObject.Instantiate(Resources.Load(@"Effects\DustStorm"), Vector3.zero, Quaternion.identity);
         //stoneDust = GameObject.Find("DustStorm");
         possiblePositions = new Vector3[6] 
         {
@@ -22,15 +23,27 @@ public class ParticleEffectScript : MonoBehaviour
             new Vector3(7.59f, 3.6f, -1f),
             new Vector3(1.15f, 3.6f, -4.57f)
         };
-	}
+        audioClips = new AudioClip[3]
+        {
+            (AudioClip)Resources.Load(@"Effects\Stone_Dust_01"),
+            (AudioClip)Resources.Load(@"Effects\Stone_Dust_02"),
+            (AudioClip)Resources.Load(@"Effects\Stone_Dust_03"),
+        };
+        PlayStoneDustOnceRandom();
+    }
 
     public void PlayStoneDustOnceRandom()
     {
         System.Random random = new System.Random();
-        int index = random.Next(0, 3);
+        int index = random.Next(0, possiblePositions.Length);
         stoneDust.GetComponent<Transform>().position = new Vector3(possiblePositions[index].x, possiblePositions[index].y, possiblePositions[index].z);
         stoneDust.GetComponent<ParticleSystem>().Play(true);
-        stoneDust.GetComponentInChildren<AudioSource>().Play();
+
+        //sound
+        index = random.Next(0, audioClips.Length);
+        AudioSource audio = stoneDust.GetComponentInChildren<AudioSource>();
+        audio.clip = audioClips[index];
+        audio.Play();
 
         //controller vibration
         float stoneDustDir = Utilities.GetDirection(UnityEngine.Camera.main.transform, stoneDust.transform);

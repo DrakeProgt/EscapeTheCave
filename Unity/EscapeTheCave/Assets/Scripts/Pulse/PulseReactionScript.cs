@@ -20,9 +20,6 @@ public class PulseReactionScript : MonoBehaviour
     private PulseLevel pulseLevel;
     private FakePulse fakePulse;
 
-    private ViewReaction viewReaction;
-    private StoneDustReaction stoneDustReaction;
-
     private List<Reaction> reactions;
 
     //Use this for initialization
@@ -34,6 +31,7 @@ public class PulseReactionScript : MonoBehaviour
         reactions = new List<Reaction>();
         reactions.Add(ViewReaction.GetInstance());
         reactions.Add(StoneDustReaction.GetInstance());
+        reactions.Add(SoundReaction.GetInstance());
         fakePulse.Init();
         StartCoroutine(fakePulse.PulseLoop());
     }
