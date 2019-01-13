@@ -16,12 +16,13 @@ public class PedestalBaseController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (!GameManager.isWordPuzzleSolved)
         {
             return;
-        }
+        }*/
 
-        if(!isGateOpened)
+        if(!true)
         {
             foreach(GameObject pedestalGate in pedestalGates)
             {
@@ -35,7 +36,7 @@ public class PedestalBaseController : MonoBehaviour {
         {
             transform.Translate(Vector3.up * .5f * Time.deltaTime);
 
-            if (transform.position.y >= -1.5f)
+            if (transform.position.y >= -3.3f)
             {
                 isPedestalMovedUp = true;
             }

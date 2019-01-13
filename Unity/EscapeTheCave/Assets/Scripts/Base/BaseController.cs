@@ -8,6 +8,7 @@ public class BaseController : MonoBehaviour
     [SerializeField] Vector3 targetPosition;
     [SerializeField] GameObject crystalChild, lanternChild;
     [SerializeField] GameObject[] prismChildren;
+    [SerializeField] GameObject StarSign;
 
     public float correctRotations;
 
@@ -27,33 +28,10 @@ public class BaseController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.isWordPuzzleSolved)
-        {
-            return;
-        }
-
-        if (GameManager.pressedInteractKey && GameManager.focused && System.Array.IndexOf(new string[] { "PrismPlatform", "CrystalPlatform", "LanternPlatform" }, GameManager.focused.name) > -1)
-        {
-            GameManager.focused.transform.GetChild(0).gameObject.SetActive(true);
-            if (lanternChild.activeSelf)
-            {
-                lanternChild.GetComponent<LanternController>().ActivateLights();
-
-                if (crystalChild.activeSelf)
-                {
-                    crystalChild.GetComponent<CrystalController>().ActivateLights();
-                    foreach (GameObject child in prismChildren)
-                    {
-                        child.GetComponent<PrismController>().ActivateLights();
-                    }
-                }
-            }
-        }
-
-
         if (correctRotations == 3) // TODO correctRotations == 11 for prod version
         {
             GameManager.isLightPuzzleSolved = true;
+            StarSign.GetComponent<StarSignLineSystem>().buildUp();
         }
     }
 }

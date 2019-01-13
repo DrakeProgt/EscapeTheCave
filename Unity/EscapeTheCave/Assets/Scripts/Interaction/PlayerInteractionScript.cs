@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerInteractionScript : MonoBehaviour
 {
-    [SerializeField] GameObject inventory;
+    [SerializeField] GameObject prismLeft, prismMiddle;
+
+    [SerializeField] GameObject inventoryObject;
+    Inventory inventory;
 
     private bool hovered;
     private string message;
@@ -17,6 +20,9 @@ public class PlayerInteractionScript : MonoBehaviour
     {
         hovered = false;
         message = "";
+        inventory = inventoryObject.GetComponent<Inventory>();
+        inventory.AddItemToInventory(prismLeft, prismLeft.GetComponent<ControllerInterface>().GetItemType());
+        inventory.AddItemToInventory(prismMiddle, prismMiddle.GetComponent<ControllerInterface>().GetItemType());
     }
 
     // Update is called once per frame
@@ -54,8 +60,11 @@ public class PlayerInteractionScript : MonoBehaviour
                 case "pressable":
                     message = "Press with Button E";
                     break;
-                case "placeable": 
-                    message = "Place " + hit.collider.gameObject.transform.GetChild(0).gameObject.name;
+                case "placeable":
+                    string itemName = hit.collider.gameObject.name.Replace("Platform", "");
+                    string m = itemName.Replace("Left", "").Replace("Right", "").Replace("Middle", "");
+                    message = "Place " + m;
+                    PlaceObject(hit.collider.gameObject);
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
@@ -75,19 +84,67 @@ public class PlayerInteractionScript : MonoBehaviour
             
     }
 
+    private void PlaceObject(GameObject platform)
+    {
+        if (GameManager.pressedInteractKey && inventory.GetSelectedItem().name == platform.name.Replace("Platform", ""))
+        {
+            GameObject obj = inventory.RemoveAndGetSelectedItemFromInventory();
+            Debug.Log(obj);
+            Transform t = platform.transform.GetChild(0);
+            Vector3 targetPosition = t.position;
+            t.gameObject.SetActive(false);
+
+            obj.SetActive(true);
+            obj.transform.parent = platform.transform;
+            if (!obj.name.Contains("Prism"))
+            {
+                obj.transform.localRotation = Quaternion.identity;
+            }
+
+            Vector3 startPosition = transform.position;
+
+            StartCoroutine(MoveObjectAway(obj, startPosition, targetPosition, .6f));
+        }
+    }
+
     private void PickUpObject(GameObject pickedObject)
     {
-        if (Input.GetButtonDown("Interact"))
+        if (GameManager.pressedInteractKey)
         {
             pickedObject.GetComponent<BoxCollider>().enabled = false;
 
-            //move the gameObject slowly
-            MoveSample animation = pickedObject.GetComponent<MoveSample>();
-            animation.MoveAnimation(gameObject.GetComponent<Transform>().position);
-            StartCoroutine(animation.DestroyObject(1.2f));
+            inventory.AddItemToInventory(pickedObject, pickedObject.GetComponent<ControllerInterface>().GetItemType());
 
-            //TODO: add item to inventory
+            Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
+            Vector3 startPosition = pickedObject.transform.position;
+
+            StartCoroutine(MoveObjectTowards(pickedObject, startPosition, targetPosition, .6f));
         }
+    }
+
+    IEnumerator MoveObjectTowards(GameObject obj, Vector3 source, Vector3 target, float overTime)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + overTime)
+        {
+            obj.transform.position = Vector3.Slerp(source, target, (Time.time - startTime) / overTime);
+            yield return null;
+        }
+        obj.transform.position = target;
+        obj.SetActive(false);
+
+    }
+
+    IEnumerator MoveObjectAway(GameObject obj, Vector3 source, Vector3 target, float overTime)
+    {
+        float startTime = Time.time;
+        while (Time.time < startTime + overTime)
+        {
+            obj.transform.position = Vector3.Slerp(source, target, (Time.time - startTime) / overTime);
+            yield return null;
+        }
+        obj.transform.position = target;
+        obj.GetComponent<ControllerInterface>().Enable();
     }
 
     private void SetTextBoxDim(float width, float height)

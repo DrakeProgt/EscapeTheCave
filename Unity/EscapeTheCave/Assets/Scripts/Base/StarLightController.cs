@@ -6,6 +6,7 @@ public class StarLightController : MonoBehaviour {
 
     [SerializeField] bool isRotating;
     int rotateIndex;
+    [SerializeField] int correctRotation;
     [SerializeField] GameObject targetRotations;
     Vector3[] rotations;
     [SerializeField] int[] validRotations;
@@ -33,10 +34,17 @@ public class StarLightController : MonoBehaviour {
             if (transform.rotation == rotateValue)
             {
                 isRotating = false;
+                if(rotateIndex == correctRotation)
+                {
+                    targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>().enabled = true;
+                }
+                else
+                {
+                    targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>().enabled = false;
+                }
             }
         }
 	}
-
 
     public void Rotate()
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GearController : MonoBehaviour
 {
-
     [SerializeField] GameObject prismPlatform;
     bool isRotating;
     Quaternion targetRotation;
@@ -21,14 +20,13 @@ public class GearController : MonoBehaviour
     void Update()
     {
         if (GameManager.pressedInteractKey
-            && GameManager.focused.tag == "rotateable"
-            && GameManager.focused == gameObject)
+            && GameManager.focused == gameObject
+            && GameManager.focused.tag == "rotateable")
         {
             isRotating = true;
             prismPlatform.GetComponent<PrismController>().Rotate();
         }
         
-        /*
         if (isRotating)
         {
             transform.GetChild(0).transform.Rotate(Vector3.up * 2);
@@ -41,7 +39,5 @@ public class GearController : MonoBehaviour
         {
             targetRotation = transform.rotation * Quaternion.Euler(0, 360 / 8, 0);
         }
-        */
-
     }
 }

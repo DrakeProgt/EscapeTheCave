@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LanternController : MonoBehaviour {
+public class LanternController : MonoBehaviour, ControllerInterface {
 
-	private bool IsAssignedToBase;
+    public bool isEnabled { set; get; }
+    [SerializeField] GameObject crystal;
+    [SerializeField] GameObject[] prisms;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
 	{
-		
+        isEnabled = false;
 	}
 	
 	// Update is called once per frame
@@ -18,11 +20,24 @@ public class LanternController : MonoBehaviour {
         
     }
 
-    public void ActivateLights()
+    public void Enable()
     {
-        foreach (Transform child in transform)
+        isEnabled = true;
+        if(crystal.GetComponent<ControllerInterface>().isEnabled)
         {
-            child.gameObject.SetActive(true);
+            crystal.GetComponent<CrystalController>().ActivateLights();
         }
+        foreach(GameObject prism in prisms)
+        {
+            if(prism.GetComponent<ControllerInterface>().isEnabled)
+            {
+                prism.GetComponent<PrismChildController>().ActivateLights();
+            }
+        }
+    }
+
+    public ItemType GetItemType()
+    {
+        return ItemType.Lantern;
     }
 }

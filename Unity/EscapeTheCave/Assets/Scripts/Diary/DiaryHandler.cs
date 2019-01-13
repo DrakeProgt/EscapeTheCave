@@ -71,7 +71,7 @@ public class DiaryHandler : MonoBehaviour
 		if (!running)
 		{
 			// toggle diary init
-			if(GameManager.pressedL1Key)
+			if(GameManager.pressedR2Key)
 			{
 				opened = !BookAnimator.GetBool("DiaryOpened");
 				if(opened) Book.SetActive(true);

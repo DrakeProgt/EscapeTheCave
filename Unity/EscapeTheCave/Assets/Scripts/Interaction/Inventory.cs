@@ -6,14 +6,14 @@ using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Inventory : MonoBehaviour
-{    
+{
     //public GameObject hotbarSlots;
     private Slot[] slots;
     private int currentSlotIndex;
     private int prismIndex;
 
-	// Use this for initialization
-	private void Start ()
+    // Use this for initialization
+    private void Start()
     {
         slots = new Slot[9];
         InitSlots();
@@ -26,12 +26,12 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < 9; i++)
         {
-            slots[i] = new Slot(GameObject.Find("Slot"+(i+1).ToString()));
+            slots[i] = new Slot(GameObject.Find("Slot" + (i + 1).ToString()));
         }
     }
 
     // Update is called once per frame
-    private void FixedUpdate ()
+    private void FixedUpdate()
     {
         float inventoryAxis = CrossPlatformInputManager.GetAxis("InventoryMove");
         if (inventoryAxis == -1)
@@ -72,14 +72,25 @@ public class Inventory : MonoBehaviour
 
     public void AddItemToInventory(GameObject item, ItemType itemType)
     {
-        if (!slots[currentSlotIndex].Empty)
-            return;
+        int slotIndex = 0;
+        while (!slots[slotIndex].Empty) {
+            slotIndex++;
+            if(slotIndex > 7)
+            {
+                return;
+            }
+        }
 
-        slots[currentSlotIndex].SavedGameObject = item;
+        slots[slotIndex].SavedGameObject = item;
         Texture texture = GetTexture(itemType);
-        slots[currentSlotIndex].SlotUI.GetComponent<RawImage>().texture = texture;
+        slots[slotIndex].SlotUI.GetComponent<RawImage>().texture = texture;
 
-        slots[currentSlotIndex].Empty = false;
+        slots[slotIndex].Empty = false;
+    }
+
+    public GameObject GetSelectedItem()
+    {
+        return slots[currentSlotIndex].SavedGameObject;
     }
 
     private Texture GetTexture(ItemType itemType)

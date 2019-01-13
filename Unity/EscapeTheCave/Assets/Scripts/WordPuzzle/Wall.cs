@@ -63,6 +63,8 @@ public class Wall : MonoBehaviour {
 
     private bool isEndAnimationFinished()
     {
+        Debug.Log(starSignScript);
+        Debug.Log("WARNING");
         return starSignScript.buildUp();
     }
 
