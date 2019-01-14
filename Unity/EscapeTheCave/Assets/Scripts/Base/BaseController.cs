@@ -9,7 +9,8 @@ public class BaseController : MonoBehaviour
     [SerializeField] GameObject[] prismChildren;
     [SerializeField] GameObject StarSign;
 
-    public float correctRotations;
+    public bool[] gearsSolved = { false, false, false };
+    public bool[] gearsRotating = { false, false, false };
 
     float t;
     bool isMovedUp;
@@ -21,14 +22,14 @@ public class BaseController : MonoBehaviour
         t = 0;
         targetPosition = new Vector3(transform.position.x, transform.position.y + 1.3f, transform.position.z);
         movementTime = 20;
-        correctRotations = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (correctRotations == 3) // TODO correctRotations == 11 for prod version
+        if (gearsSolved[0] && gearsSolved[1] && gearsSolved[2])
         {
+            Debug.Log("LightPuzzle solved!");
             GameManager.isLightPuzzleSolved = true;
             foreach(GameObject prism in prismChildren)
             {

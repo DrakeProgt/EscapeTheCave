@@ -21,10 +21,17 @@ public class PlayerInteractionScript : MonoBehaviour
         hovered = false;
         message = "";
         inventory = inventoryObject.GetComponent<Inventory>();
+        StartCoroutine(DelayedStart(1));
+    }
+
+    IEnumerator DelayedStart(float waitTime)
+    {
+        // suspend execution for waitTime seconds
+        yield return new WaitForSeconds(waitTime);
         inventory.AddItemToInventory(prismLeft, prismLeft.GetComponent<ControllerInterface>().GetItemType());
         inventory.AddItemToInventory(prismMiddle, prismMiddle.GetComponent<ControllerInterface>().GetItemType());
     }
-
+    
     // Update is called once per frame
     private void Update()
     {
