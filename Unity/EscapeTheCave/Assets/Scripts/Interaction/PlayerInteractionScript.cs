@@ -132,7 +132,6 @@ public class PlayerInteractionScript : MonoBehaviour
         }
         obj.transform.position = target;
         obj.SetActive(false);
-
     }
 
     IEnumerator MoveObjectAway(GameObject obj, Vector3 source, Vector3 target, float overTime)
