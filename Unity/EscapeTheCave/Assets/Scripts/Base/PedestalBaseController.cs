@@ -35,7 +35,7 @@ public class PedestalBaseController : MonoBehaviour {
         {
             transform.Translate(Vector3.up * .5f * Time.deltaTime);
 
-            if (transform.position.y >= -3.3f)
+            if (transform.position.y >= -3.6f)
             {
                 isPedestalMovedUp = true;
             }
