@@ -7,6 +7,7 @@ public class PrismPlatformController : MonoBehaviour {
     bool isRotating;
     Quaternion targetRotation;
     float moveSpeed;
+    public int prismIndex;
     [SerializeField] int rotateIndex, correctRotation;
 
 
@@ -14,6 +15,12 @@ public class PrismPlatformController : MonoBehaviour {
 	void Start () {
         moveSpeed = 50;
         rotateIndex = 0;
+        
+        // for Dev Start 
+        if (rotateIndex == correctRotation)
+        {
+            transform.parent.parent.gameObject.GetComponent<BaseController>().gearsSolved[prismIndex] = true;
+        }
 	}
 	
 	// Update is called once per frame
@@ -24,16 +31,22 @@ public class PrismPlatformController : MonoBehaviour {
             if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
             {
                 isRotating = false;
-
-                if (gameObject.activeSelf && rotateIndex == correctRotation)
-                {
-                    transform.parent.parent.gameObject.GetComponent<BaseController>().correctRotations++;
-                }
+                transform.parent.parent.gameObject.GetComponent<BaseController>().gearsRotating[prismIndex] = false;
+                Debug.Log("is " + rotateIndex + " and should " + correctRotation);
             }
         }
         else
         {
             targetRotation = transform.rotation * Quaternion.Euler(0, 0, 360 / 8);
+        }
+        
+        if (gameObject.activeSelf && rotateIndex == correctRotation)
+        {
+            transform.parent.parent.gameObject.GetComponent<BaseController>().gearsSolved[prismIndex] = true;
+        }
+        else
+        {
+            transform.parent.parent.gameObject.GetComponent<BaseController>().gearsSolved[prismIndex] = false;
         }
     }
 
@@ -51,6 +64,7 @@ public class PrismPlatformController : MonoBehaviour {
                 rotateIndex = 0;
             }
             isRotating = true;
+            transform.parent.parent.gameObject.GetComponent<BaseController>().gearsRotating[prismIndex] = true;
         }
     }
 }

@@ -5,14 +5,12 @@ using UnityEngine;
 public class GearController : MonoBehaviour
 {
     [SerializeField] GameObject prismPlatform;
-    bool isRotating;
-    Quaternion targetRotation;
     float moveSpeed;
+    public int index;
 
     // Use this for initialization
     void Start()
     {
-        isRotating = false;
         moveSpeed = 50;
     }
 
@@ -21,23 +19,15 @@ public class GearController : MonoBehaviour
     {
         if (GameManager.pressedInteractKey
             && GameManager.focused == gameObject
-            && GameManager.focused.tag == "rotateable")
+            && GameManager.focused.tag == "rotateable"
+            && !transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[index])
         {
-            isRotating = true;
             prismPlatform.GetComponent<PrismController>().Rotate();
         }
         
-        if (isRotating)
+        if (transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[index])
         {
-            transform.GetChild(0).transform.Rotate(Vector3.up * 2);
-            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
-            {
-                isRotating = false;
-            }
-        }
-        else
-        {
-            targetRotation = transform.rotation * Quaternion.Euler(0, 360 / 8, 0);
+            transform.Rotate(Vector3.up * Time.deltaTime * 300);
         }
     }
 }

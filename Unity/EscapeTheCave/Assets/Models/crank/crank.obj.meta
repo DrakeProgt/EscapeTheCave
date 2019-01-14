@@ -5,12 +5,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: default
+    100004: crank
     400000: //RootNode
     400002: default
+    400004: crank
     2100000: defaultMat
+    2100002: initialShadingGroup
     2300000: default
+    2300002: crank
     3300000: default
+    3300002: crank
     4300000: default
+    4300002: crank
   externalObjects: {}
   materials:
     importMaterials: 1
