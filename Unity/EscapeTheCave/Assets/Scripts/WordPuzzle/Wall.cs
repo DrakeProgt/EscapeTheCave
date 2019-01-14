@@ -44,8 +44,7 @@ public class Wall : MonoBehaviour {
 
     private void Update()
     {
-        if (!GameManager.isWordPuzzleSolved)
-        {
+        
             if (!solved)
             {
                 if (null != GameManager.focused && GameManager.pressedInteractKey && "pressable" == GameManager.focused.tag && ("WordPuzzleButton" == GameManager.focused.name || "WordPuzzleButton(Clone)" == GameManager.focused.name))
@@ -57,7 +56,7 @@ public class Wall : MonoBehaviour {
             {
                 GameManager.isWordPuzzleSolved = isEndAnimationFinished();
             }
-        }
+        
         
     }
 
@@ -74,6 +73,7 @@ public class Wall : MonoBehaviour {
             {
                 cube.GetComponent<Cube>().Finish();
             }
+            GameManager.isWordPuzzleSolved = true;
             Debug.Log("WordPuzzleSolved");
             return true;
         }

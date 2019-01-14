@@ -27,7 +27,6 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < 9; i++)
         {
             slots[i] = new Slot(GameObject.Find("Slot" + (i + 1).ToString()));
-            Debug.Log(slots[i]);
         }
     }
 
