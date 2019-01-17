@@ -15,6 +15,7 @@ public class Wall : MonoBehaviour {
     public int[] rightKeys = { 14, 36, 41, 110, 164, 184, 204, 255, 272, 329, 342 };
     public int correctCount = 0;
     private bool solved = false;
+    private bool isAnimationFinished;
     static List<GameObject> list = new List<GameObject>();
     private StarSignLineSystem starSignScript;
 
@@ -44,7 +45,6 @@ public class Wall : MonoBehaviour {
 
     private void Update()
     {
-        
             if (!solved)
             {
                 if (null != GameManager.focused && GameManager.pressedInteractKey && "pressable" == GameManager.focused.tag && ("WordPuzzleButton" == GameManager.focused.name || "WordPuzzleButton(Clone)" == GameManager.focused.name))
@@ -52,11 +52,11 @@ public class Wall : MonoBehaviour {
                     GameManager.focused.GetComponent<Cube>().Press();
                 }
                 solved = isFinished();
-            } else
-            {
-                GameManager.isWordPuzzleSolved = isEndAnimationFinished();
             }
-        
+            else if(GameManager.isWordPuzzleSolved && !isAnimationFinished)
+            {
+                isAnimationFinished = isEndAnimationFinished();
+            }
         
     }
 

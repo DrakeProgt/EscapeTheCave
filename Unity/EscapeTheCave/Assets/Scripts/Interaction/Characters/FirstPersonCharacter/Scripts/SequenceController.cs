@@ -1,69 +1,81 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class SequenceController : MonoBehaviour
 {
 
-    [SerializeField] GameObject positionTarget, rotationTargetOne, rotationTargetTwo, sequenceUI;
-    bool done = false;
+    [SerializeField]
+    GameObject positionTarget, rotationTargetOne, rotationTargetTwo, sequenceUI;
+    bool started, firstSequenceDone, secondSequenceDone;
+    float duration, elapsed;
+    Vector3 startPosition;
+
+    public bool test;
+
+
+    void Start()
+    {
+        elapsed = 0;
+        duration = 8;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.isWordPuzzleSolved && !done)
+        if (GameManager.isWordPuzzleSolved)
         {
-            StartCoroutine(MoveObjectToPosition(transform, positionTarget.transform.position, 8));
+            //gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().test = test;
+            if (!started)
+            {
+                started = true;
+                startPosition = transform.position;
+                gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+                sequenceUI.SetActive(true);
+            }
+            else if (!firstSequenceDone)
+            {
+                var targetRotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
+
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+                transform.GetChild(0).rotation = Quaternion.Lerp(transform.GetChild(0).rotation, targetRotation, 3 * Time.deltaTime);
+
+                transform.position = Vector3.Lerp(startPosition, positionTarget.transform.position, elapsed / duration);
+                elapsed += Time.deltaTime;
+
+                if (elapsed > duration)
+                {
+                    elapsed = 0;
+                    firstSequenceDone = true;
+                    transform.position = positionTarget.transform.position;
+                    transform.rotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
+                    transform.GetChild(0).rotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
+                }
+            }
+            else if (!secondSequenceDone)
+            {
+                var targetRotation = Quaternion.LookRotation(rotationTargetTwo.transform.position - transform.position);
+
+                // Smoothly rotate towards the target point.
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+                transform.GetChild(0).rotation = Quaternion.Lerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+
+                elapsed += Time.deltaTime;
+
+                if (elapsed > duration)
+                {
+                    gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+                    transform.rotation = Quaternion.LookRotation(rotationTargetTwo.transform.position - transform.position);
+                    transform.GetChild(0).rotation = Quaternion.LookRotation(rotationTargetTwo.transform.position - transform.position);
+                    sequenceUI.SetActive(false);
+                    secondSequenceDone = true;
+                }
+            }
         }
     }
 
-    IEnumerator MoveObjectToPosition(Transform trans, Vector3 end_position, float duration)
-    {
-        gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
-        sequenceUI.SetActive(true);
-
-        Vector3 start_position = trans.position;
-        float elapsed = 0;
-
-        // move to first position and look at starsign
-        while (elapsed < duration)
-        {
-            Debug.Log("Calculating...");
-            Debug.Log(elapsed);
-            Debug.Log(duration);
-            var targetRotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
-
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
-            transform.GetChild(0).rotation = Quaternion.Lerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
-
-            trans.position = Vector3.Lerp(start_position, end_position, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        Debug.Log("Done...");
-        trans.position = end_position;
-        transform.rotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
-        transform.GetChild(0).rotation = Quaternion.LookRotation(rotationTargetOne.transform.position - transform.position);
-
-        float elapsedNew = 0;
-        while (elapsedNew < duration)
-        {
-            Debug.Log("Calculating again...");
-            var targetRotation = Quaternion.LookRotation(rotationTargetTwo.transform.position - transform.position);
-
-            // Smoothly rotate towards the target point.
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
-            transform.GetChild(0).rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5 * Time.deltaTime);
-
-            elapsedNew += Time.deltaTime;
-            yield return null;
-        }
-
-        gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-        sequenceUI.SetActive(false);
-        done = true;
-    }
 
     float EqualVecs(Vector3 lhs, Vector3 rhs)
     {
