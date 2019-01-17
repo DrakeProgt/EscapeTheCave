@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Kirill Kulikov\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Kirill Kulikov\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_EscapeTheCave.602717336.00" t="ExcludeRecursive" />
+    <e p="D:\Dokumente\git\EscapeTheCave\Unity\EscapeTheCave" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="_MK" t="Include">
+          <e p="MKGlassFree" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MKGlassFreeEditor.cs" t="Include" />
+            </e>
+            <e p="MKGlassFreeMaterialHelper.cs" t="Include" />
+            <e p="Shader" t="Include">
+              <e p="Inc" t="Include">
+                <e p="Common" t="Include">
+                  <e p="MKGlassDef.cginc" t="Include" />
+                  <e p="MKGlassInc.cginc" t="Include" />
+                  <e p="MKGlassLight.cginc" t="Include" />
+                  <e p="MKGlassV.cginc" t="Include" />
+                </e>
+                <e p="Forward" t="Include">
+                  <e p="MKGlassForward.cginc" t="Include" />
+                  <e p="MKGlassForwardAddSetup.cginc" t="Include" />
+                  <e p="MKGlassForwardBaseSetup.cginc" t="Include" />
+                  <e p="MKGlassForwardIO.cginc" t="Include" />
+                </e>
+                <e p="Meta" t="Include">
+                  <e p="MKGlassMeta.cginc" t="Include" />
+                  <e p="MKGlassMetaIO.cginc" t="Include" />
+                  <e p="MKGlassMetaSetup.cginc" t="Include" />
+                </e>
+                <e p="Surface" t="Include">
+                  <e p="MKGlassSurface.cginc" t="Include" />
+                  <e p="MKGlassSurfaceIO.cginc" t="Include" />
+                </e>
+                <e p="VertexLit" t="Include">
+                  <e p="MKGlassVertexLit.cginc" t="Include" />
+                  <e p="MKGlassVertexLitIO.cginc" t="Include" />
+                  <e p="MKGlassVertexLitSetup.cginc" t="Include" />
+                </e>
+              </e>
+              <e p="MKGlassCommonFree.shader" t="Include" />
+              <e p="MKGlassFree.shader" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Materials" t="Include">
+          <e p="classicNoise3d.cginc" t="Include" />
+          <e p="FakeVolumetricLightShaderExtended.shader" t="Include" />
+        </e>
+        <e p="Plugins" t="Include">
+          <e p="Pixelplacement" t="Include">
+            <e p="iTween" t="Include">
+              <e p="iTween.cs" t="Include" />
+              <e p="ReadMe!" t="Include">
+                <e p="ReadMe!.txt" t="Include" />
+              </e>
+              <e p="Sample" t="Include">
+                <e p="MoveSample.cs" t="Include" />
+                <e p="RotateSample.cs" t="Include" />
+                <e p="SampleInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="PostProcessing" t="Include">
+          <e p="Editor" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="PostProcessingModelEditorAttribute.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include">
+              <e p="AmbientOcclusionModelEditor.cs" t="Include" />
+              <e p="AntialiasingModelEditor.cs" t="Include" />
+              <e p="BloomModelEditor.cs" t="Include" />
+              <e p="BuiltinDebugViewsEditor.cs" t="Include" />
+              <e p="ChromaticAberrationEditor.cs" t="Include" />
+              <e p="ColorGradingModelEditor.cs" t="Include" />
+              <e p="DefaultPostFxModelEditor.cs" t="Include" />
+              <e p="DepthOfFieldModelEditor.cs" t="Include" />
+              <e p="DitheringModelEditor.cs" t="Include" />
+              <e p="EyeAdaptationModelEditor.cs" t="Include" />
+              <e p="FogModelEditor.cs" t="Include" />
+              <e p="GrainModelEditor.cs" t="Include" />
+              <e p="MotionBlurModelEditor.cs" t="Include" />
+              <e p="ScreenSpaceReflectionModelEditor.cs" t="Include" />
+              <e p="UserLutModelEditor.cs" t="Include" />
+              <e p="VignetteModelEditor.cs" t="Include" />
+            </e>
+            <e p="Monitors" t="Include">
+              <e p="HistogramMonitor.cs" t="Include" />
+              <e p="ParadeMonitor.cs" t="Include" />
+              <e p="VectorscopeMonitor.cs" t="Include" />
+              <e p="WaveformMonitor.cs" t="Include" />
+            </e>
+            <e p="PostProcessingBehaviourEditor.cs" t="Include" />
+            <e p="PostProcessingFactory.cs" t="Include" />
+            <e p="PostProcessingInspector.cs" t="Include" />
+            <e p="PostProcessingModelEditor.cs" t="Include" />
+            <e p="PostProcessingMonitor.cs" t="Include" />
+            <e p="PropertyDrawers" t="Include">
+              <e p="GetSetDrawer.cs" t="Include" />
+              <e p="MinDrawer.cs" t="Include" />
+              <e p="TrackballGroupDrawer.cs" t="Include" />
+            </e>
+            <e p="Utils" t="Include">
+              <e p="CurveEditor.cs" t="Include" />
+              <e p="EditorGUIHelper.cs" t="Include" />
+              <e p="EditorResources.cs" t="Include" />
+              <e p="FxStyles.cs" t="Include" />
+              <e p="ReflectionUtils.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor Resources" t="Include">
+            <e p="Monitors" t="Include">
+              <e p="HistogramCompute.compute" t="Include" />
+              <e p="HistogramRender.shader" t="Include" />
+              <e p="ParadeRender.shader" t="Include" />
+              <e p="VectorscopeCompute.compute" t="Include" />
+              <e p="VectorscopeRender.shader" t="Include" />
+              <e p="WaveformCompute.compute" t="Include" />
+              <e p="WaveformRender.shader" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="CurveBackground.shader" t="Include" />
+              <e p="Trackball.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="Bluenoise64" t="Include">
+              <e p="COPYING.txt" t="Include" />
+              <e p="LICENSE.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="ACES.cginc" t="Include" />
+              <e p="AmbientOcclusion.cginc" t="Include" />
+              <e p="AmbientOcclusion.shader" t="Include" />
+              <e p="Blit.shader" t="Include" />
+              <e p="Bloom.cginc" t="Include" />
+              <e p="Bloom.shader" t="Include" />
+              <e p="BuiltinDebugViews.shader" t="Include" />
+              <e p="ColorGrading.cginc" t="Include" />
+              <e p="Common.cginc" t="Include" />
+              <e p="DepthOfField.cginc" t="Include" />
+              <e p="DepthOfField.shader" t="Include" />
+              <e p="DiskKernels.cginc" t="Include" />
+              <e p="EyeAdaptation.cginc" t="Include" />
+              <e p="EyeAdaptation.shader" t="Include" />
+              <e p="EyeHistogram.compute" t="Include" />
+              <e p="Fog.shader" t="Include" />
+              <e p="FXAA.shader" t="Include" />
+              <e p="FXAA3.cginc" t="Include" />
+              <e p="GrainGen.shader" t="Include" />
+              <e p="LutGen.shader" t="Include" />
+              <e p="MotionBlur.cginc" t="Include" />
+              <e p="MotionBlur.shader" t="Include" />
+              <e p="ScreenSpaceRaytrace.cginc" t="Include" />
+              <e p="ScreenSpaceReflection.shader" t="Include" />
+              <e p="TAA.cginc" t="Include" />
+              <e p="TAA.shader" t="Include" />
+              <e p="Tonemapping.cginc" t="Include" />
+              <e p="Uber.shader" t="Include" />
+              <e p="UberSecondPass.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Runtime" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="GetSetAttribute.cs" t="Include" />
+              <e p="MinAttribute.cs" t="Include" />
+              <e p="TrackballAttribute.cs" t="Include" />
+              <e p="TrackballGroupAttribute.cs" t="Include" />
+            </e>
+            <e p="Components" t="Include">
+              <e p="AmbientOcclusionComponent.cs" t="Include" />
+              <e p="BloomComponent.cs" t="Include" />
+              <e p="BuiltinDebugViewsComponent.cs" t="Include" />
+              <e p="ChromaticAberrationComponent.cs" t="Include" />
+              <e p="ColorGradingComponent.cs" t="Include" />
+              <e p="DepthOfFieldComponent.cs" t="Include" />
+              <e p="DitheringComponent.cs" t="Include" />
+              <e p="EyeAdaptationComponent.cs" t="Include" />
+              <e p="FogComponent.cs" t="Include" />
+              <e p="FxaaComponent.cs" t="Include" />
+              <e p="GrainComponent.cs" t="Include" />
+              <e p="MotionBlurComponent.cs" t="Include" />
+              <e p="ScreenSpaceReflectionComponent.cs" t="Include" />
+              <e p="TaaComponent.cs" t="Include" />
+              <e p="UserLutComponent.cs" t="Include" />
+              <e p="VignetteComponent.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include">
+              <e p="AmbientOcclusionModel.cs" t="Include" />
+              <e p="AntialiasingModel.cs" t="Include" />
+              <e p="BloomModel.cs" t="Include" />
+              <e p="BuiltinDebugViewsModel.cs" t="Include" />
+              <e p="ChromaticAberrationModel.cs" t="Include" />
+              <e p="ColorGradingModel.cs" t="Include" />
+              <e p="DepthOfFieldModel.cs" t="Include" />
+              <e p="DitheringModel.cs" t="Include" />
+              <e p="EyeAdaptationModel.cs" t="Include" />
+              <e p="FogModel.cs" t="Include" />
+              <e p="GrainModel.cs" t="Include" />
+              <e p="MotionBlurModel.cs" t="Include" />
+              <e p="ScreenSpaceReflectionModel.cs" t="Include" />
+              <e p="UserLutModel.cs" t="Include" />
+              <e p="VignetteModel.cs" t="Include" />
+            </e>
+            <e p="PostProcessingBehaviour.cs" t="Include" />
+            <e p="PostProcessingComponent.cs" t="Include" />
+            <e p="PostProcessingContext.cs" t="Include" />
+            <e p="PostProcessingModel.cs" t="Include" />
+            <e p="PostProcessingProfile.cs" t="Include" />
+            <e p="Utils" t="Include">
+              <e p="ColorGradingCurve.cs" t="Include" />
+              <e p="GraphicsUtils.cs" t="Include" />
+              <e p="MaterialFactory.cs" t="Include" />
+              <e p="RenderTextureFactory.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="CustomMotionTexture" t="Include">
+              <e p="ExampleWheelController.cs" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="CustomMotionVectorTexture.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Resources" t="Include">
+          <e p="classicNoise3d.cginc" t="Include" />
+          <e p="FakeVolumetricLightShader.shader" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Base" t="Include">
+            <e p="BaseController.cs" t="Include" />
+            <e p="ControllerInterface.cs" t="Include" />
+            <e p="CrystalController.cs" t="Include" />
+            <e p="GearController.cs" t="Include" />
+            <e p="LanternController.cs" t="Include" />
+            <e p="PedestalBaseController.cs" t="Include" />
+            <e p="PrismChildController.cs" t="Include" />
+            <e p="PrismController.cs" t="Include" />
+            <e p="PrismPlatformController.cs" t="Include" />
+            <e p="StarLightController.cs" t="Include" />
+          </e>
+          <e p="Camera" t="Include">
+            <e p="CameraController.cs" t="Include" />
+          </e>
+          <e p="Diary" t="Include">
+            <e p="DiaryHandler.cs" t="Include" />
+          </e>
+          <e p="Effects" t="Include">
+            <e p="CameraEffectsScript.cs" t="Include" />
+            <e p="LightDimMonster.cs" t="Include" />
+            <e p="LightEffectsScript.cs" t="Include" />
+            <e p="ParticleEffectScript.cs" t="Include" />
+          </e>
+          <e p="FogSpread.cs" t="Include" />
+          <e p="Gate" t="Include">
+            <e p="DoorController.cs" t="Include" />
+          </e>
+          <e p="General" t="Include">
+            <e p="GameManager.cs" t="Include" />
+            <e p="Tweeny.cs" t="Include" />
+          </e>
+          <e p="Interaction" t="Include">
+            <e p="Characters" t="Include">
+              <e p="FirstPersonCharacter" t="Include">
+                <e p="FirstPersonCharacterGuidelines.txt" t="Include" />
+                <e p="Scripts" t="Include">
+                  <e p="FirstPersonController.cs" t="Include" />
+                  <e p="HeadBob.cs" t="Include" />
+                  <e p="MouseLook.cs" t="Include" />
+                  <e p="RigidbodyFirstPersonController.cs" t="Include" />
+                  <e p="SequenceController.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Inventory.cs" t="Include" />
+            <e p="PlayerInteractionScript.cs" t="Include" />
+          </e>
+          <e p="LightRay" t="Include">
+            <e p="LightRay.cs" t="Include" />
+          </e>
+          <e p="Menu" t="Include">
+            <e p="MenuScript.cs" t="Include" />
+          </e>
+          <e p="Monster" t="Include">
+            <e p="MonsterPosition.cs" t="Include" />
+          </e>
+          <e p="Pulse" t="Include">
+            <e p="FakePulse.cs" t="Include" />
+            <e p="PulseReactionScript.cs" t="Include" />
+            <e p="Reaction.cs" t="Include" />
+            <e p="StoneDustReaction.cs" t="Include" />
+            <e p="ViewReaction.cs" t="Include" />
+          </e>
+          <e p="StandardTriplanar.shader" t="Include" />
+          <e p="Utilities.cs" t="Include" />
+          <e p="WordPuzzle" t="Include">
+            <e p="Cube.cs" t="Include" />
+            <e p="StarSignLine.cs" t="Include" />
+            <e p="StarSignLineSystem.cs" t="Include" />
+            <e p="Wall.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Standard Assets" t="Include">
+          <e p="CrossPlatformInput" t="Include">
+            <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AxisTouchButton.cs" t="Include" />
+              <e p="ButtonHandler.cs" t="Include" />
+              <e p="CrossPlatformInputManager.cs" t="Include" />
+              <e p="InputAxisScrollbar.cs" t="Include" />
+              <e p="Joystick.cs" t="Include" />
+              <e p="MobileControlRig.cs" t="Include" />
+              <e p="PlatformSpecific" t="Include">
+                <e p="MobileInput.cs" t="Include" />
+                <e p="StandaloneInput.cs" t="Include" />
+              </e>
+              <e p="TiltInput.cs" t="Include" />
+              <e p="TouchPad.cs" t="Include" />
+              <e p="VirtualInput.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Editor" t="Include">
+            <e p="CrossPlatformInput" t="Include">
+              <e p="CrossPlatformInputInitialize.cs" t="Include" />
+            </e>
+            <e p="ImageEffects" t="Include">
+              <e p="AntialiasingEditor.cs" t="Include" />
+              <e p="BloomAndFlaresEditor.cs" t="Include" />
+              <e p="BloomEditor.cs" t="Include" />
+              <e p="CameraMotionBlurEditor.cs" t="Include" />
+              <e p="ColorCorrectionCurvesEditor.cs" t="Include" />
+              <e p="ColorCorrectionLookupEditor.cs" t="Include" />
+              <e p="CreaseShadingEditor.cs" t="Include" />
+              <e p="DepthOfFieldDeprecatedEditor.cs" t="Include" />
+              <e p="DepthOfFieldEditor.cs" t="Include" />
+              <e p="EdgeDetectionEditor.cs" t="Include" />
+              <e p="NoiseAndGrainEditor.cs" t="Include" />
+              <e p="SunShaftsEditor.cs" t="Include" />
+              <e p="TonemappingEditor.cs" t="Include" />
+              <e p="VignetteAndChromaticAberrationEditor.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Effects" t="Include">
+            <e p="ImageEffects" t="Include">
+              <e p="Readme.txt" t="Include" />
+              <e p="Scripts" t="Include">
+                <e p="Antialiasing.cs" t="Include" />
+                <e p="Bloom.cs" t="Include" />
+                <e p="BloomAndFlares.cs" t="Include" />
+                <e p="BloomOptimized.cs" t="Include" />
+                <e p="Blur.cs" t="Include" />
+                <e p="BlurOptimized.cs" t="Include" />
+                <e p="CameraMotionBlur.cs" t="Include" />
+                <e p="ColorCorrectionCurves.cs" t="Include" />
+                <e p="ColorCorrectionLookup.cs" t="Include" />
+                <e p="ColorCorrectionRamp.cs" t="Include" />
+                <e p="ContrastEnhance.cs" t="Include" />
+                <e p="ContrastStretch.cs" t="Include" />
+                <e p="CreaseShading.cs" t="Include" />
+                <e p="DepthOfField.cs" t="Include" />
+                <e p="DepthOfFieldDeprecated.cs" t="Include" />
+                <e p="EdgeDetection.cs" t="Include" />
+                <e p="Fisheye.cs" t="Include" />
+                <e p="GlobalFog.cs" t="Include" />
+                <e p="Grayscale.cs" t="Include" />
+                <e p="ImageEffectBase.cs" t="Include" />
+                <e p="ImageEffects.cs" t="Include" />
+                <e p="MotionBlur.cs" t="Include" />
+                <e p="NoiseAndGrain.cs" t="Include" />
+                <e p="NoiseAndScratches.cs" t="Include" />
+                <e p="PostEffectsBase.cs" t="Include" />
+                <e p="PostEffectsHelper.cs" t="Include" />
+                <e p="Quads.cs" t="Include" />
+                <e p="ScreenOverlay.cs" t="Include" />
+                <e p="ScreenSpaceAmbientObscurance.cs" t="Include" />
+                <e p="ScreenSpaceAmbientOcclusion.cs" t="Include" />
+                <e p="SepiaTone.cs" t="Include" />
+                <e p="SunShafts.cs" t="Include" />
+                <e p="TiltShift.cs" t="Include" />
+                <e p="Tonemapping.cs" t="Include" />
+                <e p="Triangles.cs" t="Include" />
+                <e p="Twirl.cs" t="Include" />
+                <e p="VignetteAndChromaticAberration.cs" t="Include" />
+                <e p="Vortex.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="_Antialiasing" t="Include">
+                  <e p="DLAA.shader" t="Include" />
+                  <e p="FXAA2.shader" t="Include" />
+                  <e p="FXAA3Console.shader" t="Include" />
+                  <e p="FXAAPreset2.shader" t="Include" />
+                  <e p="FXAAPreset3.shader" t="Include" />
+                  <e p="NFAA.shader" t="Include" />
+                  <e p="SSAA.shader" t="Include" />
+                </e>
+                <e p="_BloomAndFlares" t="Include">
+                  <e p="Blend.shader" t="Include" />
+                  <e p="BlendForBloom.shader" t="Include" />
+                  <e p="BlendOneOne.shader" t="Include" />
+                  <e p="BlurAndFlares.shader" t="Include" />
+                  <e p="BrightPassFilter.shader" t="Include" />
+                  <e p="BrightPassFilter2.shader" t="Include" />
+                  <e p="LensFlareCreate.shader" t="Include" />
+                  <e p="MobileBloom.shader" t="Include" />
+                  <e p="MobileBlur.shader" t="Include" />
+                  <e p="MultiPassHollywoodFlares.shader" t="Include" />
+                  <e p="SeparableBlurPlus.shader" t="Include" />
+                  <e p="VignetteShader.shader" t="Include" />
+                </e>
+                <e p="_DepthOfField" t="Include">
+                  <e p="Bokeh34.shader" t="Include" />
+                  <e p="DepthOfField34.shader" t="Include" />
+                  <e p="DepthOfFieldDX11.shader" t="Include" />
+                  <e p="DepthOfFieldScatter.shader" t="Include" />
+                  <e p="SeparableBlur.shader" t="Include" />
+                  <e p="SeparableWeightedBlurDof34.shader" t="Include" />
+                  <e p="TiltShiftHdrLensBlur.shader" t="Include" />
+                </e>
+                <e p="BlendModesOverlay.shader" t="Include" />
+                <e p="BlurEffectConeTaps.shader" t="Include" />
+                <e p="CameraMotionBlur.shader" t="Include" />
+                <e p="CameraMotionBlurDX11.shader" t="Include" />
+                <e p="ChromaticAberrationShader.shader" t="Include" />
+                <e p="ColorCorrection3DLut.shader" t="Include" />
+                <e p="ColorCorrectionCurves.shader" t="Include" />
+                <e p="ColorCorrectionCurvesSimple.shader" t="Include" />
+                <e p="ColorCorrectionEffect.shader" t="Include" />
+                <e p="ColorCorrectionSelective.shader" t="Include" />
+                <e p="Contrast Stretch" t="Include">
+                  <e p="Adaptation.shader" t="Include" />
+                  <e p="Apply.shader" t="Include" />
+                  <e p="Luminance.shader" t="Include" />
+                  <e p="MinMaxReduction.shader" t="Include" />
+                </e>
+                <e p="ContrastComposite.shader" t="Include" />
+                <e p="ConvertDepth.shader" t="Include" />
+                <e p="CreaseApply.shader" t="Include" />
+                <e p="EdgeDetectNormals.shader" t="Include" />
+                <e p="FisheyeShader.shader" t="Include" />
+                <e p="frag_ao.cginc" t="Include" />
+                <e p="GlobalFog.shader" t="Include" />
+                <e p="GrayscaleEffect.shader" t="Include" />
+                <e p="MotionBlur.shader" t="Include" />
+                <e p="MotionBlurClear.shader" t="Include" />
+                <e p="NoiseAndGrain.shader" t="Include" />
+                <e p="NoiseAndGrainDX11.shader" t="Include" />
+                <e p="NoiseEffectShaderRGB.shader" t="Include" />
+                <e p="NoiseEffectShaderYUV.shader" t="Include" />
+                <e p="PrepareSunShaftsBlur.shader" t="Include" />
+                <e p="RadialBlur.shader" t="Include" />
+                <e p="ScreenSpaceAmbientObscurance.shader" t="Include" />
+                <e p="ScreenSpaceRaytrace.cginc" t="Include" />
+                <e p="SepiaToneEffect.shader" t="Include" />
+                <e p="ShowAlphaChannel.shader" t="Include" />
+                <e p="SimpleClear.shader" t="Include" />
+                <e p="SSAOShader.shader" t="Include" />
+                <e p="SunShaftsComposite.shader" t="Include" />
+                <e p="Tonemapper.shader" t="Include" />
+                <e p="TwirlEffect.shader" t="Include" />
+                <e p="VignettingShader.shader" t="Include" />
+                <e p="VortexEffect.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Fonts" t="Include">
+            <e p="OpenSans" t="Include">
+              <e p="License!.txt" t="Include" />
+            </e>
+          </e>
+          <e p="ParticleSystems" t="Include">
+            <e p="ParticleSystemsGuidelines.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="AfterburnerPhysicsForce.cs" t="Include" />
+              <e p="ExplosionFireAndDebris.cs" t="Include" />
+              <e p="ExplosionPhysicsForce.cs" t="Include" />
+              <e p="Explosive.cs" t="Include" />
+              <e p="ExtinguishableParticleSystem.cs" t="Include" />
+              <e p="FireLight.cs" t="Include" />
+              <e p="Hose.cs" t="Include" />
+              <e p="ParticleSystemMultiplier.cs" t="Include" />
+              <e p="SmokeParticles.cs" t="Include" />
+              <e p="WaterHoseParticles.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="PriorityParticleAdd.shader" t="Include" />
+              <e p="PriorityParticleAddSoft.shader" t="Include" />
+              <e p="PriorityParticleAlpha.shader" t="Include" />
+            </e>
+          </e>
+          <e p="Utility" t="Include">
+            <e p="ActivateTrigger.cs" t="Include" />
+            <e p="AlphaButtonClickMask.cs" t="Include" />
+            <e p="AutoMobileShaderSwitch.cs" t="Include" />
+            <e p="AutoMoveAndRotate.cs" t="Include" />
+            <e p="CameraRefocus.cs" t="Include" />
+            <e p="CurveControlledBob.cs" t="Include" />
+            <e p="DragRigidbody.cs" t="Include" />
+            <e p="DynamicShadowSettings.cs" t="Include" />
+            <e p="EventSystemChecker.cs" t="Include" />
+            <e p="FollowTarget.cs" t="Include" />
+            <e p="ForcedReset.cs" t="Include" />
+            <e p="FOVKick.cs" t="Include" />
+            <e p="FPSCounter.cs" t="Include" />
+            <e p="LerpControlledBob.cs" t="Include" />
+            <e p="ObjectResetter.cs" t="Include" />
+            <e p="ParticleSystemDestroyer.cs" t="Include" />
+            <e p="PlatformSpecificContent.cs" t="Include" />
+            <e p="SimpleActivatorMenu.cs" t="Include" />
+            <e p="SimpleMouseRotator.cs" t="Include" />
+            <e p="SmoothFollow.cs" t="Include" />
+            <e p="TimedObjectActivator.cs" t="Include" />
+            <e p="TimedObjectDestructor.cs" t="Include" />
+            <e p="WaypointCircuit.cs" t="Include" />
+            <e p="WaypointProgressTracker.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Volumetric Lights" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="VolumetricLight.cs" t="Include" />
+            <e p="VolumetricLightRenderer.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="BilateralBlur.shader" t="Include" />
+            <e p="BlitAdd.shader" t="Include" />
+            <e p="VolumetricLight.shader" t="Include" />
+          </e>
+        </e>
+        <e p="VolumetricFog" t="Include">
+          <e p="Demos" t="Include">
+            <e p="Demo10_MultipleFogAreas" t="Include">
+              <e p="DemoMultipleFogAreas.cs" t="Include" />
+            </e>
+            <e p="Demo11_DepthBlur" t="Include">
+              <e p="DemoDepthBlur.cs" t="Include" />
+            </e>
+            <e p="Demo14_XY_Plane" t="Include">
+              <e p="DemoXYLights.cs" t="Include" />
+            </e>
+            <e p="Demo16_MountainFlight" t="Include">
+              <e p="CameraMove.cs" t="Include" />
+              <e p="README FIRST.txt" t="Include" />
+            </e>
+            <e p="Demo17_MapMagic" t="Include">
+              <e p="README FIRST.txt" t="Include" />
+            </e>
+            <e p="Demo18_MultiCamTest" t="Include">
+              <e p="README FIRST.txt" t="Include" />
+              <e p="test.cs" t="Include" />
+            </e>
+            <e p="Demo1_Walk" t="Include">
+              <e p="DemoWalk.cs" t="Include" />
+            </e>
+            <e p="Demo2_FogOfWar" t="Include">
+              <e p="DemoFogOfWar.cs" t="Include" />
+            </e>
+            <e p="Demo4_PointLight" t="Include">
+              <e p="DemoPointLight.cs" t="Include" />
+            </e>
+            <e p="Demo5_Shafts" t="Include">
+              <e p="DemoShafts.cs" t="Include" />
+            </e>
+            <e p="Demo6_HighClouds" t="Include">
+              <e p="FreeCameraMove.cs" t="Include" />
+            </e>
+            <e p="Demo8_BoxedArea" t="Include">
+              <e p="DemoBoxedArea.cs" t="Include" />
+            </e>
+            <e p="Demo9_SurroundingFog" t="Include">
+              <e p="DemoSurroundingFog.cs" t="Include" />
+            </e>
+            <e p="DemoSources" t="Include">
+              <e p="Skybox" t="Include">
+                <e p="README_SKYBOX.txt" t="Include" />
+              </e>
+              <e p="Textures" t="Include">
+                <e p="Elephant_Credits.txt" t="Include" />
+              </e>
+            </e>
+            <e p="How to install demo scenes.txt" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="FogVolumeExtensions.cs" t="Include" />
+            <e p="VolumetricFogAbout.cs" t="Include" />
+            <e p="VolumetricFogEditorStyles.cs" t="Include" />
+            <e p="VolumetricFogGaiaExtension.cs" t="Include" />
+            <e p="VolumetricFogInspector.cs" t="Include" />
+            <e p="VolumetricFogProfileInspector.cs" t="Include" />
+            <e p="VolumetricFogShaderOptions.cs" t="Include" />
+            <e p="VolumetricFogSInfo.cs" t="Include" />
+          </e>
+          <e p="Extra" t="Include">
+            <e p="DynamicFog" t="Include">
+              <e p="Demos" t="Include">
+                <e p="How to install demo scenes.txt" t="Include" />
+              </e>
+              <e p="Editor" t="Include">
+                <e p="DynamicFogEditor.cs" t="Include" />
+                <e p="DynamicFogEditorStyles.cs" t="Include" />
+                <e p="DynamicFogExclusiveEditor.cs" t="Include" />
+                <e p="DynamicFogGaiaExtension.cs" t="Include" />
+                <e p="DynamicFogManagerEditor.cs" t="Include" />
+                <e p="DynamicFogProfileEditor.cs" t="Include" />
+                <e p="FogVolumeExtensions.cs" t="Include" />
+              </e>
+              <e p="PostProcessingSupport" t="Include">
+                <e p="README FIRST!.txt" t="Include" />
+              </e>
+              <e p="Readme.txt" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="DFGBasic.shader" t="Include" />
+                  <e p="DFGDesktop.shader" t="Include" />
+                  <e p="DFGDesktopPlus.shader" t="Include" />
+                  <e p="DFGDesktopPlusOrthogonal.shader" t="Include" />
+                  <e p="DFGOnlyFog.shader" t="Include" />
+                  <e p="DFGOrthogonal.shader" t="Include" />
+                  <e p="DFGSimple.shader" t="Include" />
+                  <e p="DFGWithSky.shader" t="Include" />
+                  <e p="DFMLambert.shader" t="Include" />
+                  <e p="DFMLambertSolidColor.shader" t="Include" />
+                  <e p="DFMStandardShader.shader" t="Include" />
+                  <e p="DFMStandardShaderNormal.shader" t="Include" />
+                  <e p="DFMStandardShaderNormalOcclusion.shader" t="Include" />
+                  <e p="DFMStandardShaderNormalOcclusionIntegrated.shader" t="Include" />
+                  <e p="DFMStandardShaderSolid.shader" t="Include" />
+                  <e p="DFMSurfaceShaderCommon.cginc" t="Include" />
+                  <e p="DFMUnlit.shader" t="Include" />
+                  <e p="DFMUnlitSolidColor.shader" t="Include" />
+                  <e p="DFMVertexFragmentShaderCommon.cginc" t="Include" />
+                  <e p="DFOBasic.shader" t="Include" />
+                  <e p="DFODesktop.shader" t="Include" />
+                  <e p="DFODesktopPlus.shader" t="Include" />
+                  <e p="DFODesktopPlusOrthogonal.shader" t="Include" />
+                  <e p="DFOOnlyFog.shader" t="Include" />
+                  <e p="DFOOrthogonal.shader" t="Include" />
+                  <e p="DFOSimple.shader" t="Include" />
+                  <e p="DFOWithSky.shader" t="Include" />
+                  <e p="DFRLambert.shader" t="Include" />
+                  <e p="DFRLambertSolidColor.shader" t="Include" />
+                  <e p="DFRStandardShader.shader" t="Include" />
+                  <e p="DFRStandardShaderSolid.shader" t="Include" />
+                  <e p="DFRUnlit.shader" t="Include" />
+                  <e p="DFRUnlitSolidColor.shader" t="Include" />
+                  <e p="DynamicFogCommon.cginc" t="Include" />
+                  <e p="DynamicFogDither.cginc" t="Include" />
+                  <e p="FogOfWar.shader" t="Include" />
+                </e>
+              </e>
+              <e p="Scripts" t="Include">
+                <e p="DynamicFog.cs" t="Include" />
+                <e p="DynamicFogBase.cs" t="Include" />
+                <e p="DynamicFogExclusive.cs" t="Include" />
+                <e p="DynamicFogManager.cs" t="Include" />
+                <e p="DynamicFogOfWar.cs" t="Include" />
+                <e p="DynamicFogProfile.cs" t="Include" />
+                <e p="FogVolume.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Readme.txt" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Extra" t="Include">
+              <e p="Glass" t="Include">
+                <e p="GlassCustom.shader" t="Include" />
+              </e>
+              <e p="Sprites" t="Include">
+                <e p="Shaders" t="Include">
+                  <e p="SpriteFogCommon.cginc" t="Include" />
+                  <e p="SpriteFogDiffuse.shader" t="Include" />
+                  <e p="SpriteFogDiffuseInstancing.shader" t="Include" />
+                  <e p="SpriteFogUnlit.shader" t="Include" />
+                  <e p="SpriteFogUnlitInstancing.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Blur.shader" t="Include" />
+              <e p="ChaosLerp.shader" t="Include" />
+              <e p="CopyDepth.shader" t="Include" />
+              <e p="CopyDepthAndTrans.shader" t="Include" />
+              <e p="CopyOpaque.cginc" t="Include" />
+              <e p="CopyOpaque.shader" t="Include" />
+              <e p="CopySunDepth.shader" t="Include" />
+              <e p="MaskWrite.shader" t="Include" />
+              <e p="VolumetricFog.cginc" t="Include" />
+              <e p="VolumetricFog.shader" t="Include" />
+              <e p="VolumetricFogOptions.cginc" t="Include" />
+              <e p="VolumetricFogOverlay.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="FogAreaCullingManager.cs" t="Include" />
+            <e p="FogVolume.cs" t="Include" />
+            <e p="IVolumetricFogRenderComponent.cs" t="Include" />
+            <e p="VolumetricFog.cs" t="Include" />
+            <e p="VolumetricFogFoW.cs" t="Include" />
+            <e p="VolumetricFogMaterialIntegration.cs" t="Include" />
+            <e p="VolumetricFogPosT.cs" t="Include" />
+            <e p="VolumetricFogPreT.cs" t="Include" />
+            <e p="VolumetricFogProfile.cs" t="Include" />
+            <e p="VolumetricFogStaticParams.cs" t="Include" />
+          </e>
+        </e>
+        <e p="XInputDotNet" t="Include">
+          <e p="Docs.txt" t="Include" />
+          <e p="MITLicense.txt" t="Include" />
+        </e>
+      </e>
+      <e p="EscapeTheCave.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>

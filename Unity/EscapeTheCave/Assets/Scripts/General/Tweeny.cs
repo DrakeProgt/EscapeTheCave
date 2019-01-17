@@ -84,7 +84,8 @@ public class Tweeny
         isFinished();
         if (finished) return targetVal;
 
-        return calculateNextValue(startVal, targetVal);
+        float progress = calculateNextValue(0.0f, 1.0f);
+        return (startVal + (progress * (targetVal - startVal)));
     }
 
     public Vector3 nextVector()

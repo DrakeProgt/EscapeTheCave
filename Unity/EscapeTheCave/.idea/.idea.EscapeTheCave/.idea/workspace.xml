@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b5591f31-f535-4b54-bd18-94721fb54989" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FogSpread.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FogSpread.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F718FBF7-147E-4022-82FD-ACF37BDD8584/f3/83806ebb/Transform.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11490">
+              <caret line="771" column="16" selection-start-line="771" selection-start-column="16" selection-end-line="771" selection-end-column="16" />
+              <folding>
+                <marker date="1547416618515" expanded="true" signature="0:311" ph="/* Decompiled with JetBrains decompiler ... */" />
+                <marker date="1547416618515" expanded="true" signature="499:30612" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="504:598" ph="///   &lt;para&gt;Position, rotation and scale of an object.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="853:30610" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="883:895" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="901:1002" ph="///   &lt;para&gt;The position of the transform in world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="1030:1227" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1046:1148" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1158:1221" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1233:1348" ph="///   &lt;para&gt;Position of the transform relative to the parent transform.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="1381:1588" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1397:1504" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1514:1582" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1651:1757" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1832:1903" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="1995:2057" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2063:2159" ph="///   &lt;para&gt;The rotation as Euler angles in degrees.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="2190:2345" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2206:2264" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2274:2339" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2351:2491" ph="///   &lt;para&gt;The rotation as Euler angles in degrees relative to the parent transform's rotation.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="2527:2692" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2543:2606" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2616:2686" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2698:2799" ph="///   &lt;para&gt;The red axis of the transform in world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="2824:3007" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2840:2902" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="2912:3001" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3013:3116" ph="///   &lt;para&gt;The green axis of the transform in world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="3138:3315" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3154:3213" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3223:3309" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3321:3423" ph="///   &lt;para&gt;The blue axis of the transform in world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="3450:3618" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3466:3530" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3540:3612" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3624:3748" ph="///   &lt;para&gt;The rotation of the transform in world space stored as a Quaternion.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="3779:3979" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3795:3900" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3910:3973" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="3985:4115" ph="///   &lt;para&gt;The rotation of the transform relative to the parent transform's rotation.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="4151:4361" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="4167:4277" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="4287:4355" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="4443:4617" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="4459:4539" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="4549:4611" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5013:5119" ph="///   &lt;para&gt;The scale of the transform relative to the parent.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="5149:5350" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5165:5269" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5279:5344" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5356:5440" ph="///   &lt;para&gt;The parent of the transform.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="5468:5980" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5484:5536" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="5546:5974" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="6019:6147" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="6035:6084" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="6094:6141" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="6245:6656" ph="///   &lt;para&gt;Set the parent of the transform.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="6695:6738" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="6744:7155" ph="///   &lt;para&gt;Set the parent of the transform.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="7343:7476" ph="///   &lt;para&gt;Matrix that transforms a point from world space into local space (Read Only).&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="7516:7652" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="7532:7646" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="7658:7791" ph="///   &lt;para&gt;Matrix that transforms a point from local space into world space (Read Only).&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="7831:7967" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="7847:7961" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="7973:8179" ph="///   &lt;para&gt;Sets the world space position and rotation of the Transform component.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="8257:8341" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="8347:8553" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="8647:8808" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="8814:9020" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="9067:9126" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="9132:9415" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="9515:9583" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="9589:9872" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="9925:9993" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="9999:10205" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="10274:10444" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="10450:10733" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="10808:10876" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="10882:11237" ph="///   &lt;para&gt;Applies a rotation of eulerAngles.z degrees around the z axis, eulerAngles.x degrees around the x axi ... " />
+                <marker date="1547416618515" expanded="true" signature="11323:11591" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="11631:11682" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="11688:12188" ph="///   &lt;para&gt;Applies a rotation of zAngle degrees around the z axis, xAngle degrees around the x axis, and yAngle  ... " />
+                <marker date="1547416618515" expanded="true" signature="12300:12380" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="12446:12526" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="12628:12699" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="12705:13016" ph="///   &lt;para&gt;Rotates the object around axis by angle degrees.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="13113:13357" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="13408:13464" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="13470:13729" ph="///   &lt;para&gt;Rotates the transform about axis passing through point in world coordinates by angle degrees.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="13800:14044" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="14050:14326" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at target's current position.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="14413:14523" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="14529:14805" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at target's current position.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="14846:14959" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="14965:15229" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at worldPosition.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="15321:15385" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="15391:15655" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at worldPosition.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="15701:15768" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="15904:15985" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="15991:16141" ph="///   &lt;para&gt;Transforms direction from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="16198:16311" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="16317:16533" ph="///   &lt;para&gt;Transforms direction x, y, z from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="16598:16670" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="16676:16874" ph="///   &lt;para&gt;Transforms a direction from world space to local space. The opposite of Transform.TransformDirection. ... " />
+                <marker date="1547416618515" expanded="true" signature="16938:17058" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="17064:17330" ph="///   &lt;para&gt;Transforms the direction x, y, z from world space to local space. The opposite of Transform.Transform ... " />
+                <marker date="1547416618515" expanded="true" signature="17402:17481" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="17487:17631" ph="///   &lt;para&gt;Transforms vector from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="17682:17789" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="17795:18008" ph="///   &lt;para&gt;Transforms vector x, y, z from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="18070:18139" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="18145:18334" ph="///   &lt;para&gt;Transforms a vector from world space to local space. The opposite of Transform.TransformVector.&lt;/para ... " />
+                <marker date="1547416618515" expanded="true" signature="18392:18506" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="18512:18772" ph="///   &lt;para&gt;Transforms the vector x, y, z from world space to local space. The opposite of Transform.TransformVec ... " />
+                <marker date="1547416618515" expanded="true" signature="18841:18917" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="18923:19071" ph="///   &lt;para&gt;Transforms position from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="19123:19231" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="19237:19456" ph="///   &lt;para&gt;Transforms the position x, y, z from local space to world space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="19517:19585" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="19591:19739" ph="///   &lt;para&gt;Transforms position from world space to local space.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="19798:19913" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="19919:20180" ph="///   &lt;para&gt;Transforms the position x, y, z from world space to local space. The opposite of Transform.TransformP ... " />
+                <marker date="1547416618515" expanded="true" signature="20248:20323" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="20329:20432" ph="///   &lt;para&gt;Returns the topmost transform in the hierarchy.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="20458:20527" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="20474:20521" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="20623:20720" ph="///   &lt;para&gt;The number of children the Transform has.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="20847:20926" ph="///   &lt;para&gt;Unparents all children.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="21083:21199" ph="///   &lt;para&gt;Move the transform to the start of the local transform list.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="21298:21412" ph="///   &lt;para&gt;Move the transform to the end of the local transform list.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="21510:21639" ph="///   &lt;para&gt;Sets the sibling index.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="21745:21824" ph="///   &lt;para&gt;Gets the sibling index.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="22152:22420" ph="///   &lt;para&gt;Finds a child by n and returns it.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="22456:22623" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="22773:22872" ph="///   &lt;para&gt;The global scale of the object (Read Only).&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="22902:23065" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="22955:23059" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="23071:23201" ph="///   &lt;para&gt;Is this transform a child of parent?&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="23396:23526" ph="///   &lt;para&gt;Has the transform changed since the last time the flag was set to 'false'?&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="23876:23915" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="23955:24026" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="24032:24161" ph="///   &lt;para&gt;&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="24273:24336" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="24454:24522" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="24528:24824" ph="///   &lt;para&gt;Returns a transform child by index.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="25238:25361" ph="///   &lt;para&gt;The transform capacity of the transform's hierarchy data structure.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="25394:25562" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="25410:25479" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="25489:25556" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="25924:26049" ph="///   &lt;para&gt;The number of transforms in the transform's hierarchy data structure.&lt;/para&gt; ... " />
+                <marker date="1547416618515" expanded="true" signature="30114:30606" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="30232:30276" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="30305:30419" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="30325:30411" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="30449:30525" ph="{...}" />
+                <marker date="1547416618515" expanded="true" signature="30552:30600" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/FogSpread.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+              <folding>
+                <marker date="1547569649149" expanded="false" signature="6:106" ph="..." />
+                <marker date="1547569649149" expanded="true" signature="146:2380" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="614:1370" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="1413:1532" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="1586:2378" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="1626:1645" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="1675:1915" ph="{...}" />
+                <marker date="1547569649149" expanded="true" signature="1965:2372" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/GameManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+              <folding>
+                <marker date="1547490039124" expanded="false" signature="6:78" ph="..." />
+                <marker date="1547490039124" expanded="true" signature="111:1284" ph="{...}" />
+                <marker date="1547490039124" expanded="true" signature="632:800" ph="{...}" />
+                <marker date="1547490039124" expanded="true" signature="843:1282" ph="{...}" />
+                <marker date="1547490039124" expanded="true" signature="861:1276" ph="{...}" />
+                <marker date="1547490039124" expanded="true" signature="968:1094" ph="{...}" />
+                <marker date="1547490039124" expanded="true" signature="1111:1234" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <marker date="1547750390489" expanded="false" signature="6:92" ph="..." />
+                <marker date="1547750390489" expanded="true" signature="128:3392" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="762:1811" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="824:896" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="1083:1634" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="1168:1294" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="1299:1420" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="1838:2435" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="1874:2253" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2114:2208" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2331:2411" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2478:2531" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2562:2908" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2614:2879" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2670:2750" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2953:3219" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="2983:3031" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="3036:3213" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="3122:3203" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="3255:3385" ph="{...}" />
+                <marker date="1547750390489" expanded="true" signature="3312:3357" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/PedestalBaseController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+              <folding>
+                <marker date="1547490038688" expanded="false" signature="6:78" ph="..." />
+                <marker date="1547490038688" expanded="true" signature="132:1146" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="326:395" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="450:1144" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="496:536" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="563:903" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="635:893" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="802:879" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="932:1138" ph="{...}" />
+                <marker date="1547490038688" expanded="true" signature="1058:1128" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="41" column="24" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="24" />
+              <folding>
+                <marker date="1547565634435" expanded="false" signature="6:111" ph="..." />
+                <marker date="1547565634435" expanded="true" signature="192:2858" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="629:778" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="872:1062" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1117:1486" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1156:1480" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1531:1636" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1564:1626" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1661:1726" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1761:1960" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1880:1929" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="1990:2204" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="2237:2446" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="2508:2856" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="2541:2850" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="2885:3332" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="2892:3009" ph="/* http://gizma.com/easing ... */" />
+                <marker date="1547565634435" expanded="true" signature="3076:3118" ph="{...}" />
+                <marker date="1547565634435" expanded="true" signature="3193:3330" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/PlayerInteractionScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="23" column="40" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="40" />
+              <folding>
+                <marker date="1547490039416" expanded="false" signature="6:78" ph="..." />
+                <marker date="1547490039416" expanded="true" signature="132:5900" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="508:671" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="717:1054" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="1124:3203" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="1807:3082" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="1986:2077" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="2128:3043" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="3095:3184" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="3254:4037" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="3381:4031" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="3783:3878" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="4093:4650" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="4143:4644" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="4749:5073" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="4841:4996" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="5169:5521" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="5261:5416" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="5580:5654" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="5680:5898" ph="{...}" />
+                <marker date="1547490039416" expanded="true" signature="5766:5892" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>isWordPuzzleSolved</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="unity_master" />
+      </map>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F718FBF7-147E-4022-82FD-ACF37BDD8584/f3/83806ebb/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Diary/DiaryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Cube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FogSpread.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Base/PedestalBaseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/PlayerInteractionScript.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/Animator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/StarSignLineSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/StarSignLine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Base/BaseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Base/GearController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Base/PrismPlatformController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Interaction/PlayerInteractionScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Base/PedestalBaseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FogSpread.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Cube.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="riderModule/invalid/Default Android Facet" />
+    </ignored-facets>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1866" />
+    <option name="y" value="-22" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Base" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="General" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="WordPuzzle" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ShaderFun/ShaderFun" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b5591f31-f535-4b54-bd18-94721fb54989" name="Default Changelist" comment="" />
+      <created>1545311859394</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1545311859394</updated>
+      <workItem from="1545311862533" duration="6905000" />
+      <workItem from="1545397942270" duration="12514000" />
+      <workItem from="1546857794193" duration="562000" />
+      <workItem from="1546859190206" duration="3144000" />
+      <workItem from="1547401495980" duration="1829000" />
+      <workItem from="1547404147801" duration="107000" />
+      <workItem from="1547405581162" duration="1378000" />
+      <workItem from="1547406999326" duration="1422000" />
+      <workItem from="1547408755589" duration="9189000" />
+      <workItem from="1547458863951" duration="8527000" />
+      <workItem from="1547560168401" duration="8450000" />
+      <workItem from="1547746533619" duration="1415000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix resize of world and clean up scene">
+      <created>1545313650426</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545313650427</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add starlight for wordpuzzle">
+      <created>1545410199297</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545410199297</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add monster">
+      <created>1546861304627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1546861304627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="try out android export">
+      <created>1546865494893</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546865494893</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add volumetricfog asset files&#10;fix some of LightPuzzle issues">
+      <created>1547461032205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547461032205</updated>
+    </task>
+    <task id="LOCAL-00006" summary="correct all models&#10;add cave 2 preview">
+      <created>1547466235343</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547466235343</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add ground fog initial">
+      <created>1547473686470</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547473686470</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add ground fog initial">
+      <created>1547475162134</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1547475162134</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="55442000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Captures" order="5" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Performance Profiler" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159913" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="NuGet" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Logcat" order="13" />
+      <window_info anchor="bottom" id="Unit Tests" order="14" />
+      <window_info anchor="bottom" id="Database Changes" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="16" sideWeight="0.49840087" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Unity" order="17" />
+      <window_info anchor="bottom" id="Messages" order="18" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="6" />
+      <window_info anchor="right" id="Errors In Solution" order="7" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="unity_master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="unity_master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix resize of world and clean up scene" />
+    <MESSAGE value="add starlight for wordpuzzle" />
+    <MESSAGE value="add monster" />
+    <MESSAGE value="try out android export" />
+    <MESSAGE value="add volumetricfog asset files&#10;fix some of LightPuzzle issues" />
+    <MESSAGE value="correct all models&#10;add cave 2 preview" />
+    <MESSAGE value="add ground fog initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ground fog initial" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pulse/FakePulse.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/CrystalController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <marker date="1544124155453" expanded="false" signature="6:78" ph="..." />
+            <marker date="1544124155453" expanded="true" signature="127:391" ph="{...}" />
+            <marker date="1544124155453" expanded="true" signature="181:186" ph="{...}" />
+            <marker date="1544124155453" expanded="true" signature="241:246" ph="{...}" />
+            <marker date="1544124155453" expanded="true" signature="277:389" ph="{...}" />
+            <marker date="1544124155453" expanded="true" signature="320:386" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightRay/LightRay.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/StarSignLine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/StarSignLineSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="76" column="25" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Inventory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/BaseController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/PrismPlatformController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/GearController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/PrismController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/StarLightController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Utilities.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+          <folding>
+            <marker date="1547490039453" expanded="false" signature="6:154" ph="..." />
+            <marker date="1547490039453" expanded="true" signature="180:2748" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="216:2746" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="231:862" ph="/// Normalize an input value.  ... " />
+            <marker date="1547490039453" expanded="true" signature="972:1321" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="995:1171" ph="/* pulse (input value) for example is between 40 (inLower) and 200 (inUpper) ... */" />
+            <marker date="1547490039453" expanded="true" signature="1331:1496" ph="/// Return -1 when the target direction is left, +1 when it is right and 0 if the direction is straight ahead or  ... " />
+            <marker date="1547490039453" expanded="true" signature="1582:2046" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="1822:1877" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="1908:1964" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="1981:2036" ph="{...}" />
+            <marker date="1547490039453" expanded="true" signature="2056:2405" ph="/// Let the XBox Controller vibrate. ... " />
+            <marker date="1547490039453" expanded="true" signature="2518:2740" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Diary/DiaryHandler.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="125" column="12" lean-forward="true" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+          <folding>
+            <marker date="1547490039104" expanded="false" signature="6:92" ph="..." />
+            <marker date="1547490039104" expanded="true" signature="135:7190" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="1139:1886" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="1802:1880" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="1941:6342" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="1964:3428" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="2024:2485" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="2187:2304" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="2313:2346" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="2591:2960" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="3055:3420" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="3451:6339" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="3471:4259" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="3838:4074" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="4182:4254" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="4279:5160" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="4627:4729" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="4832:4947" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5055:5155" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5186:5688" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5280:5438" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5529:5683" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5718:6335" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="5808:5997" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="6135:6330" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="6394:6628" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="6660:6846" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="6879:7066" ph="{...}" />
+            <marker date="1547490039104" expanded="true" signature="7119:7188" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F718FBF7-147E-4022-82FD-ACF37BDD8584/f3/83806ebb/Transform.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11490">
+          <caret line="771" column="16" selection-start-line="771" selection-start-column="16" selection-end-line="771" selection-end-column="16" />
+          <folding>
+            <marker date="1547416618515" expanded="true" signature="0:311" ph="/* Decompiled with JetBrains decompiler ... */" />
+            <marker date="1547416618515" expanded="true" signature="499:30612" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="504:598" ph="///   &lt;para&gt;Position, rotation and scale of an object.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="853:30610" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="883:895" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="901:1002" ph="///   &lt;para&gt;The position of the transform in world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="1030:1227" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1046:1148" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1158:1221" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1233:1348" ph="///   &lt;para&gt;Position of the transform relative to the parent transform.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="1381:1588" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1397:1504" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1514:1582" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1651:1757" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1832:1903" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="1995:2057" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2063:2159" ph="///   &lt;para&gt;The rotation as Euler angles in degrees.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="2190:2345" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2206:2264" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2274:2339" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2351:2491" ph="///   &lt;para&gt;The rotation as Euler angles in degrees relative to the parent transform's rotation.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="2527:2692" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2543:2606" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2616:2686" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2698:2799" ph="///   &lt;para&gt;The red axis of the transform in world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="2824:3007" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2840:2902" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="2912:3001" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3013:3116" ph="///   &lt;para&gt;The green axis of the transform in world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="3138:3315" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3154:3213" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3223:3309" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3321:3423" ph="///   &lt;para&gt;The blue axis of the transform in world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="3450:3618" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3466:3530" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3540:3612" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3624:3748" ph="///   &lt;para&gt;The rotation of the transform in world space stored as a Quaternion.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="3779:3979" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3795:3900" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3910:3973" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="3985:4115" ph="///   &lt;para&gt;The rotation of the transform relative to the parent transform's rotation.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="4151:4361" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="4167:4277" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="4287:4355" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="4443:4617" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="4459:4539" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="4549:4611" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5013:5119" ph="///   &lt;para&gt;The scale of the transform relative to the parent.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="5149:5350" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5165:5269" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5279:5344" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5356:5440" ph="///   &lt;para&gt;The parent of the transform.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="5468:5980" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5484:5536" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="5546:5974" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="6019:6147" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="6035:6084" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="6094:6141" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="6245:6656" ph="///   &lt;para&gt;Set the parent of the transform.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="6695:6738" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="6744:7155" ph="///   &lt;para&gt;Set the parent of the transform.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="7343:7476" ph="///   &lt;para&gt;Matrix that transforms a point from world space into local space (Read Only).&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="7516:7652" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="7532:7646" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="7658:7791" ph="///   &lt;para&gt;Matrix that transforms a point from local space into world space (Read Only).&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="7831:7967" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="7847:7961" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="7973:8179" ph="///   &lt;para&gt;Sets the world space position and rotation of the Transform component.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="8257:8341" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="8347:8553" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="8647:8808" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="8814:9020" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="9067:9126" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="9132:9415" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="9515:9583" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="9589:9872" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="9925:9993" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="9999:10205" ph="///   &lt;para&gt;Moves the transform in the direction and distance of translation.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="10274:10444" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="10450:10733" ph="///   &lt;para&gt;Moves the transform by x along the x axis, y along the y axis, and z along the z axis.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="10808:10876" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="10882:11237" ph="///   &lt;para&gt;Applies a rotation of eulerAngles.z degrees around the z axis, eulerAngles.x degrees around the x axi ... " />
+            <marker date="1547416618515" expanded="true" signature="11323:11591" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="11631:11682" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="11688:12188" ph="///   &lt;para&gt;Applies a rotation of zAngle degrees around the z axis, xAngle degrees around the x axis, and yAngle  ... " />
+            <marker date="1547416618515" expanded="true" signature="12300:12380" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="12446:12526" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="12628:12699" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="12705:13016" ph="///   &lt;para&gt;Rotates the object around axis by angle degrees.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="13113:13357" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="13408:13464" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="13470:13729" ph="///   &lt;para&gt;Rotates the transform about axis passing through point in world coordinates by angle degrees.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="13800:14044" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="14050:14326" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at target's current position.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="14413:14523" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="14529:14805" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at target's current position.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="14846:14959" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="14965:15229" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at worldPosition.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="15321:15385" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="15391:15655" ph="///   &lt;para&gt;Rotates the transform so the forward vector points at worldPosition.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="15701:15768" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="15904:15985" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="15991:16141" ph="///   &lt;para&gt;Transforms direction from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="16198:16311" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="16317:16533" ph="///   &lt;para&gt;Transforms direction x, y, z from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="16598:16670" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="16676:16874" ph="///   &lt;para&gt;Transforms a direction from world space to local space. The opposite of Transform.TransformDirection. ... " />
+            <marker date="1547416618515" expanded="true" signature="16938:17058" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="17064:17330" ph="///   &lt;para&gt;Transforms the direction x, y, z from world space to local space. The opposite of Transform.Transform ... " />
+            <marker date="1547416618515" expanded="true" signature="17402:17481" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="17487:17631" ph="///   &lt;para&gt;Transforms vector from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="17682:17789" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="17795:18008" ph="///   &lt;para&gt;Transforms vector x, y, z from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="18070:18139" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="18145:18334" ph="///   &lt;para&gt;Transforms a vector from world space to local space. The opposite of Transform.TransformVector.&lt;/para ... " />
+            <marker date="1547416618515" expanded="true" signature="18392:18506" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="18512:18772" ph="///   &lt;para&gt;Transforms the vector x, y, z from world space to local space. The opposite of Transform.TransformVec ... " />
+            <marker date="1547416618515" expanded="true" signature="18841:18917" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="18923:19071" ph="///   &lt;para&gt;Transforms position from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="19123:19231" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="19237:19456" ph="///   &lt;para&gt;Transforms the position x, y, z from local space to world space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="19517:19585" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="19591:19739" ph="///   &lt;para&gt;Transforms position from world space to local space.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="19798:19913" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="19919:20180" ph="///   &lt;para&gt;Transforms the position x, y, z from world space to local space. The opposite of Transform.TransformP ... " />
+            <marker date="1547416618515" expanded="true" signature="20248:20323" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="20329:20432" ph="///   &lt;para&gt;Returns the topmost transform in the hierarchy.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="20458:20527" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="20474:20521" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="20623:20720" ph="///   &lt;para&gt;The number of children the Transform has.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="20847:20926" ph="///   &lt;para&gt;Unparents all children.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="21083:21199" ph="///   &lt;para&gt;Move the transform to the start of the local transform list.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="21298:21412" ph="///   &lt;para&gt;Move the transform to the end of the local transform list.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="21510:21639" ph="///   &lt;para&gt;Sets the sibling index.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="21745:21824" ph="///   &lt;para&gt;Gets the sibling index.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="22152:22420" ph="///   &lt;para&gt;Finds a child by n and returns it.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="22456:22623" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="22773:22872" ph="///   &lt;para&gt;The global scale of the object (Read Only).&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="22902:23065" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="22955:23059" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="23071:23201" ph="///   &lt;para&gt;Is this transform a child of parent?&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="23396:23526" ph="///   &lt;para&gt;Has the transform changed since the last time the flag was set to 'false'?&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="23876:23915" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="23955:24026" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="24032:24161" ph="///   &lt;para&gt;&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="24273:24336" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="24454:24522" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="24528:24824" ph="///   &lt;para&gt;Returns a transform child by index.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="25238:25361" ph="///   &lt;para&gt;The transform capacity of the transform's hierarchy data structure.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="25394:25562" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="25410:25479" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="25489:25556" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="25924:26049" ph="///   &lt;para&gt;The number of transforms in the transform's hierarchy data structure.&lt;/para&gt; ... " />
+            <marker date="1547416618515" expanded="true" signature="30114:30606" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="30232:30276" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="30305:30419" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="30325:30411" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="30449:30525" ph="{...}" />
+            <marker date="1547416618515" expanded="true" signature="30552:30600" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/GameManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+          <folding>
+            <marker date="1547490039124" expanded="false" signature="6:78" ph="..." />
+            <marker date="1547490039124" expanded="true" signature="111:1284" ph="{...}" />
+            <marker date="1547490039124" expanded="true" signature="632:800" ph="{...}" />
+            <marker date="1547490039124" expanded="true" signature="843:1282" ph="{...}" />
+            <marker date="1547490039124" expanded="true" signature="861:1276" ph="{...}" />
+            <marker date="1547490039124" expanded="true" signature="968:1094" ph="{...}" />
+            <marker date="1547490039124" expanded="true" signature="1111:1234" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Base/PedestalBaseController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+          <folding>
+            <marker date="1547490038688" expanded="false" signature="6:78" ph="..." />
+            <marker date="1547490038688" expanded="true" signature="132:1146" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="326:395" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="450:1144" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="496:536" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="563:903" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="635:893" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="802:879" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="932:1138" ph="{...}" />
+            <marker date="1547490038688" expanded="true" signature="1058:1128" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/General/Tweeny.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="24" />
+          <folding>
+            <marker date="1547565634435" expanded="false" signature="6:111" ph="..." />
+            <marker date="1547565634435" expanded="true" signature="192:2858" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="629:778" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="872:1062" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1117:1486" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1156:1480" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1531:1636" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1564:1626" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1661:1726" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1761:1960" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1880:1929" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="1990:2204" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="2237:2446" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="2508:2856" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="2541:2850" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="2885:3332" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="2892:3009" ph="/* http://gizma.com/easing ... */" />
+            <marker date="1547565634435" expanded="true" signature="3076:3118" ph="{...}" />
+            <marker date="1547565634435" expanded="true" signature="3193:3330" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/PlayerInteractionScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="40" />
+          <folding>
+            <marker date="1547490039416" expanded="false" signature="6:78" ph="..." />
+            <marker date="1547490039416" expanded="true" signature="132:5900" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="508:671" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="717:1054" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="1124:3203" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="1807:3082" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="1986:2077" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="2128:3043" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="3095:3184" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="3254:4037" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="3381:4031" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="3783:3878" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="4093:4650" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="4143:4644" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="4749:5073" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="4841:4996" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="5169:5521" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="5261:5416" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="5580:5654" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="5680:5898" ph="{...}" />
+            <marker date="1547490039416" expanded="true" signature="5766:5892" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/FogSpread.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
+          <folding>
+            <marker date="1547569649149" expanded="false" signature="6:106" ph="..." />
+            <marker date="1547569649149" expanded="true" signature="146:2380" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="614:1370" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="1413:1532" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="1586:2378" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="1626:1645" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="1675:1915" ph="{...}" />
+            <marker date="1547569649149" expanded="true" signature="1965:2372" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Cube.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+          <folding>
+            <marker date="1547750038656" expanded="false" signature="6:78" ph="..." />
+            <marker date="1547750038656" expanded="true" signature="114:5754" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="903:2160" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="1151:1425" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="1635:1788" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="1985:2131" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2179:2492" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2199:2486" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2280:2451" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2518:2581" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2608:2807" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2641:2801" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2832:3012" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="2931:3006" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3030:3573" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3112:3315" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3364:3567" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3595:4064" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3745:3872" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="3922:4049" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="4113:4722" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="4758:4888" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="4926:4991" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5034:5104" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5164:5423" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5204:5304" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5317:5417" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5477:5752" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5517:5625" ph="{...}" />
+            <marker date="1547750038656" expanded="true" signature="5638:5746" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/WordPuzzle/Wall.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <marker date="1547750390489" expanded="false" signature="6:92" ph="..." />
+            <marker date="1547750390489" expanded="true" signature="128:3392" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="762:1811" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="824:896" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="1083:1634" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="1168:1294" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="1299:1420" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="1838:2435" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="1874:2253" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2114:2208" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2331:2411" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2478:2531" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2562:2908" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2614:2879" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2670:2750" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2953:3219" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="2983:3031" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="3036:3213" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="3122:3203" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="3255:3385" ph="{...}" />
+            <marker date="1547750390489" expanded="true" signature="3312:3357" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

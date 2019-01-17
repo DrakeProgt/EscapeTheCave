@@ -12,14 +12,22 @@ public class Wall : MonoBehaviour {
     public GameObject StarSign;
     public string text = "Test es testet Test testet set test teste";
     public int lineLength = 5;
-    public int[] rightKeys = { 14, 36, 41, 110, 164, 184, 204, 255, 272, 329, 342 };
+    public int[] rightKeys = { 14, 36, 41, 110, 165, 184, 204, 255, 272, 329, 342 };
+    public bool devMode = false;
     public int correctCount = 0;
     private bool solved = false;
+    private bool isAnimationFinished;
     static List<GameObject> list = new List<GameObject>();
     private StarSignLineSystem starSignScript;
 
 
     void Start () {
+        // for fast solving in dev mode
+        if (devMode)
+        {
+            rightKeys = new int[] { rightKeys[0] };
+        }
+
         GameObject firstCube = Instantiate(CubePrefab, WallController.GetComponent<Transform>());
         list.Add(firstCube);
 
@@ -45,17 +53,19 @@ public class Wall : MonoBehaviour {
     private void Update()
     {
         
-            if (!solved)
+        if (!solved)
+        {
+            if (null != GameManager.focused && GameManager.pressedInteractKey && "pressable" == GameManager.focused.tag && ("WordPuzzleButton" == GameManager.focused.name || "WordPuzzleButton(Clone)" == GameManager.focused.name))
             {
-                if (null != GameManager.focused && GameManager.pressedInteractKey && "pressable" == GameManager.focused.tag && ("WordPuzzleButton" == GameManager.focused.name || "WordPuzzleButton(Clone)" == GameManager.focused.name))
-                {
-                    GameManager.focused.GetComponent<Cube>().Press();
-                }
-                solved = isFinished();
-            } else
-            {
-                GameManager.isWordPuzzleSolved = isEndAnimationFinished();
+                GameManager.focused.GetComponent<Cube>().Press();
             }
+            solved = isFinished();
+        } 
+        
+        if (GameManager.isWordPuzzleSolved && !isAnimationFinished)
+        {
+            isAnimationFinished = isEndAnimationFinished();
+        }
         
         
     }
