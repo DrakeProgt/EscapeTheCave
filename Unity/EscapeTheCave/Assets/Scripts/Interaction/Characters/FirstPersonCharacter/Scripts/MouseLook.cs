@@ -27,7 +27,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CameraTargetRot = camera.localRotation;
         }
 
-        public void LookRotation(Transform character, Transform camera)
+        public void LookRotation(Transform character, Transform camera, bool resetRotation = false)
         {
             SetCursorLock(!GameManager.isGamePaused);
 
@@ -39,6 +39,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_CharacterTargetRot *= Quaternion.Euler (0f, yRot, 0f);
             m_CameraTargetRot *= Quaternion.Euler (-xRot, 0f, 0f);
+
+            if (resetRotation)
+            {
+                m_CameraTargetRot = new Quaternion(0, 0, 0, 1);
+                m_CharacterTargetRot = new Quaternion(0, .8f, 0, -.6f);
+            }
 
             if(clampVerticalRotation)
                 m_CameraTargetRot = ClampRotationAroundXAxis (m_CameraTargetRot);
@@ -52,8 +58,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else
             {
+                Debug.Log("CAMERA REPOSSITIONINT");
                 character.localRotation = m_CharacterTargetRot;
                 camera.localRotation = m_CameraTargetRot;
+                Debug.Log(m_CharacterTargetRot);
             }
 
             UpdateCursorLock();
