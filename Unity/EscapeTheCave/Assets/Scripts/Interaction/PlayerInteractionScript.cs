@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -50,9 +51,6 @@ public class PlayerInteractionScript : MonoBehaviour
         Ray ray = UnityEngine.Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2)); //or Input.mousePosition?
         if (Physics.Raycast(ray, out hit, 5, layerMask))
         {
-            //TODO: set width and height of textBox depending on message
-            SetTextBoxDim(250, 20);
-
             if (hit.collider.gameObject.tag != "Untagged")
             {
                 GameManager.focused = hit.collider.gameObject;
@@ -65,7 +63,7 @@ public class PlayerInteractionScript : MonoBehaviour
                     PickUpObject(hit.collider.gameObject);
                     break;
                 case "pressable":
-                    message = "Press with Button E";
+                    message = GameManager.hoverMessage;
                     break;
                 case "placeable":
                     string itemName = hit.collider.gameObject.name.Replace("Platform", "");
@@ -81,10 +79,16 @@ public class PlayerInteractionScript : MonoBehaviour
                     break;
             }
 
-            hovered = true;
+            if (!String.IsNullOrEmpty(message))
+            {
+                //TODO: set width and height of textBox depending on message
+                SetTextBoxDim(250, 20);
+                hovered = true;
+            }
         }
         else
         {
+            GameManager.hoverMessage = null;
             hovered = false;
             GameManager.focused = null;
         }

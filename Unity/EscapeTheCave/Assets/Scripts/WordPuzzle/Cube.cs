@@ -120,17 +120,20 @@ public class Cube : MonoBehaviour {
 
     void Highlight()
     {
-        bool focused = this.gameObject == GameManager.focused && !pressed;
-        if (focused && letter != ' ' && 0.1f > currentEmissionLevel)
+        if (!GameManager.isWordPuzzleSolved)
         {
-            currentEmissionLevel += Time.deltaTime * 0.4f;
-            SetEmmission(currentEmissionLevel);
-        } else if (!focused && 0.0f < currentEmissionLevel)
-        {
-            currentEmissionLevel -= Time.deltaTime * 0.7f;
-            SetEmmission(currentEmissionLevel);
+            bool focused = this.gameObject == GameManager.focused && !pressed;
+            if (focused && letter != ' ' && 0.1f > currentEmissionLevel)
+            {
+                GameManager.hoverMessage = "Press with Button E";
+                currentEmissionLevel += Time.deltaTime * 0.4f;
+                SetEmmission(currentEmissionLevel);
+            } else if (!focused && 0.0f < currentEmissionLevel)
+            {
+                currentEmissionLevel -= Time.deltaTime * 0.7f;
+                SetEmmission(currentEmissionLevel);
+            } 
         }
-        
     }
 
     void SetOriginPosition(int row, int column)

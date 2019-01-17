@@ -49,6 +49,7 @@
             </e>
           </e>
         </e>
+        <e p="CinematicSequenceUI.cs" t="Include" />
         <e p="Materials" t="Include">
           <e p="classicNoise3d.cginc" t="Include" />
           <e p="FakeVolumetricLightShaderExtended.shader" t="Include" />

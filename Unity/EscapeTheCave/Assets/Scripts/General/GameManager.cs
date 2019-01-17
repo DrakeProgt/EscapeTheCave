@@ -11,6 +11,7 @@ public static class GameManager
     public static bool pressedR1Key = false;
     public static bool pressedL2Key = false;
     public static bool pressedR2Key = false;
+    public static string hoverMessage = "This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message";
 
     [SerializeField] public static bool isWordPuzzleSolved = false;
     public static bool isLightPuzzleSolved = false;
