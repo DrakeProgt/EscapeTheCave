@@ -100,7 +100,6 @@ public class PlayerInteractionScript : MonoBehaviour
         if (GameManager.pressedInteractKey && inventory.GetSelectedItem().name == platform.name.Replace("Platform", ""))
         {
             GameObject obj = inventory.RemoveAndGetSelectedItemFromInventory();
-            Debug.Log(obj);
             Transform t = platform.transform.GetChild(0);
             Vector3 targetPosition = t.position;
             t.gameObject.SetActive(false);

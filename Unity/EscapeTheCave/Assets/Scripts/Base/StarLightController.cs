@@ -10,6 +10,7 @@ public class StarLightController : MonoBehaviour
     [SerializeField] GameObject targetRotations;
     Vector3[] rotations;
     [SerializeField] int[] validRotations;
+    int prismIndex;
 
 
     // Use this for initialization
@@ -22,6 +23,7 @@ public class StarLightController : MonoBehaviour
         }
         rotateIndex = 0;
         isRotating = false;
+        prismIndex = transform.parent.GetComponent<PrismController>().prismIndex;
     }
 
     // Update is called once per frame
@@ -35,7 +37,6 @@ public class StarLightController : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, rotateValue, 4 * Time.deltaTime);
             if (Quaternion.Angle(transform.rotation, rotateValue) < .01f)
             {
-                Debug.Log("ROTATING IS FALSE");
                 isRotating = false;
             }
         }
@@ -45,15 +46,18 @@ public class StarLightController : MonoBehaviour
     {
         Debug.Log("ACTIVATING HALO LIGHTS!!!");
         if (targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>() != null)
+        {
             targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>().enabled = true;
+        }
     }
 
     public void Rotate()
     {
-        if (isRotating) return;
-
+        Debug.Log("Rotating StarLight...");
         if (targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>() != null)
+        {
             targetRotations.transform.GetChild(validRotations[rotateIndex] - 1).GetComponent<Light>().enabled = false;
+        }
 
         if (++rotateIndex >= rotations.Length)
         {

@@ -18,7 +18,7 @@ public class SequenceController : MonoBehaviour
     void Start()
     {
         elapsed = 0;
-        duration = 8;
+        duration = 8.5f;
     }
 
     // Update is called once per frame
@@ -26,7 +26,6 @@ public class SequenceController : MonoBehaviour
     {
         if (GameManager.isWordPuzzleSolved)
         {
-            //gameObject.GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().test = test;
             if (!started)
             {
                 started = true;

@@ -22,11 +22,13 @@ public class GearController : MonoBehaviour
             && GameManager.focused.tag == "rotateable"
             && !transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[index])
         {
+            Debug.Log("Start rotating...");
             prismPlatform.GetComponent<PrismController>().Rotate();
         }
         
         if (transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[index])
         {
+            Debug.Log("Rotate gear...");
             transform.Rotate(Vector3.up * Time.deltaTime * 300);
         }
     }

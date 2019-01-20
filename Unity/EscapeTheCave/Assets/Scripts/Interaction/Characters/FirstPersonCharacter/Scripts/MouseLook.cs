@@ -58,10 +58,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             else
             {
-                Debug.Log("CAMERA REPOSSITIONINT");
                 character.localRotation = m_CharacterTargetRot;
                 camera.localRotation = m_CameraTargetRot;
-                Debug.Log(m_CharacterTargetRot);
             }
 
             UpdateCursorLock();

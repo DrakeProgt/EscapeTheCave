@@ -7,7 +7,6 @@ public class BaseController : MonoBehaviour
     [SerializeField] float movementTime;
     [SerializeField] Vector3 targetPosition;
     [SerializeField] GameObject[] prismChildren;
-    [SerializeField] GameObject StarSign;
 
     public bool[] gearsSolved = { false, false, false };
     public bool[] gearsRotating = { false, false, false };
@@ -39,7 +38,6 @@ public class BaseController : MonoBehaviour
                     child.gameObject.GetComponent<StarLightController>().ActivateHaloLights();
                 }
             }
-            // StarSign.GetComponent<StarSignLineSystem>().buildUp();
         }
     }
 }

@@ -6,6 +6,7 @@ public class PrismController : MonoBehaviour, ControllerInterface {
 
     public bool isEnabled { set; get; }
     [SerializeField] GameObject crystal, lantern;
+    public int prismIndex;
 
     // Use this for initialization
     void Start ()
@@ -37,6 +38,11 @@ public class PrismController : MonoBehaviour, ControllerInterface {
 
     public void Rotate()
     {
+        if(transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[prismIndex])
+        {
+            return;
+        }
+
         foreach (Transform child in transform)
         {
             if(child.gameObject.activeSelf)
