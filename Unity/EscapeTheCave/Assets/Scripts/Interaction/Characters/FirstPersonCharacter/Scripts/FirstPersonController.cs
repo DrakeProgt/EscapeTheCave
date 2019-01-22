@@ -63,6 +63,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             savedWalkSpeed = m_WalkSpeed;
             height = GetComponent<CharacterController>().height;
+            GameManager.Player = transform.gameObject;
         }
 
         private void OnEnable()

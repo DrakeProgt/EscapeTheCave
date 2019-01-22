@@ -251,6 +251,7 @@
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
           </e>
+          <e p="DeadZone.cs" t="Include" />
           <e p="Diary" t="Include">
             <e p="DiaryHandler.cs" t="Include" />
           </e>
@@ -284,6 +285,7 @@
             <e p="Inventory.cs" t="Include" />
             <e p="PlayerInteractionScript.cs" t="Include" />
           </e>
+          <e p="JumpStone.cs" t="Include" />
           <e p="LightRay" t="Include">
             <e p="LightRay.cs" t="Include" />
           </e>
