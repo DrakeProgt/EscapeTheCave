@@ -43,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         public bool resetRotation;
+        private float height;
 
         private float savedWalkSpeed;
 
@@ -61,6 +62,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MouseLook.Init(transform, m_Camera.transform);
 
             savedWalkSpeed = m_WalkSpeed;
+            height = GetComponent<CharacterController>().height;
         }
 
         private void OnEnable()
@@ -120,7 +122,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 if (!Physics.Raycast(ray, out hit, 1.8f))
                 {
                     gameObject.transform.localScale = new Vector3(1, 1, 1);
-                    GetComponent<CharacterController>().height = 1.8f;
+                    GetComponent<CharacterController>().height = height;
                 }
                 else
                 {

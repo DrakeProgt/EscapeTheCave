@@ -27,13 +27,13 @@ public class FogSpread : MonoBehaviour
 	void Start () {
 		fogGrowth = new Tweeny(new Vector3(50,15,50), new Vector3(200,15,200), 10000, "linear");
 		fogRise = new Tweeny(GroundFog.GetComponent<VolumetricFog>().height, targetFogHeight, 4000, "linear");
-		fogDensityGrowth = new Tweeny(1.1f, 1.25f, 2000, "default");
+		fogDensityGrowth = new Tweeny(0.8f, 1.1f, 2000, "default");
 
 		fogSpread = new Tweeny(GroundFog.GetComponent<VolumetricFog>().fogAreaFallOff, 3.0f, 20000, "linear");
 		fogSlowDown = new Tweeny(GroundFog.GetComponent<VolumetricFog>().speed, 0.005f, 10000, "default");
 		fogFinalRise = new Tweeny(targetFogHeight, targetFogFinalHeight, 10000, "default");
-		fogDensityFall = new Tweeny(1.25f, 0.3f, 10000, "default");
-		fogFinalGrowth = new Tweeny(new Vector3(200,15,200), new Vector3(1000,15,1000), 10000, "linear");
+		fogDensityFall = new Tweeny(1.1f, 0.4f, 10000, "default");
+		fogFinalGrowth = new Tweeny(new Vector3(200,15,200), new Vector3(2000,15,2000), 10000, "linear");
 
 //		StartCoroutine(DelayedStart(3));
 	}

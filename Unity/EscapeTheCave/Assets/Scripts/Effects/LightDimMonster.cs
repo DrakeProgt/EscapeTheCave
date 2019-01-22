@@ -9,34 +9,58 @@ public class LightDimMonster : MonoBehaviour
     //distanceReact = intensity
     //distance = new intensity
 
-    private Light[] lights;
-    private float[] originalIntensity;
+    private Light light;
+    private float originalIntensity;
+    private Color originalColor;
+    private float originalRange;
+    private Color deltaColor;
+    private float deltaOriginalColor = 0.1f;
+    private float deltaSecondColor = 0.1f;
+    private float switchDuration = 5;
+    private float intensityDuration = 5;
+    private float intensityDim = 0.35f;
 
     // Use this for initialization
     void Start()
     {
-        lights = GetComponentsInChildren<Light>();
-        originalIntensity = new float[lights.Length];
-
-        for (int i = 0; i < originalIntensity.Length; i++)
-        {
-            originalIntensity[i] = lights[i].intensity;
-        }
+        light = GetComponentInChildren<Light>();
+        originalIntensity = light.intensity;
+        originalRange = light.range;
+        originalColor = CalculateRandomColor(light.color, deltaOriginalColor);
+        deltaColor = CalculateRandomColor(originalColor, deltaSecondColor);
+        switchDuration = Random.Range(7.0f, 30.0f);
+        intensityDuration = Random.Range(5.0f, 15.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 monsterPosition = GameManager.monsterPosition;
-
-        for (int i = 0; i < lights.Length; i++)
+        float distance = Vector3.Distance(transform.position, GameManager.monsterPosition);
+        float monsterDim = 1.0f;
+        float timeDim = 1.0f;
+        if (distance < distanceReact)
         {
-            float distance = Vector3.Distance(lights[i].transform.position, monsterPosition);
-            if (distance < distanceReact)
-            {
-                lights[i].intensity = (distance * originalIntensity[i]) / distanceReact;
-            }
+            monsterDim = ((distance * originalIntensity) / distanceReact);
         }
+        
+        timeDim = 1.0f - (Mathf.PingPong(Time.time, intensityDuration) / intensityDuration) * intensityDim;
+
+        light.intensity = originalIntensity * monsterDim * timeDim;
+        light.range = originalRange * monsterDim * timeDim;
+        
+        float t = Mathf.PingPong(Time.time, switchDuration) / switchDuration;
+        light.color = Color.Lerp(originalColor, deltaColor, t);
+    }
+
+    private Color CalculateRandomColor(Color originColor, float randomDelta)
+    {
+        Color newInstance = new Color();
+//        Debug.Log("Old Color: " + originColor.r + " | " + originColor.g + " | " + originColor.b + " | ");
+        newInstance.r = originColor.r + ((Random.Range(0.0f, 1.0f) * (2 * randomDelta) - randomDelta));
+        newInstance.g = originColor.g + ((Random.Range(0.0f, 1.0f) * (2 * randomDelta) - randomDelta));
+        newInstance.b = originColor.b + ((Random.Range(0.0f, 1.0f) * (2 * randomDelta) - randomDelta));
+//        Debug.Log("New Color: " + newInstance.r + " | " + newInstance.g + " | " + newInstance.b + " | ");
+
+        return newInstance;
     }
 }
