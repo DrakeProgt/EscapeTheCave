@@ -5,9 +5,8 @@ using UnityEngine;
 public class LightDimMonster : MonoBehaviour
 {
 
-    [SerializeField] float distanceReact = 10.0f;
-    //distanceReact = intensity
-    //distance = new intensity
+    private float distanceReact = 12.0f;
+    private float distanceBlack = 5.0f;
 
     private Light light;
     private float originalIntensity;
@@ -40,7 +39,15 @@ public class LightDimMonster : MonoBehaviour
         float timeDim = 1.0f;
         if (distance < distanceReact)
         {
-            monsterDim = ((distance * originalIntensity) / distanceReact);
+            if (distance < distanceBlack)
+            {
+                monsterDim = 0.0f;
+            }
+            else
+            {
+                monsterDim = (distance - distanceBlack) / (distanceReact - distanceBlack);
+            }
+//            Debug.Log("monsterDim: " + monsterDim + " | " + distance);
         }
         
         timeDim = 1.0f - (Mathf.PingPong(Time.time, intensityDuration) / intensityDuration) * intensityDim;
