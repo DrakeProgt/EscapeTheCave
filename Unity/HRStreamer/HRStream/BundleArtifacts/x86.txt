@@ -1,2 +1,0 @@
-MainPackage=C:\Users\David\source\repos\HRStream\HRStream\bin\x86\Release\HRStream_1.1.0.0_x86.appx
-SymbolPackage=C:\Users\David\source\repos\HRStream\HRStream\AppPackages\HRStream_1.1.0.0_Test\HRStream_1.1.0.0_x86.appxsym

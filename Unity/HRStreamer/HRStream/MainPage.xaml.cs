@@ -26,14 +26,21 @@ namespace HRStream
         bool simstatus;
         bool connected;
         int HR;
+        string[] macs;
         public MainPage()
         {
             this.InitializeComponent();
-            DeviceMAC = txtMAC.Text;
+            
             simstatus = (bool)btnSwitch.IsChecked;
             UDP.init(33333);
             connected = false;
             slideHR.IsEnabled = (bool)btnSwitch.IsChecked;
+            
+            macs = File.ReadAllLines(@"Assets\MAC.txt");
+            foreach (string mac in macs)
+            {
+                comboMAC.Items.Add(mac);
+            }
 
             if ((bool)btnSwitch.IsChecked)
             {
@@ -51,10 +58,11 @@ namespace HRStream
             HR = 60;
             do
             {
-                HR += rand.Next(-5, 5);
+                HR += rand.Next(-8, 11);
                 UDP.sendString(HR.ToString());
                 txtHR.Text = HR.ToString();
-                await Task.Delay(1000);
+                slideHR.Value = HR;
+                await Task.Delay(1500);
             }
             while (simstatus);
         }
@@ -256,10 +264,9 @@ namespace HRStream
                 FindAndConnect();
             }
         }
-
-        private void txtMAC_TextChanged(object sender, TextChangedEventArgs e)
+        private void comboMAC_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DeviceMAC = txtMAC.Text;
+            DeviceMAC = comboMAC.SelectedItem.ToString().Split('_')[1];
         }
     }
 }

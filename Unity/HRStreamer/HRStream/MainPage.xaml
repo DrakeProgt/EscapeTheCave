@@ -17,17 +17,17 @@
             <RowDefinition/>
             <RowDefinition Height="Auto" MinHeight="0"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="txtConn" Margin="48,49.6,35.6,0" Text="Disconnected" TextWrapping="Wrap" VerticalAlignment="Top" Height="60" FontSize="20" Grid.Row="1" HorizontalAlignment="Stretch"/>
-        <ProgressRing x:Name="ringSearch" HorizontalAlignment="Left" Margin="18,25.2,0,0" VerticalAlignment="Top" Height="25" Width="27" IsActive="False" Grid.Row="1" FontFamily="Segoe UI"/>
-        <TextBlock x:Name="txtSearch" Margin="49,10.6,27.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" FontSize="20" Grid.Row="1" FontFamily="Segoe UI" HorizontalAlignment="Stretch"><Run Text="Search Status"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="txtSub" Margin="49,106.6,30.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" FontSize="20" Grid.Row="1" FontFamily="Segoe UI" HorizontalAlignment="Stretch"><Run Text="Un-subscribed"/><LineBreak/><Run/></TextBlock>
-        <ProgressRing x:Name="ringConn" HorizontalAlignment="Left" Margin="18,66.2,0,0" VerticalAlignment="Top" Height="26" Width="27" IsActive="False" Grid.Row="1" FontFamily="Segoe UI"/>
-        <ProgressRing x:Name="ringSubscribe" HorizontalAlignment="Left" Margin="18,109.2,0,0" VerticalAlignment="Top" Height="26" Width="27" IsActive="False" Grid.Row="1"/>
+        <TextBlock x:Name="txtConn" Margin="48,0,35.6,151.8" Text="Disconnected" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="60" FontSize="20" Grid.Row="1"/>
+        <ProgressRing x:Name="ringSearch" HorizontalAlignment="Left" Margin="18,0,0,211.8" VerticalAlignment="Bottom" Height="25" Width="27" IsActive="False" Grid.Row="1" FontFamily="Segoe UI"/>
+        <TextBlock x:Name="txtSearch" Margin="49,0,27.6,202.8" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="48" FontSize="20" Grid.Row="1" FontFamily="Segoe UI"><Run Text="Search Status"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="txtSub" Margin="49,0,30.6,119.8" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="35" FontSize="20" Grid.Row="1" FontFamily="Segoe UI"><Run Text="Un-subscribed"/><LineBreak/><Run/></TextBlock>
+        <ProgressRing x:Name="ringConn" HorizontalAlignment="Left" Margin="18,0,0,169.8" VerticalAlignment="Bottom" Height="26" Width="27" IsActive="False" Grid.Row="1" FontFamily="Segoe UI"/>
+        <ProgressRing x:Name="ringSubscribe" HorizontalAlignment="Left" Margin="18,0,0,126.8" VerticalAlignment="Bottom" Height="26" Width="27" IsActive="False" Grid.Row="1"/>
         <TextBlock x:Name="txtHR" HorizontalAlignment="Left" Margin="18,141.2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="91" Width="146" FontSize="72" Grid.Row="1" Text="00"/>
         <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,141.2,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
         <Slider x:Name="slideHR" HorizontalAlignment="Left" Margin="129,145.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="47" LargeChange="0" Orientation="Vertical" Height="116" Maximum="140" Minimum="30" Value="60" ValueChanged="slideHR_ValueChanged"/>
         <ToggleButton x:Name="btnSwitch" Content="Simulate" HorizontalAlignment="Left" Margin="207,205.2,0,0" Grid.Row="1" VerticalAlignment="Top" Tapped="ToggleButton_Tapped" IsChecked="True"/>
-        <TextBox x:Name="txtMAC" HorizontalAlignment="Left" Margin="38,17,0,0" Grid.RowSpan="2" Text="f5:8d:0e:26:ad:c0" VerticalAlignment="Top" FontFamily="Consolas" TextChanged="txtMAC_TextChanged"/>
+        <ComboBox x:Name="comboMAC" HorizontalAlignment="Left" Margin="48,0,0,1.2" VerticalAlignment="Bottom" Width="228" SelectionChanged="comboMAC_SelectionChanged" PlaceholderText="Select Device..."/>
 
     </Grid>
 </Page>
