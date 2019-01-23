@@ -81,12 +81,16 @@ public class DiaryHandler : MonoBehaviour
 				if (opened)
 				{
 					opening = true;
-					GetComponent<Transform>().localPosition = targetPosition + downPositionOffset;
+                    SoundSystem.PlayDiaryOpenSound(1);
+                    SoundSystem.PlayDiaryTurnSound(2);
+                    GetComponent<Transform>().localPosition = targetPosition + downPositionOffset;
 				}
 				else
 				{
 					closing = true;
-				}
+                    SoundSystem.PlayDiaryOpenSound();
+                    SoundSystem.PlayDiaryTurnSound();
+                }
 				running = true;
 				time = Time.time * 1000;
 				setLeftPage(currentLeftPage);

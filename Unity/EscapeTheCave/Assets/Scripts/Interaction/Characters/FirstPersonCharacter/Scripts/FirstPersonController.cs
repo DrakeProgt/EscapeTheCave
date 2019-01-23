@@ -25,7 +25,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] public AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
@@ -46,6 +46,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float height;
         public bool cinematicMode = false;
         public Vector3 cinematicVelocity;
+        public Quaternion rootRotation;
 
         private float savedWalkSpeed;
 
@@ -85,7 +86,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             RotateView(resetRotation);
             if (resetRotation) resetRotation = false;
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+            if (!m_Jump && !cinematicMode)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
@@ -333,7 +334,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (!cinematicMode)
             {
-                m_MouseLook.LookRotation(transform, m_Camera.transform, resetRotation);
+                m_MouseLook.LookRotation(transform, m_Camera.transform, resetRotation, rootRotation);
             }
         }
 
