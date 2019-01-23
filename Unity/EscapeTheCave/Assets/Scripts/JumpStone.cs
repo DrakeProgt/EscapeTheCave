@@ -7,6 +7,7 @@ public class JumpStone : MonoBehaviour
 
 	public GameObject parallelGroup;
 
+	private GameObject finishArea;
 	private GameObject area;
 	private GameObject[] Cylinders = new GameObject[3];
 	private Vector3[] positions = new Vector3[3];
@@ -23,6 +24,7 @@ public class JumpStone : MonoBehaviour
 	{
 		int i = 0;
 		GameObject deadZone = transform.parent.Find("DeadZone").gameObject;
+		GameObject finishArea = transform.parent.Find("FinishArea").gameObject;
 		
 		foreach (Transform child in transform)
 		{
@@ -80,6 +82,14 @@ public class JumpStone : MonoBehaviour
 			if (isActivated && !isRun && Time.time > (startTime + waitTime))
 			{
 				fall();
+				if(parallelGroup != null) parallelGroup.GetComponent<JumpStone>().fall();
+				isRun = true;
+			}
+			
+			if (isRun && finishArea.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position))
+			{
+				fall();
+				if(parallelGroup != null) parallelGroup.GetComponent<JumpStone>().fall();
 				isRun = true;
 			}
 		}
