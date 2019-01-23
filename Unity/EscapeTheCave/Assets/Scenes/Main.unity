@@ -9546,7 +9546,7 @@ Prefab:
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
       propertyPath: _fogAreaPosition.z
-      value: -10.1900015
+      value: -9.349999
       objectReference: {fileID: 0}
     - target: {fileID: 4124843881978580, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9568,12 +9568,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4124843881978580, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalScale.z
-      value: 11.1
+      value: 12.921511
       objectReference: {fileID: 0}
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
       propertyPath: _fogAreaDepth
-      value: 5.55
+      value: 6.4607553
       objectReference: {fileID: 0}
     - target: {fileID: 4464247117748648, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalPosition.x
@@ -9651,6 +9651,20 @@ Prefab:
       propertyPath: parallelGroup
       value: 
       objectReference: {fileID: 2108370844}
+    - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
+        type: 2}
+      propertyPath: _speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
+        type: 2}
+      propertyPath: _turbulenceStrength
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124843881978580, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
   m_IsPrefabAsset: 0
@@ -12081,7 +12095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3d446f7ff644b70a8daaa5525fcf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDirty: 1
+  isDirty: 0
   _preset: 1000
   _profile: {fileID: 0}
   _useFogVolumes: 0
@@ -12122,7 +12136,7 @@ MonoBehaviour:
   _lightIntensity: 1
   _lightColor: {r: 1, g: 0, b: 0, a: 1}
   _updateTextureSpread: 1
-  _speed: 0.023
+  _speed: 0
   _windDirection: {x: 1, y: 0, z: 0}
   _useRealTime: 0
   _skyColor: {r: 0.125, g: 0.125, b: 0.125, a: 1}
@@ -12144,9 +12158,9 @@ MonoBehaviour:
   _fogAreaFallOff: 1
   _fogAreaFollowMode: 0
   _fogAreaTopology: 2
-  _fogAreaRadius: 4.405
-  _fogAreaPosition: {x: -78.909996, y: -9.129999, z: -30.820004}
-  _fogAreaDepth: 4.59
+  _fogAreaRadius: 4.952542
+  _fogAreaPosition: {x: -78.909996, y: -9.129999, z: -30.140001}
+  _fogAreaDepth: 6.613731
   _fogAreaHeight: 4.405
   _fogAreaSortingMode: 0
   _fogAreaRenderOrder: 1
@@ -12270,7 +12284,7 @@ MonoBehaviour:
   _sunShadowsBakeMode: 1
   _sunShadowsRefreshInterval: 0
   _sunShadowsCancellation: 0
-  _turbulenceStrength: 0.25
+  _turbulenceStrength: 0
   _useXYPlane: 0
   _useSinglePassStereoRenderingMatrix: 0
   _spsrBehaviour: 0
@@ -12363,8 +12377,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1107651007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7600021, y: 1.5200005, z: 2.7599983}
-  m_LocalScale: {x: 8.81, y: 8.81, z: 9.18}
+  m_LocalPosition: {x: 2.7600021, y: 1.5200005, z: 3.44}
+  m_LocalScale: {x: 9.905084, y: 8.81, z: 13.227462}
   m_Children: []
   m_Father: {fileID: 1334636681}
   m_RootOrder: 1
@@ -20143,7 +20157,7 @@ MonoBehaviour:
   _lightIntensity: 1
   _lightColor: {r: 1, g: 0, b: 0, a: 1}
   _updateTextureSpread: 1
-  _speed: 0.023
+  _speed: 0
   _windDirection: {x: 1, y: 0, z: 0}
   _useRealTime: 0
   _skyColor: {r: 0.125, g: 0.125, b: 0.125, a: 1}
@@ -20291,7 +20305,7 @@ MonoBehaviour:
   _sunShadowsBakeMode: 1
   _sunShadowsRefreshInterval: 0
   _sunShadowsCancellation: 0
-  _turbulenceStrength: 0.25
+  _turbulenceStrength: 0
   _useXYPlane: 0
   _useSinglePassStereoRenderingMatrix: 0
   _spsrBehaviour: 0
@@ -24914,7 +24928,7 @@ Prefab:
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
       propertyPath: _fogAreaPosition.x
-      value: -95.8
+      value: -98.2
       objectReference: {fileID: 0}
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
@@ -24924,7 +24938,7 @@ Prefab:
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
       propertyPath: _fogAreaPosition.z
-      value: -10.1900015
+      value: -42.45
       objectReference: {fileID: 0}
     - target: {fileID: 4124843881978580, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalPosition.x
@@ -24946,12 +24960,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4124843881978580, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalScale.z
-      value: 11.1
+      value: 12.94704
       objectReference: {fileID: 0}
     - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
         type: 2}
       propertyPath: _fogAreaDepth
-      value: 5.55
+      value: 6.47352
       objectReference: {fileID: 0}
     - target: {fileID: 4464247117748648, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
       propertyPath: m_LocalPosition.x
@@ -25049,6 +25063,16 @@ Prefab:
       propertyPath: parallelGroup
       value: 
       objectReference: {fileID: 353215384}
+    - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
+        type: 2}
+      propertyPath: _speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213795686508350, guid: 586147a2f8d23c54f8cb412be16f1b73,
+        type: 2}
+      propertyPath: _turbulenceStrength
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 586147a2f8d23c54f8cb412be16f1b73, type: 2}
   m_IsPrefabAsset: 0

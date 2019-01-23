@@ -17,14 +17,15 @@ public class JumpStone : MonoBehaviour
 	private bool isRun;
 	private float activateDistance = 2.0f;
 	public static bool reset = false;
-	
+
+	private bool isInitFinsihed = false; // need to wait for FPSController to be finished first
 	private float waitTime = 2.0f;
 	
 	void Start ()
 	{
 		int i = 0;
 		GameObject deadZone = transform.parent.Find("DeadZone").gameObject;
-		GameObject finishArea = transform.parent.Find("FinishArea").gameObject;
+		finishArea = transform.parent.Find("FinishArea").gameObject;
 		
 		foreach (Transform child in transform)
 		{
@@ -44,7 +45,7 @@ public class JumpStone : MonoBehaviour
 		
 		init();
 	}
-
+	
 	public void init()
 	{
 		for (int i = 0; i < 3; i++)
@@ -69,8 +70,14 @@ public class JumpStone : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameManager.secondCaveReached && GameManager.Player != null)
+		if (GameManager.secondCaveReached && !isRun && GameManager.Player != null)
 		{
+			if (!isInitFinsihed)
+			{
+				isInitFinsihed = true;
+				Physics.IgnoreCollision(GameManager.Player.GetComponent<Collider>(), finishArea.GetComponent<Collider>());	
+			}
+			
 			float distance = Vector3.Distance(area.transform.position, GameManager.Player.transform.position);
 //			distance = 1;
 			if (!isActivated && distance < activateDistance)
@@ -86,7 +93,7 @@ public class JumpStone : MonoBehaviour
 				isRun = true;
 			}
 			
-			if (isRun && finishArea.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position))
+			if (finishArea.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position))
 			{
 				fall();
 				if(parallelGroup != null) parallelGroup.GetComponent<JumpStone>().fall();
