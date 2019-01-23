@@ -20,11 +20,7 @@ public class PrismPlatformController : MonoBehaviour
 
         prismIndex = transform.parent.GetComponent<PrismController>().prismIndex;
 
-        // for Dev Start 
-        if (rotateIndex == correctRotation)
-        {
-            transform.parent.parent.gameObject.GetComponent<BaseController>().gearsSolved[prismIndex] = true;
-        }
+        Debug.Log(transform.parent.childCount);
     }
 
     // Update is called once per frame
@@ -63,13 +59,20 @@ public class PrismPlatformController : MonoBehaviour
 
     public void Rotate()
     {
+        transform.parent.parent.gameObject.GetComponent<BaseController>().gearsRotating[prismIndex] = true;
+        isRotating = true;
+        foreach (Transform child in transform.parent)
+        {
+            if (!child.gameObject.activeSelf)
+            {
+                return;
+            }
+        }
         Debug.Log("Rotating PrismPlatform...");
         if (++rotateIndex >= 8)
         {
             rotateIndex = 0;
         }
-        isRotating = true;
-        transform.parent.parent.gameObject.GetComponent<BaseController>().gearsRotating[prismIndex] = true;
 
     }
 }

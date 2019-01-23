@@ -24,7 +24,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
-            m_CameraTargetRot = camera.localRotation;
+            m_CameraTargetRot = new Quaternion(0, 0, 0, 1);
         }
 
         public void LookRotation(Transform character, Transform camera, bool resetRotation = false)

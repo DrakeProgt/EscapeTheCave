@@ -93,6 +93,7 @@ public class Wall : MonoBehaviour {
 
     public void PressedKey(bool correctKey)
     {
+        SoundSystem.PlayStonePress();
         if (correctKey)
         {
             correctCount++;

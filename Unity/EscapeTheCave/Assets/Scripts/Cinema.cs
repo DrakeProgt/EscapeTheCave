@@ -49,23 +49,24 @@ public class Cinema : MonoBehaviour
 		
 	}
 
-	private bool moveTo(Vector3 target, float speed)
+	private bool moveTo(Vector3 targetPosition, float speed)
 	{
-		Vector3 twoDimensionalTarget = target;
-		Vector3 twoDimensionalPosition = transform.position;
-		twoDimensionalTarget.y = 0;
-		twoDimensionalPosition.y = 0;
+        Vector3 originPosition = transform.position;
+        targetPosition.y = 0;
+        originPosition.y = 0;
 		
-		float distance = Vector3.Distance(twoDimensionalPosition, twoDimensionalTarget);
+		float distance = Vector3.Distance(originPosition, targetPosition);
 		if (distance < speed)
 		{
-			transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity =
-				(twoDimensionalTarget - twoDimensionalPosition).normalized * distance;
-			if (distance < 0.3f) return true;
+			transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity = (targetPosition - originPosition).normalized * distance;
+            if (distance < 1)
+            {
+                return true;
+            }
+
 			return false;
 		}
-		transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity =
-			(twoDimensionalTarget - twoDimensionalPosition).normalized * speed;
+		transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity = (targetPosition - originPosition).normalized * speed;
 		return false;
 	}
 }
