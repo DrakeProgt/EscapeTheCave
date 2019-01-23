@@ -45,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public bool resetRotation;
         private float height;
         public bool cinematicMode = false;
+        public Vector3 cinematicVelocity;
 
         private float savedWalkSpeed;
 
@@ -177,6 +178,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
+            if (cinematicMode)
+            {
+                desiredMove = cinematicVelocity;
+            }
+            
 
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
@@ -282,40 +288,42 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void GetInput(out float speed)
         {
-            if (cinematicMode)
-            {
-                speed = 0.0f;
-            }
-            else
-            {
-                // Read input
-                float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-                float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+            // Read input
+            float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+            float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
-                bool waswalking = m_IsWalking;
+            bool waswalking = m_IsWalking;
 
 #if !MOBILE_INPUT
-                // On standalone builds, walk/run speed is modified by a key press.
-                // keep track of whether or not the character is walking or running
-                m_IsWalking = !CrossPlatformInputManager.GetButton("Run");// !Input.GetKey(KeyCode.LeftShift);
+            // On standalone builds, walk/run speed is modified by a key press.
+            // keep track of whether or not the character is walking or running
+            m_IsWalking = !CrossPlatformInputManager.GetButton("Run");// !Input.GetKey(KeyCode.LeftShift);
 #endif
-                // set the desired speed to be walking or running
-                speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            // set the desired speed to be walking or running
+            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+
+            if (cinematicMode)
+            {
+                m_Input = new Vector2(cinematicVelocity.z, -cinematicVelocity.x);
+                speed = m_Input.magnitude;
+                Debug.Log(speed);
+            } else
+            {
                 m_Input = new Vector2(horizontal, vertical);
+            }
 
-                // normalize input if it exceeds 1 in combined length:
-                if (m_Input.sqrMagnitude > 1)
-                {
-                    m_Input.Normalize();
-                }
+            // normalize input if it exceeds 1 in combined length:
+            if (m_Input.sqrMagnitude > 1)
+            {
+                m_Input.Normalize();
+            }
 
-                // handle speed change to give an fov kick
-                // only if the player is going to a run, is running and the fovkick is to be used
-                if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
-                {
-                    StopAllCoroutines();
-                    StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
-                }
+            // handle speed change to give an fov kick
+            // only if the player is going to a run, is running and the fovkick is to be used
+            if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
         }
 

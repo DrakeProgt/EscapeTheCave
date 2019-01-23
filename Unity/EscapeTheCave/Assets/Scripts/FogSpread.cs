@@ -19,6 +19,7 @@ public class FogSpread : MonoBehaviour
 	private Tweeny fogSlowDown;
 	private Tweeny fogFinalRise;
 	private Tweeny fogDensityFall;
+	private Tweeny fogReposition;
 
 
 	private bool tweenStart = false;
@@ -29,11 +30,12 @@ public class FogSpread : MonoBehaviour
 		fogRise = new Tweeny(GroundFog.GetComponent<VolumetricFog>().height, targetFogHeight, 4000, "linear");
 		fogDensityGrowth = new Tweeny(0.8f, 1.1f, 2000, "default");
 
-		fogSpread = new Tweeny(GroundFog.GetComponent<VolumetricFog>().fogAreaFallOff, 3.0f, 20000, "linear");
+		fogSpread = new Tweeny(GroundFog.GetComponent<VolumetricFog>().fogAreaFallOff, 0.001f, 5000, "linear");
 		fogSlowDown = new Tweeny(GroundFog.GetComponent<VolumetricFog>().speed, 0.005f, 10000, "default");
 		fogFinalRise = new Tweeny(targetFogHeight, targetFogFinalHeight, 10000, "default");
-		fogDensityFall = new Tweeny(1.1f, 0.4f, 10000, "default");
-		fogFinalGrowth = new Tweeny(new Vector3(200,15,200), new Vector3(2000,15,2000), 10000, "linear");
+		fogDensityFall = new Tweeny(1.1f, 0.28f, 10000, "default");
+		fogFinalGrowth = new Tweeny(new Vector3(200,15,200), new Vector3(41,15,25), 10000, "linear");
+		fogReposition = new Tweeny(GroundFog.transform.position, new Vector3(-1.3f,-1.4f,3.37f), 20000, "linear");
 
 //		StartCoroutine(DelayedStart(3));
 	}
@@ -60,13 +62,14 @@ public class FogSpread : MonoBehaviour
 			GroundFog.GetComponent<VolumetricFog>().density = fogDensityGrowth.nextValue();
 		}
 
-		if (fogGrowth.finished && !fogSpread.finished)
+		if (fogGrowth.finished && !fogReposition.finished)
 		{
 			GroundFog.GetComponent<VolumetricFog>().fogAreaFallOff = fogSpread.nextValue();
 			GroundFog.GetComponent<VolumetricFog>().speed = fogSlowDown.nextValue();
 			GroundFog.GetComponent<VolumetricFog>().height = fogFinalRise.nextValue();
 			GroundFog.GetComponent<VolumetricFog>().density = fogDensityFall.nextValue();
 			GroundFog.GetComponent<Transform>().localScale = fogFinalGrowth.nextVector();
+			GroundFog.GetComponent<Transform>().position = fogReposition.nextVector();
 		}
 		
 	}

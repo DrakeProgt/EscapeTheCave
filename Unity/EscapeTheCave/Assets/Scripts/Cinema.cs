@@ -32,7 +32,7 @@ public class Cinema : MonoBehaviour
 				started = true;
 			}
 
-			if (moveTo(target.transform.position, 3))
+			if (moveTo(target.transform.position, 2f))
 			{
 				start = false;
 				started = false;
@@ -59,11 +59,13 @@ public class Cinema : MonoBehaviour
 		float distance = Vector3.Distance(twoDimensionalPosition, twoDimensionalTarget);
 		if (distance < speed)
 		{
-			transform.GetComponent<CharacterController>().SimpleMove((twoDimensionalTarget - twoDimensionalPosition).normalized * (distance));
+			transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity =
+				(twoDimensionalTarget - twoDimensionalPosition).normalized * distance;
 			if (distance < 0.3f) return true;
 			return false;
 		}
-		transform.GetComponent<CharacterController>().SimpleMove((twoDimensionalTarget - twoDimensionalPosition).normalized * speed);
+		transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity =
+			(twoDimensionalTarget - twoDimensionalPosition).normalized * speed;
 		return false;
 	}
 }

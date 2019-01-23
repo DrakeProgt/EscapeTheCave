@@ -11982,6 +11982,7 @@ MonoBehaviour:
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
   resetRotation: 0
   cinematicMode: 0
+  cinematicVelocity: {x: 0, y: 0, z: 0}
 --- !u!143 &1060906439
 CharacterController:
   m_ObjectHideFlags: 0
@@ -15497,6 +15498,14 @@ Prefab:
     - target: {fileID: 114127957355129040, guid: 56559855a2540a144967a0e9c9f0af0f,
         type: 2}
       propertyPath: isDirty
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146305447695166, guid: 56559855a2540a144967a0e9c9f0af0f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435246374638210, guid: 56559855a2540a144967a0e9c9f0af0f, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -19997,17 +20006,17 @@ Prefab:
     - target: {fileID: 114072979398180220, guid: e75d40698d8a9844ab5c93ce6dece8df,
         type: 2}
       propertyPath: _noiseScale
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 114072979398180220, guid: e75d40698d8a9844ab5c93ce6dece8df,
         type: 2}
       propertyPath: _noiseSparse
-      value: 0.45
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 114072979398180220, guid: e75d40698d8a9844ab5c93ce6dece8df,
         type: 2}
       propertyPath: _noiseFinalMultiplier
-      value: 1.154
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1605345824840414, guid: e75d40698d8a9844ab5c93ce6dece8df, type: 2}
       propertyPath: m_IsActive
