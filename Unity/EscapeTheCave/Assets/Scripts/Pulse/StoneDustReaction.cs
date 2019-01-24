@@ -28,7 +28,7 @@ public class StoneDustReaction : Reaction
         particleEffect = GameObject.Find("FirstPersonCharacter").GetComponent<ParticleEffectScript>();
         startEffect = false;
         random = new System.Random();
-        playEffectDelay = GetRandomInt(20000, 60000);
+        playEffectDelay = GetRandomInt(2000, 6000);
         t = new Timer(playEffectDelay);
         t.Elapsed += TimerElapsed;
         t.Enabled = true;
@@ -50,7 +50,7 @@ public class StoneDustReaction : Reaction
         {
             particleEffect.PlayStoneDustOnceRandom();
             startEffect = false;
-            t.Interval = GetRandomInt(20000, 60000);
+            t.Interval = GetRandomInt(2000, 6000);
             t.Enabled = true;
         }
     }

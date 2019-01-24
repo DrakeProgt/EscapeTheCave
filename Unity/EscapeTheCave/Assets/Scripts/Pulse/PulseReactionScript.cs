@@ -30,6 +30,7 @@ public class PulseReactionScript : MonoBehaviour
     //Use this for initialization
     void Start()
     {
+        /*
         currentPulse = 60;
         pulseLevel = PulseLevel.low;
         reactions = new List<Reaction>();
@@ -43,8 +44,9 @@ public class PulseReactionScript : MonoBehaviour
            new ThreadStart(realPulse.ReceiveData));
         receiveThread.IsBackground = true;
         receiveThread.Start();
+        */
 
-        /*
+        
         currentPulse = 60;
         pulseLevel = PulseLevel.low;
         fakePulse = FakePulse.GetInstance();
@@ -53,12 +55,12 @@ public class PulseReactionScript : MonoBehaviour
         reactions.Add(StoneDustReaction.GetInstance());
         fakePulse.Init();
         StartCoroutine(fakePulse.PulseLoop());
-        */
+        
     }
 	//Update is called once per frame
 	void FixedUpdate()
     {
-        currentPulse = realPulse.getHR();
+        //currentPulse = realPulse.getHR();
         SetPulseLevel(currentPulse);
 
         React();

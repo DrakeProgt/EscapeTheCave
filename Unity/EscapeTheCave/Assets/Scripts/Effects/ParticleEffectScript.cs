@@ -13,9 +13,9 @@ public class ParticleEffectScript : MonoBehaviour
     {
         stoneDust = (GameObject)GameObject.Instantiate(Resources.Load("DustStorm"), Vector3.zero, Quaternion.identity);
         //stoneDust = GameObject.Find("DustStorm");
-        possiblePositions = new Vector3[6] 
+        possiblePositions = new Vector3[5] 
         {
-            new Vector3(2.294353f, 3.6f, 5.34f),
+            //new Vector3(2.294353f, 3.6f, 5.34f),
             new Vector3(-4.31f, 3.6f, -5.11f),
             new Vector3(16.64f, 3.6f, -5.5f),
             new Vector3(16.25f, 3.6f, 3.86f),
