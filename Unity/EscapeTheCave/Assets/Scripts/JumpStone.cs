@@ -50,7 +50,11 @@ public class JumpStone : MonoBehaviour
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			Cylinders[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+//			Cylinders[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+			Cylinders[i].SetActive(true);
+			Cylinders[i].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+			Cylinders[i].GetComponent<Rigidbody>().isKinematic = true;
+			Cylinders[i].GetComponent<Rigidbody>().detectCollisions = true;
 			Cylinders[i].transform.localPosition = positions[i];
 			Cylinders[i].transform.localEulerAngles = rotations[i];
 		}
@@ -65,7 +69,16 @@ public class JumpStone : MonoBehaviour
 		foreach (GameObject cylinder in Cylinders)
 		{
 			cylinder.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+			cylinder.GetComponent<Rigidbody>().isKinematic = false;
+			cylinder.GetComponent<Rigidbody>().detectCollisions = true;
+			StartCoroutine(DelayedDisable(2, cylinder));
 		}	
+	}
+	
+	IEnumerator DelayedDisable(float waitTime, GameObject objectToDisable)
+	{
+		yield return new WaitForSeconds(waitTime);
+		objectToDisable.SetActive(false);
 	}
 	
 	// Update is called once per frame

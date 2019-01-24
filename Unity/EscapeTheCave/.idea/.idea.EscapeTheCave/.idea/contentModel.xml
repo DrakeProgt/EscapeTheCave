@@ -251,6 +251,7 @@
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
           </e>
+          <e p="Cinema.cs" t="Include" />
           <e p="DeadZone.cs" t="Include" />
           <e p="Diary" t="Include">
             <e p="DiaryHandler.cs" t="Include" />

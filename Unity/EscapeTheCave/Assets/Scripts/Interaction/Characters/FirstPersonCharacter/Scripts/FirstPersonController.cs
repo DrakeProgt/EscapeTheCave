@@ -25,7 +25,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private CurveControlledBob m_HeadBob = new CurveControlledBob();
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
-        [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
+        [SerializeField] public AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
@@ -44,6 +44,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
         public bool resetRotation;
         private float height;
+        public bool cinematicMode = false;
+        public Vector3 cinematicVelocity;
+        public Quaternion rootRotation;
 
         private float savedWalkSpeed;
 
@@ -71,13 +74,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             resetRotation = true;
         }
 
+        public void disableCinematicMode()
+        {
+            m_MouseLook.Init(transform, m_Camera.transform);
+            cinematicMode = false;
+        }
+
         // Update is called once per frame
         private void Update()
         {
             RotateView(resetRotation);
             if (resetRotation) resetRotation = false;
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+            if (!m_Jump && !cinematicMode)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
@@ -170,6 +179,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
+            if (cinematicMode)
+            {
+                desiredMove = cinematicVelocity;
+            }
+            
 
             // get a normal for the surface that is being touched to move along it
             RaycastHit hitInfo;
@@ -288,7 +302,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
-            m_Input = new Vector2(horizontal, vertical);
+
+            if (cinematicMode)
+            {
+                m_Input = new Vector2(cinematicVelocity.z, -cinematicVelocity.x);
+                speed = m_Input.magnitude;
+                Debug.Log(speed);
+            } else
+            {
+                m_Input = new Vector2(horizontal, vertical);
+            }
 
             // normalize input if it exceeds 1 in combined length:
             if (m_Input.sqrMagnitude > 1)
@@ -306,9 +329,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+
         private void RotateView(bool resetRotation)
         {
-            m_MouseLook.LookRotation(transform, m_Camera.transform, resetRotation);
+            if (!cinematicMode)
+            {
+                m_MouseLook.LookRotation(transform, m_Camera.transform, resetRotation, rootRotation);
+            }
         }
 
 

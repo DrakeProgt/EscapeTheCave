@@ -24,10 +24,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
-            m_CameraTargetRot = camera.localRotation;
+            m_CameraTargetRot = new Quaternion(0, 0, 0, 1);
         }
 
-        public void LookRotation(Transform character, Transform camera, bool resetRotation = false)
+        public void LookRotation(Transform character, Transform camera, bool resetRotation = false, Quaternion? rootRotation = null)
         {
             SetCursorLock(!GameManager.isGamePaused);
 
@@ -43,7 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (resetRotation)
             {
                 m_CameraTargetRot = new Quaternion(0, 0, 0, 1);
-                m_CharacterTargetRot = new Quaternion(0, .8f, 0, -.6f);
+                m_CharacterTargetRot = (Quaternion) rootRotation;
             }
 
             if(clampVerticalRotation)

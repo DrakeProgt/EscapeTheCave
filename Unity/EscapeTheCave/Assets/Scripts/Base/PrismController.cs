@@ -13,11 +13,6 @@ public class PrismController : MonoBehaviour, ControllerInterface {
 	{
         isEnabled = false;
 	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-	}
 
 	public void ActivateLights() 
 	{

@@ -67,9 +67,30 @@ public class PlayerInteractionScript : MonoBehaviour
                     break;
                 case "placeable":
                     string itemName = hit.collider.gameObject.name.Replace("Platform", "");
-                    string m = itemName.Replace("Left", "").Replace("Right", "").Replace("Middle", "");
-                    message = "Place " + m;
-                    PlaceObject(hit.collider.gameObject);
+                    itemName = itemName.Replace("Left", "").Replace("Right", "").Replace("Middle", "");
+                    bool place = true;
+                    foreach (Transform child in hit.collider.gameObject.transform)
+                    {
+                        Debug.Log(child.name);
+                        if (child.name.Replace("Left", "").Replace("Right", "").Replace("Middle", "") == itemName)
+                        {
+                            place = false;
+                        }
+                    }
+
+                    if (place)
+                    {
+                        message = "Place " + itemName;
+                        PlaceObject(hit.collider.gameObject);
+                    }
+                    else
+                    {
+                        message = "";
+                        GameManager.hoverMessage = null;
+                        hovered = false;
+                        GameManager.focused = null;
+                    }
+
                     break;
                 case "rotateable":
                     message = "Rotate " + hit.collider.gameObject.name;
