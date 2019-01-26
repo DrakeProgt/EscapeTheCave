@@ -68,6 +68,12 @@ public class StoneDustReaction : Reaction
 
     public override void ReactionHighIntensity(float currentPulse)
     {
-
+        if(startEffect)
+        {
+            particleEffect.PlayStoneDustOnceRandom();
+            startEffect = false;
+            t.Interval = GetRandomInt(90000, 240000);
+            t.Enabled = true;
+        }
     }
 }

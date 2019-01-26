@@ -25,7 +25,7 @@ public class FakePulse : MonoBehaviour
         {
             if (pulse == 60)
                 operation = new Operation(Inc);
-            else if (pulse == 180)
+            else if (pulse == 79)
                 operation = new Operation(Dec);
 
             operation(ref pulse);

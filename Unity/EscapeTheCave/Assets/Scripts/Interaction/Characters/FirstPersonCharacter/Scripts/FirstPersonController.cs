@@ -69,11 +69,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             GameManager.Player = transform.gameObject;
         }
 
-        private void OnEnable()
-        {
-            resetRotation = true;
-        }
-
         public void disableCinematicMode()
         {
             m_MouseLook.Init(transform, m_Camera.transform);
@@ -330,7 +325,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
 
-        private void RotateView(bool resetRotation)
+        private void RotateView(bool resetRotation = false)
         {
             if (!cinematicMode)
             {

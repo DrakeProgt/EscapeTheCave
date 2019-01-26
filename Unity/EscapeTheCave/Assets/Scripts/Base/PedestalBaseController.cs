@@ -29,7 +29,7 @@ public class PedestalBaseController : MonoBehaviour
 
         if (!isGateAudioPlaying && timePassed > 6)
         {
-            SoundSystem.PlayGateSound();
+            SoundSystem.PlaySound("Audio/Cave/FX/Plateau-Szene", 0, 1, 10, 0, gameObject);
             isGateAudioPlaying = true;
         }
 
@@ -53,7 +53,7 @@ public class PedestalBaseController : MonoBehaviour
         {
             if(!isPedestalAudioPlaying)
             {
-                SoundSystem.PlayPedestalSound();
+                SoundSystem.PlayPedestalSound(gameObject, 0, 1);
                 isPedestalAudioPlaying = true;
             }
             transform.Translate(Vector3.up * .5f * Time.deltaTime);

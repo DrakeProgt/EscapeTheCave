@@ -7,6 +7,7 @@ public class GearController : MonoBehaviour
     [SerializeField] GameObject prismPlatform;
     float moveSpeed;
     public int index;
+    bool isSoundPlaying;
 
     // Use this for initialization
     void Start()
@@ -29,7 +30,15 @@ public class GearController : MonoBehaviour
         if (transform.parent.gameObject.GetComponent<BaseController>().gearsRotating[index])
         {
             Debug.Log("Rotate gear...");
+            if(!isSoundPlaying)
+            {
+                SoundSystem.PlayGearSound(gameObject, 0, .2f);
+                isSoundPlaying = true;
+            }
             transform.Rotate(Vector3.up * Time.deltaTime * 300);
+        } else
+        {
+            isSoundPlaying = false;
         }
     }
 }
