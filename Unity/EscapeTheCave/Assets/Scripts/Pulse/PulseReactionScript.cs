@@ -22,9 +22,6 @@ public class PulseReactionScript : MonoBehaviour
     private FakePulse fakePulse;
     private RealPulse realPulse;
 
-    private ViewReaction viewReaction;
-    private StoneDustReaction stoneDustReaction;
-
     private List<Reaction> reactions;
 
     //Use this for initialization
@@ -51,8 +48,9 @@ public class PulseReactionScript : MonoBehaviour
         pulseLevel = PulseLevel.low;
         fakePulse = FakePulse.GetInstance();
         reactions = new List<Reaction>();
-        reactions.Add(ViewReaction.GetInstance());
-        reactions.Add(StoneDustReaction.GetInstance());
+        //reactions.Add(ViewReaction.GetInstance());
+        reactions.Add(SoundReaction.GetInstance());
+        //reactions.Add(StoneDustReaction.GetInstance());
         fakePulse.Init();
         StartCoroutine(fakePulse.PulseLoop());
         
@@ -61,7 +59,7 @@ public class PulseReactionScript : MonoBehaviour
 	void FixedUpdate()
     {
         //currentPulse = realPulse.getHR();
-        SetPulseLevel(currentPulse);
+        SetPulseLevel(GetLivePulseData());
 
         React();
         //GameObject.Find("Puls").GetComponent<Text>().text = currentPulse.ToString();

@@ -81,15 +81,15 @@ public class DiaryHandler : MonoBehaviour
 				if (opened)
 				{
 					opening = true;
-                    SoundSystem.PlayDiaryOpenSound(1);
-                    SoundSystem.PlayDiaryTurnSound(2);
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen", 1);
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", 2);
                     GetComponent<Transform>().localPosition = targetPosition + downPositionOffset;
 				}
 				else
 				{
 					closing = true;
-                    SoundSystem.PlayDiaryOpenSound();
-                    SoundSystem.PlayDiaryTurnSound();
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen");
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern");
                 }
 				running = true;
 				time = Time.time * 1000;

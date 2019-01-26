@@ -32,6 +32,8 @@ public class ParticleEffectScript : MonoBehaviour
         stoneDust.GetComponent<ParticleSystem>().Play(true);
         stoneDust.GetComponentInChildren<AudioSource>().Play();
 
+        SoundSystem.PlayDustSound();
+
         //controller vibration
         float stoneDustDir = Utilities.GetDirection(UnityEngine.Camera.main.transform, stoneDust.transform);
         float vibLeft = (stoneDustDir == -1 || stoneDustDir == 0) ? 1 : 0;

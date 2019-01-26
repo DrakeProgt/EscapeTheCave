@@ -32,14 +32,18 @@ public class ViewReaction : Reaction
 
     public override void ReactionLowIntensity(float pulse)
     {
+        Debug.Log("LoW");
+        
         cameraEffects.ChangeBlur(false);
         cameraEffects.ChangeMotionBlur(false);
         cameraEffects.ChangeVignette(false);
         cameraEffects.ChangeVignettePulsation(false);
+
     }
 
     public override void ReactionMediumIntensity(float pulse)
     {
+        Debug.Log("Medium");
         cameraEffects.ChangeBlur(true);
         cameraEffects.ChangeMotionBlur(false);
         float blurIntensity = Utilities.Norm(pulse, 80, 120, 0, 5);
@@ -47,12 +51,14 @@ public class ViewReaction : Reaction
 
         cameraEffects.ChangeVignette(true);
         cameraEffects.ChangeVignettePulsation(false);
-        float vignetteIntensity = Utilities.Norm(pulse, 80, 120, 0, 0.35f);
-        cameraEffects.SetVignetteIntensity(vignetteIntensity);
+        //float vignetteIntensity = Utilities.Norm(pulse, 80, 120, 0, 0.35f);
+        float vignetteIntensity = Utilities.Norm(pulse, 10, 10, 0, 0);
+        cameraEffects.SetVignetteIntensity(0.184f);
     }
 
     public override void ReactionHighIntensity(float pulse)
     {
+        Debug.Log("Hight");
         cameraEffects.ChangeBlur(true);
         cameraEffects.ChangeMotionBlur(true);
         float blurIntensity = Utilities.Norm(pulse, 120, 180, 5, 10);

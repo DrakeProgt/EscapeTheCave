@@ -4,31 +4,31 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 
-public class StoneDustReaction : Reaction
+public class SoundReaction : Reaction
 {
-    private static StoneDustReaction instance;
+    private static SoundReaction instance;
     private ParticleEffectScript particleEffect;
     private Timer t;
     private int playEffectDelay;
     System.Random random;
     private bool startEffect;
 
-    public static StoneDustReaction GetInstance()
+    public static SoundReaction GetInstance()
     {
         if (instance == null)
         {
-            instance = new StoneDustReaction();
+            instance = new SoundReaction();
         }
 
         return instance;
     }
 
-    private StoneDustReaction()
+    private SoundReaction()
     {
         particleEffect = GameObject.Find("FirstPersonCharacter").GetComponent<ParticleEffectScript>();
         startEffect = false;
         random = new System.Random();
-        playEffectDelay = GetRandomInt(20000, 60000);
+        playEffectDelay = GetRandomInt(2000, 6000);
         t = new Timer(playEffectDelay);
         t.Elapsed += TimerElapsed;
         t.Enabled = true;
@@ -48,9 +48,9 @@ public class StoneDustReaction : Reaction
     {
         if (startEffect)
         {
-            particleEffect.PlayStoneDustOnceRandom();
+            SoundSystem.PlayRandomMonsterSound();
             startEffect = false;
-            t.Interval = GetRandomInt(20000, 60000);
+            t.Interval = GetRandomInt(6000, 6000);
             t.Enabled = true;
         }
     }
@@ -68,12 +68,6 @@ public class StoneDustReaction : Reaction
 
     public override void ReactionHighIntensity(float currentPulse)
     {
-        if(startEffect)
-        {
-            particleEffect.PlayStoneDustOnceRandom();
-            startEffect = false;
-            t.Interval = GetRandomInt(90000, 240000);
-            t.Enabled = true;
-        }
+
     }
 }
