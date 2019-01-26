@@ -12,7 +12,7 @@ public class SequenceController : MonoBehaviour
     Vector3 startPosition;
 
     bool started;
-    bool isFirstSequenceFinished = true, isSecondSequenceFinished, testSequenceFinished;
+    bool isFirstSequenceFinished, isSecondSequenceFinished, testSequenceFinished;
     bool monsterSoundPlayed;
 
     bool[] sequencesDone;
@@ -36,7 +36,7 @@ public class SequenceController : MonoBehaviour
             }
             else if (!sequencesDone[0])
             {
-                LookTo(rotationTargets[0], 3);
+                LookTo(rotationTargets[0], 1);
                 MoveTo(positionTargets[0], elapsed / duration);
                 elapsed += Time.deltaTime;
                 PlayStepSound();
@@ -106,10 +106,10 @@ public class SequenceController : MonoBehaviour
                 GameObject.Find("Monster").transform.position = new Vector3(-34.78f, .4f, 3.05f);
                 if(!monsterSoundPlayed)
                 {
-                    SoundSystem.PlaySound("Audio/Cave/Monster/Monster-Growl (5)", 1);
+                    SoundSystem.PlaySound("Audio/Cave/Monster/Monster-Growl (5)", .5f, 1, 10, 0, GameObject.Find("Monster"));
                     monsterSoundPlayed = true;
                 }
-                LookTo(rotationTargets[2], 1);
+                LookTo(rotationTargets[2], .5f);
                 MoveTo(positionTargets[2], elapsed / duration);
                 elapsed += Time.deltaTime;
 
@@ -138,7 +138,7 @@ public class SequenceController : MonoBehaviour
     {
         var targetRotation = Quaternion.LookRotation(rotationTarget.transform.position - transform.position);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
-        transform.GetChild(0).rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+        transform.GetChild(0).rotation = Quaternion.Lerp(transform.GetChild(0).rotation, targetRotation, speed * Time.deltaTime);
     }
 
     void MoveTo(GameObject positionTarget, float speed)

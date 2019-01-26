@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour {
     float timeElapsed, waitTimeOne, waitTimeTwo;
+    bool isSoundPlayingFirstTime, isSoundPlayingSecondTime;
 
 	// Use this for initialization
 	void Start () {
@@ -22,21 +23,32 @@ public class DoorController : MonoBehaviour {
                 waitTimeOne = timeElapsed;
             }
 
-            if(timeElapsed > waitTimeOne + 2 && timeElapsed < waitTimeOne + 6)
+            if(timeElapsed > waitTimeOne + 5 && timeElapsed < waitTimeOne + 9)
             {
+                if(!isSoundPlayingFirstTime)
+                {
+                    SoundSystem.PlayPedestalSound(gameObject);
+                    isSoundPlayingFirstTime = true;
+                }
                 transform.Translate(transform.forward * -1 * Time.deltaTime);
+            } else
+            {
+                isSoundPlayingFirstTime = false;
             }
 
-            if(timeElapsed > waitTimeOne + 18 && timeElapsed < waitTimeOne + 22)
+            if(timeElapsed > waitTimeOne + 20 && timeElapsed < waitTimeOne + 24)
             {
+                if (!isSoundPlayingSecondTime)
+                {
+                    SoundSystem.PlayPedestalSound(gameObject);
+                    isSoundPlayingSecondTime = true;
+                }
                 transform.Translate(transform.forward * Time.deltaTime);
+            }
+            else
+            {
+                isSoundPlayingSecondTime = false;
             }
         }
 	}
-
-    IEnumerator MoveAside()
-    {
-        yield return new WaitForSeconds(2);
-        transform.Translate(transform.forward * -1 * Time.deltaTime);
-    }
 }

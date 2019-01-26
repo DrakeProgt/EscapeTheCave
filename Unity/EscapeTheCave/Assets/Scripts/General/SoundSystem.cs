@@ -4,23 +4,34 @@ using UnityEngine;
 
 public static class SoundSystem
 {
-
+    static System.Random rnd = new System.Random();
     static GameObject soundFX = GameObject.Find("SoundSystem");
 
-    public static void PlaySound(string file, float delay = 0, float volume = 1, float destroyDelay = 10, float stereoPan = 0)
+    public static void PlaySound(string file, float delay = 0, float volume = 1, float destroyDelay = 10, float stereoPan = 0, GameObject child = null)
     {
-        AudioSource a = (AudioSource)soundFX.AddComponent<AudioSource>();
+        if(child == null)
+        {
+            child = soundFX;
+        }
+        AudioSource a = (AudioSource)child.AddComponent<AudioSource>();
         a.clip = (AudioClip)Resources.Load(file);
         a.PlayDelayed(delay);
+        a.spatialBlend = 1;
         a.volume = volume;
         a.panStereo = stereoPan;
         DestroyComponent(a, destroyDelay);
     }
 
-    public static void PlayPedestalSound(float delay = 0)
+    public static void PlayGearSound(GameObject child, float delay = 0, float volume = 1)
     {
-        PlaySound("Audio/Cave/FX/Stone3-Slide", 0, .3f, 10);
-        AudioReverbFilter b = (AudioReverbFilter)soundFX.AddComponent<AudioReverbFilter>();
+        int r = rnd.Next(1, 4);
+        PlaySound("Audio/Cave/FX/gear/Gear (" + r + ")", delay, volume, 10, 0, child);
+    }
+
+    public static void PlayPedestalSound(GameObject child, float delay = 0, float volume = 1)
+    {
+        PlaySound("Audio/Cave/FX/Stone3-Slide", delay, volume, 10, 0, child);
+        AudioReverbFilter b = (AudioReverbFilter)child.AddComponent<AudioReverbFilter>();
         b.room = -700;
         DestroyComponent(b, 9);
     }
@@ -37,15 +48,13 @@ public static class SoundSystem
 
     public static void PlayDustSound(float delay = 0)
     {
-        System.Random rnd = new System.Random();
         int r = rnd.Next(4);
-        PlaySound("Audio/Cave/FX/dust/Stone_Dust_" + r, 0, .7f);
+        PlaySound("Audio/Cave/FX/dust/Stone_Dust_" + r, delay, .7f);
     }
 
     public static void PlayRandomMonsterSound(float delay = 0)
     {
         string fileName = "";
-        System.Random rnd = new System.Random();
         int r = rnd.Next(1, 8);
         if (rnd.Next(5) == 0)
         {
