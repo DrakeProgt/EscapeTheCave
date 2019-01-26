@@ -19,8 +19,6 @@ public class PrismPlatformController : MonoBehaviour
         rotateIndex = 0;
 
         prismIndex = transform.parent.GetComponent<PrismController>().prismIndex;
-
-        Debug.Log(transform.parent.childCount);
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ public static class GameManager
 
     public static GameObject focused;
     public static GameObject Player;
-    public static bool secondCaveReached = true;
+    public static bool secondCaveReached = false;
     public static bool pressedInteractKey = false;
     public static bool pressedL1Key = false;
     public static bool pressedR1Key = false;

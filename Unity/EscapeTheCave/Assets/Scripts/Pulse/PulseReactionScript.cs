@@ -48,9 +48,9 @@ public class PulseReactionScript : MonoBehaviour
         pulseLevel = PulseLevel.low;
         fakePulse = FakePulse.GetInstance();
         reactions = new List<Reaction>();
-        //reactions.Add(ViewReaction.GetInstance());
+        reactions.Add(ViewReaction.GetInstance());
         reactions.Add(SoundReaction.GetInstance());
-        //reactions.Add(StoneDustReaction.GetInstance());
+        reactions.Add(StoneDustReaction.GetInstance());
         fakePulse.Init();
         StartCoroutine(fakePulse.PulseLoop());
         

@@ -25,11 +25,11 @@ public class FakePulse : MonoBehaviour
         {
             if (pulse == 60)
                 operation = new Operation(Inc);
-            else if (pulse == 79)
+            else if (pulse == 180)
                 operation = new Operation(Dec);
 
             operation(ref pulse);
-            print(pulse);
+            //print(pulse);
 
             yield return new WaitForSecondsRealtime(0.2f);
         }

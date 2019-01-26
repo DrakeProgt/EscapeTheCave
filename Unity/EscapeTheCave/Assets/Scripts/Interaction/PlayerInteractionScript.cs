@@ -71,7 +71,6 @@ public class PlayerInteractionScript : MonoBehaviour
                     bool place = true;
                     foreach (Transform child in hit.collider.gameObject.transform)
                     {
-                        Debug.Log(child.name);
                         if (child.name.Replace("Left", "").Replace("Right", "").Replace("Middle", "") == itemName)
                         {
                             place = false;

@@ -10,8 +10,8 @@ public class CameraEffectsScript : MonoBehaviour
     private BlurOptimized blur;
     private MotionBlur motionBlur;
     private VignetteModel vignette;
-    private bool bPulsation;
-    float maxIntensity;
+    private bool bPulsation, reachedHigh, reachedLow = true;
+    float maxIntensity, minIntensity, vignetteIntensity;
     float frequency;
 
     // Use this for initialization
@@ -24,7 +24,8 @@ public class CameraEffectsScript : MonoBehaviour
 
         //TODO: create in script with 'AddComponent' and set profile in script?
         vignette = gameObject.GetComponent<PostProcessingBehaviour>().profile.vignette;
-        
+        vignetteIntensity = 0;
+
         InitEffects();
     }
 
@@ -55,7 +56,7 @@ public class CameraEffectsScript : MonoBehaviour
     }
 
     public void SetBlurIntensity(float intensity)
-    {        
+    {
         blur.blurSize = intensity;
     }
 
@@ -116,9 +117,10 @@ public class CameraEffectsScript : MonoBehaviour
         return bPulsation;
     }
 
-    public void SetVignettePulsationIntensityAndFrequency(float maxIntensity, float frequency)
+    public void SetVignettePulsationIntensityAndFrequency(float maxIntensity, float minIntensity, float frequency)
     {
         this.maxIntensity = maxIntensity;
+        this.minIntensity = minIntensity;
         this.frequency = frequency;
     }
 
@@ -159,24 +161,48 @@ public class CameraEffectsScript : MonoBehaviour
         vignette.settings = vignetteSettings;
     }
 
-    public void DoVignetteIntensitySmoothPulsation()
+    public void DoVignetteIntensitySmoothPulsation(float speed)
     {
-        StartCoroutine(RoutineVignetteIntensitySmoothPulsation());
+        StartCoroutine(RoutineVignetteIntensitySmoothPulsation(speed));
     }
 
-    private IEnumerator RoutineVignetteIntensitySmoothPulsation()
+    private IEnumerator RoutineVignetteIntensitySmoothPulsation(float speed)
     {
         //pulsation
         while (bPulsation)
         {
             StartCoroutine(Utilities.ControllerVibration(0.25f, 0.25f, 0.1f));
 
-            //use random factor for more realistic result
-            //use half of waiting time because of the two-time wait
-            SetVignetteIntensity(maxIntensity);
-            yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
-            SetVignetteIntensity(maxIntensity*0.8f);
-            yield return new WaitForSecondsRealtime(Random.Range(frequency / 2 * 0.75f, frequency / 2));
+            var intensity = vignetteIntensity;
+
+            if (!reachedHigh && reachedLow)
+            {
+                if (vignetteIntensity > maxIntensity)
+                {
+                    reachedHigh = true;
+                    reachedLow = false;
+                }
+                else
+                {
+                    vignetteIntensity += speed;
+                }
+            }
+            else if (!reachedLow && reachedHigh)
+            {
+                if (vignetteIntensity > minIntensity)
+                {
+                    vignetteIntensity -= speed;
+                }
+                else
+                {
+                    reachedLow = true;
+                    reachedHigh = false;
+                }
+            }
+
+            SetVignetteIntensity(vignetteIntensity);
+
+            yield return null;
         }
     }
 }

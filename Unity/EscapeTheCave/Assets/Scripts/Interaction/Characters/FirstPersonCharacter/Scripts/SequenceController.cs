@@ -109,13 +109,15 @@ public class SequenceController : MonoBehaviour
                     SoundSystem.PlaySound("Audio/Cave/Monster/Monster-Growl (5)", .5f, 1, 10, 0, GameObject.Find("Monster"));
                     monsterSoundPlayed = true;
                 }
-                LookTo(rotationTargets[2], .5f);
+                LookTo(rotationTargets[4], .5f);
                 MoveTo(positionTargets[2], elapsed / duration);
                 elapsed += Time.deltaTime;
 
                 if (elapsed > duration)
                 {
-                    ResetSequence(ref sequencesDone[3], positionTargets[2], rotationTargets[2], ref isSecondSequenceFinished);
+                    ResetSequence(ref sequencesDone[3], positionTargets[2], rotationTargets[4], ref isSecondSequenceFinished);
+                    GameManager.secondCaveReached = true;
+                    Destroy(GameObject.Find("SoundSystem").GetComponents<AudioSource>()[1]);
                     StopSequence(new Quaternion(0, .2f, 0, -.6f));
                 }
             }
@@ -137,8 +139,8 @@ public class SequenceController : MonoBehaviour
     void LookTo(GameObject rotationTarget, float speed)
     {
         var targetRotation = Quaternion.LookRotation(rotationTarget.transform.position - transform.position);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
-        transform.GetChild(0).rotation = Quaternion.Lerp(transform.GetChild(0).rotation, targetRotation, speed * Time.deltaTime);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+        transform.GetChild(0).rotation = Quaternion.Lerp(transform.GetChild(0).rotation, targetRotation, speed * 2 * Time.deltaTime);
     }
 
     void MoveTo(GameObject positionTarget, float speed)

@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class SoundReaction : Reaction
 {
-    private static SoundReaction instance;
-    private ParticleEffectScript particleEffect;
-    private Timer t;
-    private int playEffectDelay;
-    System.Random random;
-    private bool startEffect;
+    static SoundReaction instance;
+    ParticleEffectScript particleEffect;
+    Timer t;
+    int playEffectDelay;
+    System.Random rnd = new System.Random();
+    bool startEffect;
 
     public static SoundReaction GetInstance()
     {
@@ -23,34 +23,48 @@ public class SoundReaction : Reaction
         return instance;
     }
 
-    private SoundReaction()
+    SoundReaction()
     {
         particleEffect = GameObject.Find("FirstPersonCharacter").GetComponent<ParticleEffectScript>();
         startEffect = false;
-        random = new System.Random();
         playEffectDelay = GetRandomInt(2000, 6000);
         t = new Timer(playEffectDelay);
         t.Elapsed += TimerElapsed;
         t.Enabled = true;
     }
 
-    private void TimerElapsed(object sender, ElapsedEventArgs e)
+    void TimerElapsed(object sender, ElapsedEventArgs e)
     {
         startEffect = true;
     }
 
-    private int GetRandomInt(int min, int max)
+    int GetRandomInt(int min, int max)
     {
-        return random.Next(min, max);
+        return rnd.Next(min, max);
+    }
+
+    void PlayMonsterSound()
+    {
+        int fileSelection = 0;
+        if (GameManager.secondCaveReached)
+        {
+            fileSelection = rnd.Next(5, 12);
+        }
+        else
+        {
+            fileSelection = rnd.Next(1, 5);
+        }
+        SoundSystem.PlayRandomMonsterSound(GameObject.Find("MonsterAudioPoint (" + fileSelection + ")"));
     }
 
     public override void ReactionLowIntensity(float currentPulse)
     {
-        if (startEffect)
+        if (startEffect) 
         {
-            SoundSystem.PlayRandomMonsterSound();
+            PlayMonsterSound();
             startEffect = false;
-            t.Interval = GetRandomInt(6000, 6000);
+            t.Interval = GetRandomInt(180000, 240000);
+            //t.Interval = GetRandomInt(3000, 6000);
             t.Enabled = true;
         }
     }
@@ -59,15 +73,21 @@ public class SoundReaction : Reaction
     {
         if (startEffect)
         {
-            particleEffect.PlayStoneDustOnceRandom();
+            PlayMonsterSound();
             startEffect = false;
-            t.Interval = GetRandomInt(60000, 180000);
+            t.Interval = GetRandomInt(240000, 300000);
             t.Enabled = true;
         }
     }
 
     public override void ReactionHighIntensity(float currentPulse)
     {
-
+        if (startEffect)
+        {
+            PlayMonsterSound();
+            startEffect = false;
+            t.Interval = GetRandomInt(300000, 420000);
+            t.Enabled = true;
+        }
     }
 }

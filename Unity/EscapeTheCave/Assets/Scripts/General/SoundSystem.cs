@@ -9,7 +9,7 @@ public static class SoundSystem
 
     public static void PlaySound(string file, float delay = 0, float volume = 1, float destroyDelay = 10, float stereoPan = 0, GameObject child = null)
     {
-        if(child == null)
+        if (child == null)
         {
             child = soundFX;
         }
@@ -26,6 +26,12 @@ public static class SoundSystem
     {
         int r = rnd.Next(1, 4);
         PlaySound("Audio/Cave/FX/gear/Gear (" + r + ")", delay, volume, 10, 0, child);
+        if (child.GetComponent<AudioReverbFilter>() != null)
+        {
+            AudioReverbFilter b = (AudioReverbFilter)child.AddComponent<AudioReverbFilter>();
+            b.room = -700;
+            DestroyComponent(b, 9);
+        }
     }
 
     public static void PlayPedestalSound(GameObject child, float delay = 0, float volume = 1)
@@ -52,26 +58,30 @@ public static class SoundSystem
         PlaySound("Audio/Cave/FX/dust/Stone_Dust_" + r, delay, .7f);
     }
 
-    public static void PlayRandomMonsterSound(float delay = 0)
+    public static void PlayRandomMonsterSound(GameObject child, float delay = 0)
     {
         string fileName = "";
-        int r = rnd.Next(1, 8);
-        if (rnd.Next(5) == 0)
+        int r = rnd.Next(100);
+        if (r < 20)
         {
-            fileName = "Audio/Cave/Monster/Monster-Scream (" + r + ")";
+            fileName = "Audio/Cave/Monster/Monster-Scream (" + rnd.Next(1, 8) + ")";
+        }
+        else if (r > 10 && r < 30)
+        {
+            fileName = "Audio/Cave/Monster/MonsterSchritt (" + rnd.Next(1, 4) + ")";
         }
         else
         {
-            fileName = "Audio/Cave/Monster/Monster-Growl (" + r + ")";
+            fileName = "Audio/Cave/Monster/Monster-Growl (" + rnd.Next(1, 8) + ")";
         }
 
-        PlaySound(fileName, 0, .05f, 10, r);
+        PlaySound(fileName, 0, 1, 10, (float)rnd.NextDouble() * -2 + 1, child);
 
 
-        AudioReverbFilter b = (AudioReverbFilter)soundFX.AddComponent<AudioReverbFilter>();
-        if(b != null)
+        if (soundFX.GetComponent<AudioReverbFilter>() != null)
         {
-            b.room = -700;
+            AudioReverbFilter b = (AudioReverbFilter)soundFX.AddComponent<AudioReverbFilter>();
+            b.room = -1200;
             DestroyComponent(b, 9);
         }
     }

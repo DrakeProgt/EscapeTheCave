@@ -31,52 +31,45 @@ public class ViewReaction : Reaction
     }
 
     public override void ReactionLowIntensity(float pulse)
-    {
-        Debug.Log("LoW");
-        
+    {        
         cameraEffects.ChangeBlur(false);
         cameraEffects.ChangeMotionBlur(false);
         cameraEffects.ChangeVignette(false);
         cameraEffects.ChangeVignettePulsation(false);
-
     }
 
     public override void ReactionMediumIntensity(float pulse)
     {
-        Debug.Log("Medium");
-        cameraEffects.ChangeBlur(true);
+        cameraEffects.ChangeBlur(false);
         cameraEffects.ChangeMotionBlur(false);
-        float blurIntensity = Utilities.Norm(pulse, 80, 120, 0, 5);
-        cameraEffects.SetBlurIntensity(blurIntensity);
 
         cameraEffects.ChangeVignette(true);
-        cameraEffects.ChangeVignettePulsation(false);
-        //float vignetteIntensity = Utilities.Norm(pulse, 80, 120, 0, 0.35f);
-        float vignetteIntensity = Utilities.Norm(pulse, 10, 10, 0, 0);
-        cameraEffects.SetVignetteIntensity(0.184f);
+        if (!cameraEffects.IsVignettePulsation())
+        {
+            StartVignettePulsationOnce(.0007f);
+        }
+        cameraEffects.SetVignettePulsationIntensityAndFrequency(0.25f, 0.1f, 0.5f);
     }
 
     public override void ReactionHighIntensity(float pulse)
     {
-        Debug.Log("Hight");
         cameraEffects.ChangeBlur(true);
         cameraEffects.ChangeMotionBlur(true);
         float blurIntensity = Utilities.Norm(pulse, 120, 180, 5, 10);
         cameraEffects.SetBlurIntensity(blurIntensity);
         cameraEffects.SetMotionBlurIntensity(blurIntensity);
 
-        if (!cameraEffects.IsVignettePulsation())
-            StartVignettePulsationOnce();
-
         cameraEffects.ChangeVignette(true);
-        float vignetteIntensity = Utilities.Norm(pulse, 120, 150, 0.35f, 0.45f);
-
-        cameraEffects.SetVignettePulsationIntensityAndFrequency(vignetteIntensity, 0.5f);
+        if (!cameraEffects.IsVignettePulsation())
+        {
+            StartVignettePulsationOnce(.002f);
+        }
+        cameraEffects.SetVignettePulsationIntensityAndFrequency(0.416f, 0.25f, 0.5f);
     }
 
-    public void StartVignettePulsationOnce()
+    public void StartVignettePulsationOnce(float speed)
     {
         cameraEffects.ChangeVignettePulsation(true);
-        cameraEffects.DoVignetteIntensitySmoothPulsation();
+        cameraEffects.DoVignetteIntensitySmoothPulsation(speed);
     }
 }
