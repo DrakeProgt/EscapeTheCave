@@ -11,6 +11,9 @@ public class Inventory : MonoBehaviour
     private Slot[] slots;
     private int currentSlotIndex;
     private int prismIndex;
+    private float delay = 0.2f;
+    private float lastUsed;
+    
 
     // Use this for initialization
     private void Start()
@@ -50,6 +53,8 @@ public class Inventory : MonoBehaviour
 
     private void MoveInventoryRight()
     {
+        if (delay > Time.time - lastUsed) return;
+        lastUsed = Time.time;
         if (currentSlotIndex <= 7)
         {
             HighlightCurrentSlot(false);
@@ -61,6 +66,8 @@ public class Inventory : MonoBehaviour
 
     private void MoveInventoryLeft()
     {
+        if (delay > Time.time - lastUsed) return;
+        lastUsed = Time.time;
         if (currentSlotIndex >= 1)
         {
             HighlightCurrentSlot(false);

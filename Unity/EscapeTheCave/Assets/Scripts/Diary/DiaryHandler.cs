@@ -18,7 +18,7 @@ public class DiaryHandler : MonoBehaviour
 	public float BookCloseDelay = 500.0f;
 	public float PageDisappearDelay = 1500.0f;
 	
-	public int pageCount = 9;
+	public int pageCount = 14;
 	private Texture2D[] pageTextures;
 	
 	private Animator BookAnimator;
@@ -71,7 +71,7 @@ public class DiaryHandler : MonoBehaviour
 		if (!running)
 		{
 			// toggle diary init
-			if(GameManager.pressedL1Key)
+			if(GameManager.pressedR2Key)
 			{
 				opened = !BookAnimator.GetBool("DiaryOpened");
 				if(opened) Book.SetActive(true);
@@ -99,7 +99,7 @@ public class DiaryHandler : MonoBehaviour
 			}
 			
 			// switching forward
-			if (opened && GameManager.pressedR2Key && currentLeftPage + 2 < pageCount)
+			if (opened && GameManager.pressedR1Key && currentLeftPage + 2 < pageCount)
 			{
 				setTravellingPage(true, currentLeftPage + 1);
 				setTravellingPage(false, currentLeftPage + 2);
@@ -114,7 +114,7 @@ public class DiaryHandler : MonoBehaviour
 			}
 			
 			// switching backward
-			if (opened && GameManager.pressedL2Key && currentLeftPage > 2)
+			if (opened && GameManager.pressedL1Key && currentLeftPage > 2)
 			{
 				setTravellingPage(true, currentLeftPage - 1);
 				setTravellingPage(false, currentLeftPage);

@@ -47,9 +47,9 @@ public class PlayerInteractionScript : MonoBehaviour
         
         // TODO: this are just test keys, need to be corrected
         if (Input.GetKeyDown(KeyCode.E)) GameManager.pressedInteractKey = true;
-        if (Input.GetKeyDown(KeyCode.O)) GameManager.pressedL1Key = true;
-        if (Input.GetKeyDown(KeyCode.I)) GameManager.pressedR2Key = true;
-        if (Input.GetKeyDown(KeyCode.U)) GameManager.pressedL2Key = true;
+        if (Input.GetKeyDown(KeyCode.Z)) GameManager.pressedR2Key = true;
+        if (Input.GetKeyDown(KeyCode.U)) GameManager.pressedL1Key = true;
+        if (Input.GetKeyDown(KeyCode.I)) GameManager.pressedR1Key = true;
 
         // Raycast
         RaycastHit hit;

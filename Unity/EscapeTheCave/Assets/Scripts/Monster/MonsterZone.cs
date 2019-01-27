@@ -7,7 +7,7 @@ public abstract class MonsterZone : MonoBehaviour
 
 	[HideInInspector] public GameObject Monster;
 	[HideInInspector] public GameObject TriggerArea;
-	[HideInInspector] public DeadZone deadZone;
+	[HideInInspector] public TriggerZone triggerZone;
 	[HideInInspector] public GameObject BlackFog;
 	[HideInInspector] public SelfMovement selfMovementScript;
 	public GameObject[] Points;
@@ -40,7 +40,7 @@ public abstract class MonsterZone : MonoBehaviour
 	void Start ()
 	{
 		Monster = transform.Find("Monster").gameObject;
-		deadZone = Monster.transform.Find("DeadZone").gameObject.GetComponent<DeadZone>();
+		triggerZone = Monster.transform.Find("DeadZone").gameObject.GetComponent<TriggerZone>();
 		BlackFog = Monster.transform.Find("BlackFog").gameObject;
 		originRotation = Monster.transform.rotation;
 		selfMovementScript = Monster.GetComponent<SelfMovement>();
@@ -56,7 +56,7 @@ public abstract class MonsterZone : MonoBehaviour
 	{
 		deadAnimationCameraEffectsProgress = 0;
 		isPlayerCaught = false;
-		deadZone.isTriggered = false;
+		triggerZone.isTriggered = false;
 		BlackFog.SetActive(isActive);
 		currentSequence = 0;
 		currentSequencePosition = 0;
@@ -68,7 +68,7 @@ public abstract class MonsterZone : MonoBehaviour
 		currentPoint = 0;
 		isCameraSequenceRunning = false;
 		Monster.SetActive(isActive);
-		if (isActive) deadZone.ignorePlayerCollision();
+		if (isActive) triggerZone.ignorePlayerCollision();
 	}
 
 	IEnumerator DelayedStart(float waitTime)
@@ -145,7 +145,7 @@ public abstract class MonsterZone : MonoBehaviour
 		}
 
 		// start die animation
-		if (deadZone.isTriggered && !isPlayerCaught)
+		if (triggerZone.isTriggered && !isPlayerCaught)
 		{
 			isPlayerCaught = true;
 			string file = "Audio/Cave/Monster/Monster-Scream (" + Random.Range(1, 5) +")";
@@ -166,7 +166,7 @@ public abstract class MonsterZone : MonoBehaviour
 		}
 		
 		// finish die animation
-		if (deadZone.isTriggered && !isCameraSequenceRunning)
+		if (triggerZone.isTriggered && !isCameraSequenceRunning)
 		{
 			GameManager.Die();
 		}

@@ -12,17 +12,17 @@ public class JumpStoneGroup : MonoBehaviour
 	private bool isAnimationRunning;
 	private float progress = 0;
 	private Vector3 playerPosition;
-	private DeadZone DeadZone;
+	private TriggerZone triggerZone;
 	// Use this for initialization
 	void Start ()
 	{
-		DeadZone = transform.Find("DeadZone").gameObject.GetComponent<DeadZone>();
+		triggerZone = transform.Find("DeadZone").gameObject.GetComponent<TriggerZone>();
 		isAnimationRunning = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (DeadZone.isTriggered)
+		if (triggerZone.isTriggered)
 		{
 			if (!isAnimationRunning)
 			{
@@ -50,7 +50,7 @@ public class JumpStoneGroup : MonoBehaviour
 			if (deadAnimationDuration < (Time.time - CameraSequenceStartTime))
 			{
 				GameManager.Player.GetComponent<Cinema>().deactivcate();
-				DeadZone.isTriggered = false;
+				triggerZone.isTriggered = false;
 				isAnimationRunning = false;
 				GameManager.Player.GetComponent<Collider>().enabled = true;
 				GameManager.Die();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadZone : MonoBehaviour
+public class TriggerZone : MonoBehaviour
 {
 
 	[HideInInspector] public bool isTriggered = false;

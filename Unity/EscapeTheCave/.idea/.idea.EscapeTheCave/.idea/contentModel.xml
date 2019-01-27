@@ -252,7 +252,6 @@
             <e p="CameraController.cs" t="Include" />
           </e>
           <e p="Cinema.cs" t="Include" />
-          <e p="DeadZone.cs" t="Include" />
           <e p="Diary" t="Include">
             <e p="DiaryHandler.cs" t="Include" />
           </e>
@@ -262,6 +261,7 @@
             <e p="LightEffectsScript.cs" t="Include" />
             <e p="ParticleEffectScript.cs" t="Include" />
           </e>
+          <e p="EndSequence.cs" t="Include" />
           <e p="FogSpread.cs" t="Include" />
           <e p="Gate" t="Include">
             <e p="DoorController.cs" t="Include" />
@@ -315,6 +315,7 @@
             <e p="ViewReaction.cs" t="Include" />
           </e>
           <e p="StandardTriplanar.shader" t="Include" />
+          <e p="TriggerZone.cs" t="Include" />
           <e p="Utilities.cs" t="Include" />
           <e p="WordPuzzle" t="Include">
             <e p="Cube.cs" t="Include" />
