@@ -41,10 +41,19 @@ public class Cinema : MonoBehaviour
 			}
 			else
 			{
-				transform.LookAt(LookAtTarget.transform);
-				FirstPersonCamera.transform.LookAt(LookAtTarget.transform);
+				LookAt(LookAtTarget.transform.position);
 			}
+			
 		}
+		
+	}
+
+	private void LookAt(Vector3 position)
+	{
+		Vector3 lookHorizontalDirection = new Vector3(position.x, transform.position.y, position.z);
+		transform.LookAt(lookHorizontalDirection);
+		FirstPersonCamera.transform.LookAt(position);
+		FirstPersonCamera.transform.localEulerAngles = new Vector3(FirstPersonCamera.transform.localEulerAngles.x,0,0);
 	}
 
 	private bool moveTo(Vector3 target, float speed)

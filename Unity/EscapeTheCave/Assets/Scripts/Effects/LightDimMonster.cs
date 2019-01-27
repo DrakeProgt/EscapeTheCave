@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightDimMonster : MonoBehaviour
 {
 
-    private float distanceReact = 25.0f;
+    private float distanceReact = 15.0f;
     private float distanceBlack = 8.0f;
 
     private Light light;
@@ -20,6 +20,9 @@ public class LightDimMonster : MonoBehaviour
     private float intensityDim = 0.35f;
 
     private bool active = true;
+    
+    private float activateDistance = 50; // disable Lights, which are too far away from player
+    
     // Use this for initialization
     void Start()
     {
@@ -43,29 +46,50 @@ public class LightDimMonster : MonoBehaviour
     void Update()
     {
         if (!active) return;
-        float distance = Vector3.Distance(transform.position, GameManager.monsterPosition);
-        float monsterDim = 1.0f;
-        float timeDim = 1.0f;
-        if (distance < distanceReact)
+        float distanceToPlayer = Vector3.Distance(transform.position, GameManager.Player.transform.position);
+        if (distanceToPlayer > activateDistance)
         {
-            if (distance < distanceBlack)
-            {
-                monsterDim = 0.0f;
-            }
-            else
-            {
-                monsterDim = (distance - distanceBlack) / (distanceReact - distanceBlack);
-            }
-//            Debug.Log("monsterDim: " + monsterDim + " | " + distance);
+            light.enabled = false;
+            return;
+        }
+        else
+        {
+            light.enabled = true;
+        }
+
+        float monsterDim = monsterDimCalculation(GameManager.monsterPosition);
+        
+        foreach (var monsterZone in GameManager.monsterZones)
+        {
+            if (monsterZone.active) monsterDim *= monsterDimCalculation(monsterZone.Monster.transform.position);
         }
         
-        timeDim = 1.0f - (Mathf.PingPong(Time.time, intensityDuration) / intensityDuration) * intensityDim;
+        float timeDim = 1.0f - (Mathf.PingPong(Time.time, intensityDuration) / intensityDuration) * intensityDim;
 
         light.intensity = originalIntensity * monsterDim * timeDim;
         light.range = originalRange * monsterDim * timeDim;
         
         float t = Mathf.PingPong(Time.time, switchDuration) / switchDuration;
         light.color = Color.Lerp(originalColor, deltaColor, t);
+    }
+
+    private float monsterDimCalculation(Vector3 position)
+    {
+        float distance = Vector3.Distance(transform.position, position);
+        if (distance < distanceReact)
+        {
+            if (distance < distanceBlack)
+            {
+                return 0.0f;
+            }
+            else
+            {
+                return (distance - distanceBlack) / (distanceReact - distanceBlack);
+            }
+//            Debug.Log("monsterDim: " + monsterDim + " | " + distance);
+        }
+
+        return 1;
     }
 
     private Color CalculateRandomColor(Color originColor, float randomDelta)

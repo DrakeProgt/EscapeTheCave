@@ -296,11 +296,16 @@
           </e>
           <e p="Monster" t="Include">
             <e p="MonsterPosition.cs" t="Include" />
+            <e p="MonsterZone.cs" t="Include" />
+            <e p="MonsterZone1.cs" t="Include" />
+            <e p="SelfMovement.cs" t="Include" />
           </e>
           <e p="Pulse" t="Include">
             <e p="FakePulse.cs" t="Include" />
             <e p="PulseReactionScript.cs" t="Include" />
             <e p="Reaction.cs" t="Include" />
+            <e p="RealPulse.cs" t="Include" />
+            <e p="SoundReaction.cs" t="Include" />
             <e p="StoneDustReaction.cs" t="Include" />
             <e p="ViewReaction.cs" t="Include" />
           </e>

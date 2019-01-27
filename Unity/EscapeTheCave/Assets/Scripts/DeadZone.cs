@@ -19,7 +19,7 @@ public class DeadZone : MonoBehaviour {
 		{
 			if (transform.gameObject.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position))
 			{
-				GameManager.die();
+				GameManager.Die();
 			}
 		}
 	}
