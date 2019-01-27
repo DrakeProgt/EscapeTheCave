@@ -15,9 +15,11 @@ public class Cinema : MonoBehaviour
 	public GameObject target;
 	public GameObject LookAtTarget;
 
+	private float LookToProgress = 0;
 	// Use this for initialization
 	void Start () {
 		FirstPersonCamera = GameObject.Find("FirstPersonCharacter");
+		deactivcate();
 	}
 	
 	// Update is called once per frame
@@ -30,24 +32,60 @@ public class Cinema : MonoBehaviour
 				transform.gameObject.GetComponent<FirstPersonController>().cinematicMode = true;
 				blackBars.SetActive(true);
 				started = true;
+				LookToProgress = 0;
 			}
-
-			if (moveTo(target.transform.position, 2f))
+			
+//			not ready and not needed atm
+//			if (target != null)
+//			{
+//				if (moveTo(target.transform.position, 2f))
+//				{
+//					start = false;
+//					started = false;
+//					transform.gameObject.GetComponent<FirstPersonController>().disableCinematicMode();
+//					blackBars.SetActive(false);
+//				}
+//			}
+			
+			if (LookAtTarget != null)
 			{
-				start = false;
-				started = false;
-				transform.gameObject.GetComponent<FirstPersonController>().disableCinematicMode();
-				blackBars.SetActive(false);
-			}
-			else
-			{
-				LookAt(LookAtTarget.transform.position);
+				LookTo(LookAtTarget.transform.position);
 			}
 			
 		}
 		
 	}
 
+	public void deactivcate()
+	{
+		start = false;
+		started = false;
+		transform.gameObject.GetComponent<FirstPersonController>().disableCinematicMode();
+		blackBars.SetActive(false);
+	}
+
+	public void LookTo(Vector3 position)
+	{
+		
+		/*
+		 * Quaternion targetRotation = Quaternion.LookRotation(position - transform.position);
+		FirstPersonCamera.transform.rotation = Quaternion.Lerp(FirstPersonCamera.transform.rotation, targetRotation, LookToProgress);
+		
+//		Vector3 currentLookAt = (FirstPersonCamera.transform.rotation * Vector3.forward * (position - transform.position).magnitude) + transform.position;
+//		LookAt((targetRotation * Vector3.forward * (position - transform.position).magnitude) + transform.position);
+		
+		LookToProgress += Time.deltaTime * 0.1f;
+		if (LookToProgress > 0.8f) LookToProgress = 0.8f;
+		 */
+		// TODO Refactor to Quaternion
+		Vector3 currentPosition = FirstPersonCamera.transform.position;
+		Vector3 currentLookAt = 
+			(FirstPersonCamera.transform.rotation * Vector3.forward * (position - currentPosition).magnitude) + currentPosition;
+		LookToProgress += Time.deltaTime * 0.1f;
+		if (LookToProgress > 0.8f) LookToProgress = 0.8f;
+		LookAt(Vector3.Lerp(currentLookAt, position, LookToProgress));
+	}
+	
 	private void LookAt(Vector3 position)
 	{
 		Vector3 lookHorizontalDirection = new Vector3(position.x, transform.position.y, position.z);

@@ -8,7 +8,9 @@ public static class GameManager
 
     public static GameObject focused;
     public static GameObject Player;
-    public static bool secondCaveReached = false;
+    public static CameraEffectsScript cameraEffects;
+    public static bool isRecentlyRespawned = false;
+    public static bool secondCaveReached = true;
     public static bool pressedInteractKey = false;
     public static bool pressedL1Key = false;
     public static bool pressedR1Key = false;
@@ -17,7 +19,7 @@ public static class GameManager
     public static string hoverMessage = "This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message";
 
     [SerializeField] public static bool isWordPuzzleSolved = false;
-    public static bool isLightPuzzleSolved = true;
+    public static bool isLightPuzzleSolved = false;
 
     public static bool isGamePaused = false;
 
@@ -53,22 +55,32 @@ public static class GameManager
         }
     }
 
+    public static void LoadCurrentLevel()
+    {
+        // very simple atm
+        if (secondCaveReached) ResetSecondCave();
+    }
+
     public static void ResetSecondCave()
     {
         Player.transform.position = new Vector3(-24.1f, -0.56f, 1.32f);
-        Player.transform.eulerAngles = new Vector3(0.0f, 253.74f, 0.0f);
+//        Player.transform.eulerAngles = new Vector3(0.0f, 253.74f, 0.0f);
+        Player.transform.LookAt(GameObject.Find("SecondCaveLookAtTarget").transform.position);
+        Player.GetComponent<FirstPersonController>().rootRotation = Player.transform.rotation;
         Player.GetComponent<FirstPersonController>().resetRotation = true;
         JumpStone.reset = true;
-        
+        GameObject.Find("SoundSystem").GetComponents<AudioSource>()[1].enabled = false;
         foreach (var monsterZone in monsterZones)
         {
             monsterZone.Reset();
-            monsterZone.active = false;
+            monsterZone.isActive = false;
         }
     }
 
     public static void Die()
     {
+        isRecentlyRespawned = true;
+        cameraEffects.currentBlur = 5;
         ResetSecondCave();
     }
 }

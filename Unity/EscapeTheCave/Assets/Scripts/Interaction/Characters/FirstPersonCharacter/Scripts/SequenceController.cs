@@ -108,6 +108,7 @@ public class SequenceController : MonoBehaviour
                 if(!monsterSoundPlayed)
                 {
                     GameObject.Find("FogGround").SetActive(false);
+                    GameObject.Find("SoundSystem").GetComponents<AudioSource>()[1].enabled = false;
                     SoundSystem.PlaySound("Audio/Cave/Monster/Monster-Growl (5)", .5f, 1, 10, 0, GameObject.Find("MonsterSequence"));
                     monsterSoundPlayed = true;
                 }
@@ -119,6 +120,7 @@ public class SequenceController : MonoBehaviour
                 {
                     GameObject.Find("MonsterSequence").GetComponent<SelfMovement>().speed = 15;
                     GameObject.Find("MonsterSequence").GetComponent<SelfMovement>().Goto(new Vector3(-38.98f, .4f, -32.86f));
+                    SoundSystem.PlaySound("Audio/Cave/Monster/Monster-Scream (2)", 1f, 1, 10, 0, GameObject.Find("MonsterSequence"));
                     ResetSequence(ref sequencesDone[3], positionTargets[2], rotationTargets[4], ref testSequenceFinished);
                 }
             }
@@ -135,7 +137,6 @@ public class SequenceController : MonoBehaviour
                     GameObject.Find("MonsterSequence").SetActive(false);
                     GameManager.monsterPosition.y = -1000;
                     GameManager.secondCaveReached = true;
-                    Destroy(GameObject.Find("SoundSystem").GetComponents<AudioSource>()[1]);
                     ResetSequence(ref sequencesDone[4], positionTargets[2], rotationTargets[5], ref isSecondSequenceFinished);
                     StopSequence(currentRotation);
                 }

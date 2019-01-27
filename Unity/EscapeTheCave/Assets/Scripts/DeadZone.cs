@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadZone : MonoBehaviour {
+public class DeadZone : MonoBehaviour
+{
+
+	[HideInInspector] public bool isTriggered = false;
 
 	void Start () {
 		StartCoroutine(DelayedStart(1));
@@ -11,6 +14,11 @@ public class DeadZone : MonoBehaviour {
 	IEnumerator DelayedStart(float waitTime)
 	{
 		yield return new WaitForSeconds(waitTime);
+		ignorePlayerCollision();
+	}
+
+	public void ignorePlayerCollision()
+	{
 		Physics.IgnoreCollision(GameManager.Player.GetComponent<Collider>(), GetComponent<Collider>());
 	}
 	
@@ -19,7 +27,7 @@ public class DeadZone : MonoBehaviour {
 		{
 			if (transform.gameObject.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position))
 			{
-				GameManager.Die();
+				isTriggered = true;
 			}
 		}
 	}

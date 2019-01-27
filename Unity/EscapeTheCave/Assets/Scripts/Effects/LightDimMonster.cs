@@ -61,7 +61,7 @@ public class LightDimMonster : MonoBehaviour
         
         foreach (var monsterZone in GameManager.monsterZones)
         {
-            if (monsterZone.active) monsterDim *= monsterDimCalculation(monsterZone.Monster.transform.position);
+            if (monsterZone.isActive) monsterDim *= monsterDimCalculation(monsterZone.Monster.transform.position);
         }
         
         float timeDim = 1.0f - (Mathf.PingPong(Time.time, intensityDuration) / intensityDuration) * intensityDim;

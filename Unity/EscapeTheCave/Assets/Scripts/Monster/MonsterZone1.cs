@@ -6,6 +6,7 @@ public class MonsterZone1 : MonsterZone {
 
 	protected override void Init()
 	{
+		CameraSequenceDuration = 7;
 		sequences = new int[3][];
 		sequences[0] = new []{ 0, 1, 2, 3, 4};
 		sequences[1] = new []{ 4, 3, 2, 5, 6, 5, 7, 8, 7};

@@ -13,6 +13,8 @@ public class SelfMovement : MonoBehaviour
 	[HideInInspector] public float rotationSpeedDumping = 100f;
 	private float rotationProgress = 0;
 
+	private int stepChoice = 1;
+
 	private Vector3 direction;
 	public void Goto(Vector3 position)
 	{
@@ -32,6 +34,13 @@ public class SelfMovement : MonoBehaviour
 		{
 			if (lookAtMovementDirectionEnabled) lookAtMovementDirection();
 			active = !(moveTo(targetPosition, speed));
+
+			if ( (int) Time.time % 3 == 0)
+			{
+				SoundSystem.PlaySound("Audio/Cave/Monster/MonsterSchritt (" + stepChoice + ")", 0, 0.5f, 10, 0, gameObject);
+				stepChoice++;
+				if (stepChoice > 3) stepChoice = 1;
+			}
 		}	
 	}
 	

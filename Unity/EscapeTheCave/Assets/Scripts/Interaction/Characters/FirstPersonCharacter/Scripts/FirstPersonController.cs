@@ -302,7 +302,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Input = new Vector2(cinematicVelocity.z, -cinematicVelocity.x);
                 speed = m_Input.magnitude;
-                Debug.Log(speed);
+//                Debug.Log(speed);
             } else
             {
                 m_Input = new Vector2(horizontal, vertical);

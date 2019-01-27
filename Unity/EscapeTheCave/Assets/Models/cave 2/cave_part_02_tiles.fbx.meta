@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: e81d0ab3bc7c4ed44ae8150de798c2b2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Tiles.002
+    100004: Tiles.003
+    100006: Tiles.004
+    100008: Tiles.005
+    100010: Tiles.006
+    100012: Tiles.007
+    100014: Tiles.008
+    100016: Tiles.009
+    100018: Tiles.010
+    100020: Tiles.011
+    100022: Tiles.012
+    100024: Tiles.013
+    100026: Tiles.014
+    100028: Tiles.015
+    100030: Tiles.016
+    100032: Tiles.017
+    100034: Tiles.018
+    100036: Tiles.019
+    100038: Tiles.020
+    100040: Tiles.021
+    100042: Tiles.022
+    100044: Tiles.023
+    100046: Tiles.024
+    100048: Tiles.025
+    100050: Tiles.026
+    100052: Tiles.027
+    100054: Tiles.028
+    400000: //RootNode
+    400002: Tiles.002
+    400004: Tiles.003
+    400006: Tiles.004
+    400008: Tiles.005
+    400010: Tiles.006
+    400012: Tiles.007
+    400014: Tiles.008
+    400016: Tiles.009
+    400018: Tiles.010
+    400020: Tiles.011
+    400022: Tiles.012
+    400024: Tiles.013
+    400026: Tiles.014
+    400028: Tiles.015
+    400030: Tiles.016
+    400032: Tiles.017
+    400034: Tiles.018
+    400036: Tiles.019
+    400038: Tiles.020
+    400040: Tiles.021
+    400042: Tiles.022
+    400044: Tiles.023
+    400046: Tiles.024
+    400048: Tiles.025
+    400050: Tiles.026
+    400052: Tiles.027
+    400054: Tiles.028
+    2100000: Tile
+    2300000: Tiles.002
+    2300002: Tiles.003
+    2300004: Tiles.004
+    2300006: Tiles.005
+    2300008: Tiles.006
+    2300010: Tiles.007
+    2300012: Tiles.008
+    2300014: Tiles.009
+    2300016: Tiles.010
+    2300018: Tiles.011
+    2300020: Tiles.012
+    2300022: Tiles.013
+    2300024: Tiles.014
+    2300026: Tiles.015
+    2300028: Tiles.016
+    2300030: Tiles.017
+    2300032: Tiles.018
+    2300034: Tiles.019
+    2300036: Tiles.020
+    2300038: Tiles.021
+    2300040: Tiles.022
+    2300042: Tiles.023
+    2300044: Tiles.024
+    2300046: Tiles.025
+    2300048: Tiles.026
+    2300050: Tiles.027
+    2300052: Tiles.028
+    3300000: Tiles.002
+    3300002: Tiles.003
+    3300004: Tiles.004
+    3300006: Tiles.005
+    3300008: Tiles.006
+    3300010: Tiles.007
+    3300012: Tiles.008
+    3300014: Tiles.009
+    3300016: Tiles.010
+    3300018: Tiles.011
+    3300020: Tiles.012
+    3300022: Tiles.013
+    3300024: Tiles.014
+    3300026: Tiles.015
+    3300028: Tiles.016
+    3300030: Tiles.017
+    3300032: Tiles.018
+    3300034: Tiles.019
+    3300036: Tiles.020
+    3300038: Tiles.021
+    3300040: Tiles.022
+    3300042: Tiles.023
+    3300044: Tiles.024
+    3300046: Tiles.025
+    3300048: Tiles.026
+    3300050: Tiles.027
+    3300052: Tiles.028
+    4300000: Tiles.028
+    4300002: Tiles.027
+    4300004: Tiles.026
+    4300006: Tiles.025
+    4300008: Tiles.024
+    4300010: Tiles.023
+    4300012: Tiles.022
+    4300014: Tiles.021
+    4300016: Tiles.020
+    4300018: Tiles.019
+    4300020: Tiles.018
+    4300022: Tiles.017
+    4300024: Tiles.016
+    4300026: Tiles.015
+    4300028: Tiles.014
+    4300030: Tiles.013
+    4300032: Tiles.012
+    4300034: Tiles.011
+    4300036: Tiles.010
+    4300038: Tiles.009
+    4300040: Tiles.008
+    4300042: Tiles.007
+    4300044: Tiles.006
+    4300046: Tiles.005
+    4300048: Tiles.004
+    4300050: Tiles.003
+    4300052: Tiles.002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

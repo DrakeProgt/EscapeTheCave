@@ -23,14 +23,20 @@ public class PlayerInteractionScript : MonoBehaviour
         message = "";
         inventory = inventoryObject.GetComponent<Inventory>();
         StartCoroutine(DelayedStart(1));
+        GameManager.Player = gameObject;
+        GameManager.cameraEffects = transform.Find("FirstPersonCharacter").GetComponent<CameraEffectsScript>();
+        GameManager.LoadCurrentLevel();
     }
 
     IEnumerator DelayedStart(float waitTime)
     {
         // suspend execution for waitTime seconds
         yield return new WaitForSeconds(waitTime);
-        inventory.AddItemToInventory(prismLeft, prismLeft.GetComponent<ControllerInterface>().GetItemType());
-        inventory.AddItemToInventory(prismMiddle, prismMiddle.GetComponent<ControllerInterface>().GetItemType());
+        if (!GameManager.isLightPuzzleSolved)
+        {
+            inventory.AddItemToInventory(prismLeft, prismLeft.GetComponent<ControllerInterface>().GetItemType());
+            inventory.AddItemToInventory(prismMiddle, prismMiddle.GetComponent<ControllerInterface>().GetItemType());
+        }
     }
     
     // Update is called once per frame

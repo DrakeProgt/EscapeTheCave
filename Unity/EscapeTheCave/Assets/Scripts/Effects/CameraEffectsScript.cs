@@ -13,8 +13,22 @@ public class CameraEffectsScript : MonoBehaviour
     private bool bPulsation, reachedHigh, reachedLow = true;
     float maxIntensity, minIntensity, vignetteIntensity;
     float frequency;
+    private float targetBlurAfterRespawn = 0.1f;
+    public float currentBlur = 0;
 
-    // Use this for initialization
+    private void Update()
+    {
+        if (GameManager.isRecentlyRespawned)
+        {
+            currentBlur -= Time.deltaTime * 2;
+            if (currentBlur <= targetBlurAfterRespawn) GameManager.isRecentlyRespawned = false;
+            ChangeBlur(true);
+            ChangeVignette(true);
+            SetBlurIntensity(currentBlur);
+            SetVignetteIntensity(currentBlur);
+        }    
+    }
+    
     private void Start()
     {
         bPulsation = false;
@@ -40,9 +54,10 @@ public class CameraEffectsScript : MonoBehaviour
         motionBlur.extraBlur = false;
         motionBlur.shader = Shader.Find("Hidden/MotionBlur");
 
-        ChangeBlur(true);
+        ChangeBlur(false);
         ChangeMotionBlur(true);
 
+        SetBlurIntensity(0); // not sure if its okay
         SetVignetteIntensity(0);
         ChangeVignette(true);
     }
