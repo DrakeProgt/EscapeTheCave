@@ -7,7 +7,7 @@ public static class SoundSystem
     static System.Random rnd = new System.Random();
     static GameObject soundFX = GameObject.Find("SoundSystem");
 
-    public static void PlaySound(string file, float delay = 0, float volume = 1, float destroyDelay = 10, float stereoPan = 0, GameObject child = null)
+    public static void PlaySound(string file, float delay = 0, float volume = 1, float destroyDelay = 10, float stereoPan = 0, GameObject child = null, float spatialBlend = 1)
     {
         if (child == null)
         {
@@ -16,7 +16,7 @@ public static class SoundSystem
         AudioSource a = (AudioSource)child.AddComponent<AudioSource>();
         a.clip = (AudioClip)Resources.Load(file);
         a.PlayDelayed(delay);
-        a.spatialBlend = 1;
+        a.spatialBlend = spatialBlend;
         a.volume = volume;
         a.panStereo = stereoPan;
         DestroyComponent(a, destroyDelay);
@@ -83,6 +83,32 @@ public static class SoundSystem
             AudioReverbFilter b = (AudioReverbFilter)soundFX.AddComponent<AudioReverbFilter>();
             b.room = -1200;
             DestroyComponent(b, 9);
+        }
+    }
+
+    public static void PlayBreathingSound(bool isPlaying)
+    {
+        GameObject o = GameObject.Find("PlayerSound");
+        if (isPlaying)
+        {
+            Debug.Log("PLay");
+            if (o.GetComponent<AudioSource>() != null)
+            {
+                return;
+            }
+            AudioSource a = o.AddComponent<AudioSource>();
+            a.clip = (AudioClip)Resources.Load("Audio/Player/Slow_Breath");
+            a.loop = true;
+            a.Play();
+        }
+        else
+        {
+            if (o.GetComponent<AudioSource>() == null)
+            {
+                return;
+            }
+
+            DestroyComponent(o.GetComponent<AudioSource>(), 0);
         }
     }
 

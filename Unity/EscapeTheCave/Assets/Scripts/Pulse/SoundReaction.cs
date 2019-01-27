@@ -59,18 +59,20 @@ public class SoundReaction : Reaction
 
     public override void ReactionLowIntensity(float currentPulse)
     {
+        SoundSystem.PlayBreathingSound(false);
         if (startEffect) 
         {
             PlayMonsterSound();
             startEffect = false;
-            t.Interval = GetRandomInt(180000, 240000);
-            //t.Interval = GetRandomInt(3000, 6000);
+            //t.Interval = GetRandomInt(180000, 240000);
+            t.Interval = GetRandomInt(3000, 6000);
             t.Enabled = true;
         }
     }
 
     public override void ReactionMediumIntensity(float currentPulse)
     {
+        SoundSystem.PlayBreathingSound(false);
         if (startEffect)
         {
             PlayMonsterSound();
@@ -82,6 +84,7 @@ public class SoundReaction : Reaction
 
     public override void ReactionHighIntensity(float currentPulse)
     {
+        SoundSystem.PlayBreathingSound(true);
         if (startEffect)
         {
             PlayMonsterSound();
