@@ -288,6 +288,7 @@
             <e p="PlayerInteractionScript.cs" t="Include" />
           </e>
           <e p="JumpStone.cs" t="Include" />
+          <e p="JumpStoneGroup.cs" t="Include" />
           <e p="LightRay" t="Include">
             <e p="LightRay.cs" t="Include" />
           </e>
@@ -298,6 +299,10 @@
             <e p="MonsterPosition.cs" t="Include" />
             <e p="MonsterZone.cs" t="Include" />
             <e p="MonsterZone1.cs" t="Include" />
+            <e p="MonsterZone2.cs" t="Include" />
+            <e p="MonsterZone3.cs" t="Include" />
+            <e p="MonsterZone4.cs" t="Include" />
+            <e p="MonsterZone5.cs" t="Include" />
             <e p="SelfMovement.cs" t="Include" />
           </e>
           <e p="Pulse" t="Include">

@@ -127,9 +127,11 @@ public abstract class MonsterZone : MonoBehaviour
 		
 		if (!isPlayerCaught && (!isActive || (isActive && isReturningToBase)))
 		{
-			isActive = TriggerArea.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position);
+			bool zoneTriggered = 
+				TriggerArea.GetComponent<BoxCollider>().bounds.Contains(GameManager.Player.transform.position);
+			isActive = isReturningToBase || zoneTriggered;
 
-			if (isActive)
+			if (zoneTriggered)
 			{
 				Reset();
 				if (isStartWithCameraSequence) startCameraSequence(CameraSequenceDuration);

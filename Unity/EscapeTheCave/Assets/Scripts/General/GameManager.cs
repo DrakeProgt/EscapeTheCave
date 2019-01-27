@@ -6,26 +6,31 @@ using UnityStandardAssets.Characters.FirstPerson;
 public static class GameManager
 {
 
+    // Objects
     public static GameObject focused;
     public static GameObject Player;
     public static CameraEffectsScript cameraEffects;
-    public static bool isRecentlyRespawned = false;
-    public static bool secondCaveReached = true;
-    public static bool pressedInteractKey = false;
-    public static bool pressedL1Key = false;
-    public static bool pressedR1Key = false;
-    public static bool pressedL2Key = false;
-    public static bool pressedR2Key = false;
-    public static string hoverMessage = "This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message";
 
+    // States
+    public static bool isGamePaused = false;
+    public static bool secondCaveReached = true;
+    public static bool isRecentlyRespawned = false;
     [SerializeField] public static bool isWordPuzzleSolved = false;
     public static bool isLightPuzzleSolved = false;
-
-    public static bool isGamePaused = false;
-
+    
+    // Keys
+    public static bool pressedInteractKey = false;
+    public static bool pressedL1Key = false; // previous page
+    public static bool pressedR1Key = false; // next page
+    public static bool pressedL2Key = false; 
+    public static bool pressedR2Key = false; // toggle diary
+    public static bool leftArrowKey = false; // previous item
+    public static bool rightArrowKey = false; // next item
+    
+    // Vars
+    public static string hoverMessage = "This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message; This is the maximum length of the message";
 	public static Vector3 monsterPosition;
-	
-	public static MonsterZone[] monsterZones = new MonsterZone[1];
+	public static MonsterZone[] monsterZones = new MonsterZone[5];
 
     public static void UnpressAllKeys()
     {
