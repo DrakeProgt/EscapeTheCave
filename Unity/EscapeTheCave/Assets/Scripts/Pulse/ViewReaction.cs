@@ -48,7 +48,7 @@ public class ViewReaction : Reaction
         {
             StartVignettePulsationOnce(.0007f);
         }
-        cameraEffects.SetVignettePulsationIntensityAndFrequency(0.25f, 0.1f, 0.5f);
+        cameraEffects.SetVignettePulsationIntensityAndFrequency(0.25f, 0.01f, 0.5f);
     }
 
     public override void ReactionHighIntensity(float pulse)

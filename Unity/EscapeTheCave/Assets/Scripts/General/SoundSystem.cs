@@ -92,9 +92,46 @@ public static class SoundSystem
         }
     }
 
+    public static void PlayHeartBeat(bool isPlaying)
+    {
+        GameObject o = GameObject.Find("HeartbeatSound");
+        AudioSource a = o.GetComponent<AudioSource>();
+
+        if (isPlaying)
+        {
+            if (a == null)
+            {
+                a = o.AddComponent<AudioSource>();
+            }
+        }
+
+        if(a == null || a.isPlaying)
+        {
+            return;
+        }
+
+        a.clip = (AudioClip)Resources.Load("Audio/Player/Heartbeats/Heartbeat_" + rnd.Next(1, 7));
+
+        if(isPlaying)
+        {
+            a.volume = .8f;
+
+        }
+        else
+        {
+            a.volume -= .15f;
+        }
+        a.Play();
+
+        if (a.volume <= .1f)
+        {
+            DestroyComponent(a, 0);
+        }
+    }
+
     public static void PlayBreathingSound(bool isPlaying)
     {
-        GameObject o = GameObject.Find("PlayerSound");
+        GameObject o = GameObject.Find("BreathingSound");
         if (isPlaying)
         {
             if (o.GetComponent<AudioSource>() != null)

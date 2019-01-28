@@ -60,6 +60,7 @@ public class SoundReaction : Reaction
     public override void ReactionLowIntensity(float currentPulse)
     {
         SoundSystem.PlayBreathingSound(false);
+        SoundSystem.PlayHeartBeat(false);
         if (startEffect) 
         {
             PlayMonsterSound();
@@ -72,6 +73,7 @@ public class SoundReaction : Reaction
 
     public override void ReactionMediumIntensity(float currentPulse)
     {
+        SoundSystem.PlayHeartBeat(false);
         SoundSystem.PlayBreathingSound(false);
         if (startEffect)
         {
@@ -84,6 +86,7 @@ public class SoundReaction : Reaction
 
     public override void ReactionHighIntensity(float currentPulse)
     {
+        SoundSystem.PlayHeartBeat(true);
         SoundSystem.PlayBreathingSound(true);
         if (startEffect)
         {
