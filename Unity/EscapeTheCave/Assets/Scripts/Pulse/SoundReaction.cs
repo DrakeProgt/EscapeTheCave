@@ -64,8 +64,8 @@ public class SoundReaction : Reaction
         {
             PlayMonsterSound();
             startEffect = false;
-            //t.Interval = GetRandomInt(180000, 240000);
-            t.Interval = GetRandomInt(3000, 6000);
+            t.Interval = GetRandomInt(180000, 240000);
+//            t.Interval = GetRandomInt(3000, 6000);
             t.Enabled = true;
         }
     }
