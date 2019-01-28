@@ -12,7 +12,8 @@ public class Cinema : MonoBehaviour
 	private GameObject FirstPersonCamera;
 
 	public GameObject blackBars;
-	public GameObject target;
+	public GameObject MoveToTarget;
+	public float movementSpeed = 2;
 	public GameObject LookAtTarget;
 
 	private float LookToProgress = 0;
@@ -35,17 +36,14 @@ public class Cinema : MonoBehaviour
 				LookToProgress = 0;
 			}
 			
-//			not ready and not needed atm
-//			if (target != null)
-//			{
-//				if (moveTo(target.transform.position, 2f))
-//				{
-//					start = false;
-//					started = false;
-//					transform.gameObject.GetComponent<FirstPersonController>().disableCinematicMode();
-//					blackBars.SetActive(false);
-//				}
-//			}
+			if (MoveToTarget != null)
+			{
+				moveTo(MoveToTarget.transform.position, movementSpeed);
+			}
+			else
+			{
+				stopMoving();
+			}
 			
 			if (LookAtTarget != null)
 			{
@@ -56,6 +54,12 @@ public class Cinema : MonoBehaviour
 		
 	}
 
+	public void setLookAtTarget(GameObject target)
+	{
+		LookAtTarget = target;
+		LookToProgress = 0;
+	}
+	
 	public void deactivcate()
 	{
 		start = false;
@@ -112,5 +116,10 @@ public class Cinema : MonoBehaviour
 		transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity =
 			(twoDimensionalTarget - twoDimensionalPosition).normalized * speed;
 		return false;
+	}
+
+	private void stopMoving()
+	{
+		transform.gameObject.GetComponent<FirstPersonController>().cinematicVelocity = Vector3.zero;
 	}
 }
