@@ -67,6 +67,7 @@ public static class GameManager
     public static void ResetSecondCave()
     {
         Player.transform.position = new Vector3(-24.1f, -0.56f, 1.32f);
+//        Player.transform.position = new Vector3(-141.53f, -2.876f, -10.72f);
 //        Player.transform.eulerAngles = new Vector3(0.0f, 253.74f, 0.0f);
         Player.transform.LookAt(GameObject.Find("SecondCaveLookAtTarget").transform.position);
         Player.GetComponent<FirstPersonController>().rootRotation = Player.transform.rotation;

@@ -22,6 +22,12 @@ public static class SoundSystem
         DestroyComponent(a, destroyDelay);
     }
 
+    public static void PlayScream(int number, float volume = 1, float delay = 0, GameObject child = null)
+    {
+        if (child == null) child = GameManager.Player;
+        PlaySound("Audio/Player/Scream/Scream_0" + number, delay, volume, 10, 0, child);
+    }
+
     public static void PlayGearSound(GameObject child, float delay = 0, float volume = 1)
     {
         int r = rnd.Next(1, 4);
@@ -91,7 +97,7 @@ public static class SoundSystem
         GameObject o = GameObject.Find("PlayerSound");
         if (isPlaying)
         {
-            Debug.Log("PLay");
+//            Debug.Log("PLay");
             if (o.GetComponent<AudioSource>() != null)
             {
                 return;

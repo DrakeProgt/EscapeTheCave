@@ -25,13 +25,13 @@ public class PlayerInteractionScript : MonoBehaviour
         StartCoroutine(DelayedStart(1));
         GameManager.Player = gameObject;
         GameManager.cameraEffects = transform.Find("FirstPersonCharacter").GetComponent<CameraEffectsScript>();
-        GameManager.LoadCurrentLevel();
     }
 
     IEnumerator DelayedStart(float waitTime)
     {
         // suspend execution for waitTime seconds
         yield return new WaitForSeconds(waitTime);
+        GameManager.LoadCurrentLevel();
         if (!GameManager.isLightPuzzleSolved)
         {
             inventory.AddItemToInventory(prismLeft, prismLeft.GetComponent<ControllerInterface>().GetItemType());
