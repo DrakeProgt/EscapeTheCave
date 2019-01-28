@@ -91,7 +91,6 @@ public static class SoundSystem
         GameObject o = GameObject.Find("PlayerSound");
         if (isPlaying)
         {
-            Debug.Log("PLay");
             if (o.GetComponent<AudioSource>() != null)
             {
                 return;
@@ -99,6 +98,7 @@ public static class SoundSystem
             AudioSource a = o.AddComponent<AudioSource>();
             a.clip = (AudioClip)Resources.Load("Audio/Player/Slow_Breath");
             a.loop = true;
+            a.volume = .8f;
             a.Play();
         }
         else

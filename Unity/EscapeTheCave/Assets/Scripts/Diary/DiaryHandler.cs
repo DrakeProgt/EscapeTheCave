@@ -81,15 +81,15 @@ public class DiaryHandler : MonoBehaviour
 				if (opened)
 				{
 					opening = true;
-                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen", 1);
-                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", 2);
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen", 1, 1, 10, 0, null, 0);
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", 2, 1, 10, 0, null, 0);
                     GetComponent<Transform>().localPosition = targetPosition + downPositionOffset;
 				}
 				else
 				{
 					closing = true;
-                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen");
-                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern");
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch1-Öffnen-Schließen", 0, 1, 10, 0, null, 0);
+                    SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", 0, 1, 10, 0, null, 0);
                 }
 				running = true;
 				time = Time.time * 1000;
@@ -101,7 +101,9 @@ public class DiaryHandler : MonoBehaviour
 			// switching forward
 			if (opened && GameManager.pressedR1Key && currentLeftPage + 2 < pageCount)
 			{
-				setTravellingPage(true, currentLeftPage + 1);
+                SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", .5f, 1, 10, 0, null, 0);
+
+                setTravellingPage(true, currentLeftPage + 1);
 				setTravellingPage(false, currentLeftPage + 2);
 				currentLeftPage += 2;
 				TravellingPageAnimator.SetBool("left", false);
@@ -116,7 +118,9 @@ public class DiaryHandler : MonoBehaviour
 			// switching backward
 			if (opened && GameManager.pressedL1Key && currentLeftPage > 2)
 			{
-				setTravellingPage(true, currentLeftPage - 1);
+                SoundSystem.PlaySound("Audio/Diary/Tagebuch2-Blättern", .5f, 1, 10, 0, null, 0);
+
+                setTravellingPage(true, currentLeftPage - 1);
 				setTravellingPage(false, currentLeftPage);
 				currentLeftPage -= 2;
 				TravellingPage.SetActive(true);
