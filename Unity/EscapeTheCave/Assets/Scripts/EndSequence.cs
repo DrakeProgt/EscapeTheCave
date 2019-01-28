@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndSequence : MonoBehaviour
 {
@@ -122,7 +123,7 @@ public class EndSequence : MonoBehaviour
 		
 		if (runTime > 15)
 		{
-			Debug.Log("FERTSCH!");
+			SceneManager.LoadScene("Scenes/Outro");
 		}
 		
 		

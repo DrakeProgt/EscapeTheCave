@@ -170,7 +170,7 @@ public class MenuScript : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Scenes/IntroScene");
     }
 
     public void EditMusic()

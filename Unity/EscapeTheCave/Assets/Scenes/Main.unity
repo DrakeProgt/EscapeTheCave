@@ -36785,7 +36785,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1605345824840414, guid: e75d40698d8a9844ab5c93ce6dece8df, type: 2}
       propertyPath: m_Name
-      value: FogGround
+      value: EndTunnelFog
       objectReference: {fileID: 0}
     - target: {fileID: 114072979398180220, guid: e75d40698d8a9844ab5c93ce6dece8df,
         type: 2}

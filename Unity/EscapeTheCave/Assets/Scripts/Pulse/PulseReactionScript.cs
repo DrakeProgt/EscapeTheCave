@@ -52,7 +52,8 @@ public class PulseReactionScript : MonoBehaviour
         reactions.Add(SoundReaction.GetInstance());
         reactions.Add(StoneDustReaction.GetInstance());
         fakePulse.Init();
-        StartCoroutine(fakePulse.PulseLoop());
+//        StartCoroutine(fakePulse.PulseLoop());
+        StartCoroutine(fakePulse.PulseAdvancedRandom());
         
     }
 	//Update is called once per frame
