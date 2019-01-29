@@ -17,6 +17,7 @@ public static class GameManager
     public static bool isRecentlyRespawned = false;
     [SerializeField] public static bool isWordPuzzleSolved = false;
     public static bool isLightPuzzleSolved = false;
+    public static bool isDiaryOpened = false;
     
     // Keys TODO switch to Unity input like inventory 
     public static bool pressedInteractKey = false;
@@ -51,8 +52,10 @@ public static class GameManager
             }
             else
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+//                Cursor.visible = true;
+//                Cursor.lockState = CursorLockMode.None;
+//                Cursor.visible = false;
+//                Cursor.lockState = CursorLockMode.Locked;
             }
             return isConnected;
         }

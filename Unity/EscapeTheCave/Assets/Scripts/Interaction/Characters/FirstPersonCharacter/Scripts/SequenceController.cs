@@ -87,6 +87,7 @@ public class SequenceController : MonoBehaviour
 
                 if (elapsed > duration)
                 {
+                    GameObject.Find("MonsterSequence").transform.Find("BlackFog").gameObject.SetActive(true);
                     GameObject.Find("MonsterSequence").GetComponent<SelfMovement>().Goto(new Vector3(-34.78f, 0.6f, 3.137f));
                     ResetSequence(ref sequencesDone[1], positionTargets[2], rotationTargets[2], ref testSequenceFinished);
                 }
@@ -137,6 +138,7 @@ public class SequenceController : MonoBehaviour
                     GameObject.Find("MonsterSequence").SetActive(false);
                     GameManager.monsterPosition.y = -1000;
                     GameManager.secondCaveReached = true;
+                    GameObject.Find("FirstCaveGroup").SetActive(false);
                     ResetSequence(ref sequencesDone[4], positionTargets[2], rotationTargets[5], ref isSecondSequenceFinished);
                     StopSequence(currentRotation);
                 }

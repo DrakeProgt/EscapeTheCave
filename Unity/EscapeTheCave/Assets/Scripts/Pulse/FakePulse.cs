@@ -69,6 +69,8 @@ public class FakePulse : MonoBehaviour
                     pulse += Random.Range(-2.0f, 1.0f);
                 }
 
+                if (rising && GameManager.isDiaryOpened) rising = false;
+                
                 if (pulse < 60)
                 {
                     pulse = 60;
@@ -86,9 +88,9 @@ public class FakePulse : MonoBehaviour
             {
                 // in the second cave, the pulse will relay on the distance to the monsters
                 minDistance = getLowestMonsterDistance();
-                if (minDistance > 50)
+                if (minDistance > 30)
                 {
-                    pulse += Random.Range(-2.0f, 2.0f);
+                    pulse += Random.Range(-2.0f, 1.0f);
                 }
                 else
                 {

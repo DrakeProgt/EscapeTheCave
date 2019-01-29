@@ -75,6 +75,7 @@ public class DiaryHandler : MonoBehaviour
 			{
 				opened = !BookAnimator.GetBool("DiaryOpened");
 				if(opened) Book.SetActive(true);
+				GameManager.isDiaryOpened = opened;
 			
 				upMovement.reset();
 				downMovement.reset();

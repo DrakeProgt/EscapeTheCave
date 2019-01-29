@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Kirill Kulikov\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Kirill Kulikov\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_EscapeTheCave.602717336.00" t="ExcludeRecursive" />
-    <e p="D:\Dokumente\git\EscapeTheCave\Unity\EscapeTheCave" t="IncludeRecursive">
+    <e p="C:\Users\KKCor\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\KKCor\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_EscapeTheCave.-1581686270.00" t="ExcludeRecursive" />
+    <e p="D:\git\EscapeTheCave\Unity\EscapeTheCave" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -250,6 +250,7 @@
           </e>
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
+            <e p="CursorToggle.cs" t="Include" />
           </e>
           <e p="Cinema.cs" t="Include" />
           <e p="Diary" t="Include">
@@ -287,6 +288,7 @@
             <e p="Inventory.cs" t="Include" />
             <e p="PlayerInteractionScript.cs" t="Include" />
           </e>
+          <e p="IntroSequence.cs" t="Include" />
           <e p="JumpStone.cs" t="Include" />
           <e p="JumpStoneGroup.cs" t="Include" />
           <e p="LightRay" t="Include">
@@ -305,6 +307,7 @@
             <e p="MonsterZone5.cs" t="Include" />
             <e p="SelfMovement.cs" t="Include" />
           </e>
+          <e p="OutroSequence.cs" t="Include" />
           <e p="Pulse" t="Include">
             <e p="FakePulse.cs" t="Include" />
             <e p="PulseReactionScript.cs" t="Include" />
